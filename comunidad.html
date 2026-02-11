@@ -1629,13 +1629,14 @@
 
         <!-- Botones flotantes -->
         <div class="social-floating-buttons">
-            <button type="button" class="social-btn whatsapp-btn" data-bs-toggle="modal"
-                data-bs-target="#whatsappModal">
-                <i class="bi bi-whatsapp"></i>
+            <button type="button" class="social-btn facebook-btn" data-bs-toggle="modal"
+                data-bs-target="#facebookModal" aria-label="Facebook">
+                <i class="bi bi-facebook"></i>
             </button>
 
-            <button type="button" class="social-btn gmail-btn" data-bs-toggle="modal" data-bs-target="#gmailModal">
-                <i class="bi bi-envelope"></i>
+            <button type="button" class="social-btn instagram-btn" data-bs-toggle="modal"
+                data-bs-target="#instagramModal" aria-label="Instagram">
+                <i class="bi bi-instagram"></i>
             </button>
 
             <button type="button" class="social-btn suayed-btn" data-bs-toggle="modal" data-bs-target="#modalSuayed">
@@ -1650,38 +1651,107 @@
                 <img src="resources/CLE_B-09.png" alt="CLE" class="icono-btn">
             </button>
         </div>
-        <!-- Modal WhatsApp -->
-        <div class="modal fade" id="whatsappModal" tabindex="-1" aria-labelledby="whatsappModalLabel"
+
+        <!-- Modal Instagram -->
+        <div class="modal fade" id="instagramModal" tabindex="-1" aria-labelledby="instagramModalLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="whatsappModalLabel">Contactar por WhatsApp</h5>
+                        <h5 class="modal-title" id="instagramModalLabel">Instagram | Jefaturas DUACyD</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                     </div>
                     <div class="modal-body text-center">
-                        <i class="bi bi-whatsapp display-1 text-success mb-3"></i>
-                        <p>¿Deseas contactarnos por WhatsApp?</p>
-                        <a href="https://wa.me/TUNUMERO" class="btn btn-success w-100 py-2" target="_blank">
-                            <i class="bi bi-whatsapp me-2"></i> Abrir WhatsApp
+                        <i class="bi bi-instagram display-1 mb-3" style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
+                        <p class="mb-4">Selecciona la jefatura para abrir su página oficial en Instagram.</p>
+
+                        <a href="https://www.instagram.com/suayedfesaragon/" target="_blank"
+                            rel="noopener noreferrer" class="btn w-100 py-3 mb-3 d-flex align-items-center justify-content-between"
+                            style="background-color: var(--suayed-color); color: white; border-radius: 10px; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
+                            onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.2)'"
+                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'">
+                            <span class="d-flex align-items-center">
+                                <i class="bi bi-laptop fs-4 me-3"></i>
+                                <span class="fw-semibold">SUAyED</span>
+                            </span>
+                            <i class="bi bi-instagram fs-5"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/fesaragoncentrodelenguas/" target="_blank"
+                            rel="noopener noreferrer" class="btn w-100 py-3 mb-3 d-flex align-items-center justify-content-between"
+                            style="background-color: var(--cle-color); color: var(--primary-color); border-radius: 10px; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
+                            onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.2)'"
+                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'">
+                            <span class="d-flex align-items-center">
+                                <i class="bi bi-translate fs-4 me-3"></i>
+                                <span class="fw-semibold">Centro de Lenguas</span>
+                            </span>
+                            <i class="bi bi-instagram fs-5"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/educacioncontinuafesaragon/" target="_blank"
+                            rel="noopener noreferrer" class="btn w-100 py-3 d-flex align-items-center justify-content-between"
+                            style="background-color: var(--edco-color); color: white; border-radius: 10px; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
+                            onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.2)'"
+                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'">
+                            <span class="d-flex align-items-center">
+                                <i class="bi bi-lightbulb fs-4 me-3"></i>
+                                <span class="fw-semibold">Educación Continua</span>
+                            </span>
+                            <i class="bi bi-instagram fs-5"></i>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Modal Gmail -->
-        <div class="modal fade" id="gmailModal" tabindex="-1" aria-labelledby="gmailModalLabel" aria-hidden="true">
+
+        <!-- Modal Facebook -->
+        <div class="modal fade" id="facebookModal" tabindex="-1" aria-labelledby="facebookModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="gmailModalLabel">Enviar correo</h5>
+                        <h5 class="modal-title" id="facebookModalLabel">Facebook | Jefaturas DUACyD</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                     </div>
                     <div class="modal-body text-center">
-                        <i class="bi bi-envelope display-1 text-danger mb-3"></i>
-                        <p>¿Deseas escribirnos por correo electrónico?</p>
-                        <a href="mailto:tucorreo@ejemplo.com" class="btn btn-danger w-100 py-2">
-                            <i class="bi bi-envelope me-2"></i> Enviar correo
+                        <i class="bi bi-facebook display-1 mb-3" style="color: var(--primary-color);"></i>
+                        <p class="mb-4">Selecciona la jefatura para abrir su página oficial en Facebook.</p>
+
+                        <a href="https://www.facebook.com/FESAragon.SUAyED?locale=es_LA" target="_blank"
+                            rel="noopener noreferrer" class="btn w-100 py-3 mb-3 d-flex align-items-center justify-content-between"
+                            style="background-color: var(--suayed-color); color: white; border-radius: 10px; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
+                            onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.2)'"
+                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'">
+                            <span class="d-flex align-items-center">
+                                <i class="bi bi-laptop fs-4 me-3"></i>
+                                <span class="fw-semibold">SUAyED</span>
+                            </span>
+                            <i class="bi bi-facebook fs-5"></i>
+                        </a>
+
+                        <a href="https://www.facebook.com/FESAragon.centrodelenguas?locale=es_LA" target="_blank"
+                            rel="noopener noreferrer" class="btn w-100 py-3 mb-3 d-flex align-items-center justify-content-between"
+                            style="background-color: var(--cle-color); color: var(--primary-color); border-radius: 10px; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
+                            onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.2)'"
+                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'">
+                            <span class="d-flex align-items-center">
+                                <i class="bi bi-translate fs-4 me-3"></i>
+                                <span class="fw-semibold">Centro de Lenguas</span>
+                            </span>
+                            <i class="bi bi-facebook fs-5"></i>
+                        </a>
+
+                        <a href="https://www.facebook.com/FESAragon.educacioncontinua?locale=es_LA" target="_blank"
+                            rel="noopener noreferrer" class="btn w-100 py-3 d-flex align-items-center justify-content-between"
+                            style="background-color: var(--edco-color); color: white; border-radius: 10px; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
+                            onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.2)'"
+                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'">
+                            <span class="d-flex align-items-center">
+                                <i class="bi bi-lightbulb fs-4 me-3"></i>
+                                <span class="fw-semibold">Educación Continua</span>
+                            </span>
+                            <i class="bi bi-facebook fs-5"></i>
                         </a>
                     </div>
                 </div>
