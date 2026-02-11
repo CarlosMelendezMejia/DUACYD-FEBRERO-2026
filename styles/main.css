@@ -108,6 +108,31 @@
   font-weight: 500;
 }
 
+/* Hover específico para cada jefatura */
+.nav-link.nav-suayed:hover {
+  color: var(--suayed-color) !important;
+}
+
+.nav-link.nav-suayed:hover:after {
+  background-color: var(--suayed-color);
+}
+
+.nav-link.nav-cle:hover {
+  color: var(--cle-color) !important;
+}
+
+.nav-link.nav-cle:hover:after {
+  background-color: var(--cle-color);
+}
+
+.nav-link.nav-edco:hover {
+  color: var(--edco-color) !important;
+}
+
+.nav-link.nav-edco:hover:after {
+  background-color: var(--edco-color);
+}
+
 /* Botón toggler */
 .navbar-toggler {
   border: 2px solid var(--secondary-color);
