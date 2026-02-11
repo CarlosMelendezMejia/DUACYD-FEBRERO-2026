@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mapa FES Aragon</title>
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+  <style>
+    html, body { height: 100%; margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial; }
+    #map { height: 100vh; width: 100vw; }
+
+    /* Pin DOM (DivIcon) 100% personalizable con CSS */
+    .pin {
+      --pin-bg: #b71c1c; /* guinda */
+      position: relative;
+      width: 28px; height: 28px; border-radius: 999px;
+      background: var(--pin-bg); color: #fff; display: grid; place-items: center;
+      font: 700 14px/1 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial;
+      box-shadow: 0 6px 16px rgba(0,0,0,.25); border: 2px solid #fff;
+    }
+    .pin::after{ /* puntita */
+      content: ""; position: absolute; left: 50%; transform: translateX(-50%);
+      bottom: -6px; width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 8px solid var(--pin-bg);
+      filter: drop-shadow(0 2px 2px rgba(0,0,0,.15));
+    }
+
+
+    /* Tooltip simple para el DivIcon */
+    .pin-wrap { position: relative; }
+    .tooltip { position:absolute; transform: translate(-50%, -130%); left:50%; top:0; background:#111827; color:#fff; font-size:11px; padding:4px 6px; border-radius:6px; white-space:nowrap; pointer-events:none; opacity:0; transition:opacity .2s; }
+    .pin-wrap:hover .tooltip { opacity:1; }
+
+    /* Icono SVG (dentro de DivIcon) */
+    .svg-icon { width: 32px; height: 32px; }
+
+    /* Control de leyenda */
+    .legend { background:#fff; padding:10px 12px; border-radius:10px; box-shadow:0 4px 14px rgba(0,0,0,.12); font-size:12px; }
+    .legend-row { display:flex; align-items:center; gap:8px; margin:4px 0; }
+    .swatch { width:12px; height:12px; border-radius:4px; display:inline-block; }
+    .swatch.red{ background:#dc2626; }
+    .swatch.orange{ background:#f59e0b; }
+    .swatch.green{ background:#16a34a; }
+    .swatch.blue{ background:#2563eb; }
+
+    /* Asegura que los popups se vean bonitos */
+    .leaflet-popup-content-wrapper { border-radius:12px; }
+  </style>
+</head>
+<body>
+  <div id="map" aria-label="Mapa Leaflet"></div>
+
+  <!-- Leaflet JS -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+  <script>
+    // Coordenadas iniciales (FES Aragon)
+    const START = [19.450, -99.025];
+
+    // 1) Inicializa mapa
+    const map = L.map('map', {
+      center: START,
+      zoom: 18,
+      zoomControl: true,
+    });
+
+    // 2) Capa base gratuita (OpenStreetMap). Para producción/alto tráfico usa un proveedor de tiles con SLA.
+    const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // 3) Datos de FES Aragon
+    const lugares = [
+      { title: 'Edificio A1', type: 'edificio', position: [19.4498, -99.0261] },
+      { title: 'Edificio A2', type: 'edificio', position: [19.4495, -99.0261] },
+      { title: 'Edificio A3', type: 'edificio', position: [19.4492, -99.0261] },
+      { title: 'Edificio A4', type: 'edificio', position: [19.4489, -99.0261] },
+      { title: 'Edificio A5', type: 'edificio', position: [19.4486, -99.0261] },
+      { title: 'Edificio A6', type: 'edificio', position: [19.4483, -99.0261] },
+    ];
+
+    // Helper para crear un DivIcon (DOM) con tooltip
+    function createDivIcon(type, labelText){
+      const wrapper = document.createElement('div');
+      wrapper.className = 'pin-wrap';
+
+      const pin = document.createElement('div');
+      pin.className = `pin ${type || ''}`.trim();
+      pin.textContent = labelText || '';
+
+      const tip = document.createElement('div');
+      tip.className = 'tooltip';
+      tip.textContent = labelText || '';
+
+      wrapper.appendChild(pin);
+      wrapper.appendChild(tip);
+
+      return L.divIcon({
+        className: '', // importante para que no agregue estilos por defecto
+        html: wrapper,
+        iconSize: [28, 34], // alto considera la puntita
+        iconAnchor: [14, 30], // ancla hacia la puntita
+        popupAnchor: [0, -28]
+      });
+    }
+
+    // 4) Marcadores con DivIcon + popups
+    lugares.forEach(lugar => {
+      const marker = L.marker(lugar.position, {
+        icon: createDivIcon(lugar.type, ''),
+        title: lugar.title
+      }).addTo(map);
+      marker.bindPopup(`<b>${lugar.title}</b><br/>Tipo: ${lugar.type}`);
+    });
+
+
+
+    // 6) Control de leyenda
+    const Legend = L.Control.extend({
+      options: { position: 'bottomleft' },
+      onAdd: function() {
+        const div = L.DomUtil.create('div', 'legend');
+        div.innerHTML = `
+          <div style="font-weight:600; margin-bottom:6px;">Leyenda</div>
+          <div class="legend-row"><span class="swatch blue"></span> Edificio</div>
+        `;
+        return div;
+      }
+    });
+    map.addControl(new Legend());
+
+
+
+    // 8) Obtener coordenadas con un clic (y copiarlas al portapapeles)
+    let clickMarker;
+    map.on('click', async (e) => {
+      const { lat, lng } = e.latlng;
+      const text = `${lat.toFixed(6)}, ${lng.toFixed(6)}`;
+
+      if (clickMarker) map.removeLayer(clickMarker);
+      clickMarker = L.marker([lat, lng]).addTo(map)
+        .bindPopup(`<b>Coordenadas</b><br/>${text}<br/><small>(copiadas al portapapeles)</small>`)
+        .openPopup();
+
+      try { await navigator.clipboard.writeText(text); } catch(_) { /* puede fallar fuera de https */ }
+    });
+
+    // 9) Búsqueda simple con Nominatim (sin API key)
+    // Nota: respeta los Términos de Uso de Nominatim y evita abusos (pon límites/pausas en producción).
+    const Search = L.Control.extend({
+      options: { position: 'topleft' },
+      onAdd: function(){
+        const wrap = L.DomUtil.create('div');
+        const box = L.DomUtil.create('div', '', wrap);
+        box.style.cssText = 'display:flex;gap:6px;background:#fff;padding:8px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.12);';
+        const input = L.DomUtil.create('input', '', box);
+        input.type = 'text'; input.placeholder = 'Buscar lugar (Nominatim)';
+        input.style.cssText = 'border:1px solid #d1d5db;border-radius:8px;padding:6px 8px;font-size:12px;min-width:220px;';
+        const btn = L.DomUtil.create('button', '', box);
+        btn.textContent = 'Ir';
+        btn.style.cssText = 'border:1px solid #111827;border-radius:8px;padding:6px 10px;background:#111827;color:#fff;font-size:12px;';
+
+        // Evitar que el mapa capture scroll/click cuando usamos el control
+        L.DomEvent.disableClickPropagation(wrap);
+        L.DomEvent.disableScrollPropagation(wrap);
+
+        async function go(){
+          const q = input.value.trim();
+          if(!q) return;
+          btn.disabled = true; btn.textContent = '…';
+          try {
+            const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(q)}&limit=1&addressdetails=1`;
+            const res = await fetch(url, { headers: { 'Accept-Language': 'es' } });
+            const data = await res.json();
+            if(data && data[0]){
+              const lat = parseFloat(data[0].lat), lon = parseFloat(data[0].lon);
+              map.setView([lat, lon], 16);
+              if (clickMarker) map.removeLayer(clickMarker);
+              clickMarker = L.marker([lat, lon]).addTo(map)
+                .bindPopup(`<b>${data[0].display_name}</b><br/>${lat.toFixed(6)}, ${lon.toFixed(6)}`)
+                .openPopup();
+            } else {
+              alert('No se encontró la ubicación.');
+            }
+          } catch (err) {
+            alert('Error de búsqueda.');
+          } finally {
+            btn.disabled = false; btn.textContent = 'Ir';
+          }
+        }
+        btn.addEventListener('click', go);
+        input.addEventListener('keydown', (e)=>{ if(e.key==='Enter') go(); });
+        return wrap;
+      }
+    });
+    map.addControl(new Search());
+
+
+    // ⚠️ Recomendación: Trata estas coordenadas como información sensible. Mantén el archivo fuera de repos públicos.
+    const panicLayer = L.layerGroup().addTo(map);
+
+    function panicIcon(){
+      const html = `
+        <div class="pin" style="--pin-bg:#dc2626;width:30px;height:30px;">
+          !
+        </div>`;
+      return L.divIcon({ className: '', html, iconSize:[30,36], iconAnchor:[15,32], popupAnchor:[0,-28] });
+    }
+
+    function renderPanic(points){
+      panicLayer.clearLayers();
+      if(!points || !points.length) return;
+      const group = [];
+      points.forEach(p => {
+        const lat = parseFloat(p.lat || p.latitude), lng = parseFloat(p.lng || p.lon || p.longitude);
+        if(Number.isFinite(lat) && Number.isFinite(lng)){
+          const m = L.marker([lat, lng], { icon: panicIcon(), title: p.nombre || p.titulo || 'Botón de pánico' })
+            .bindPopup(`<b>${p.nombre || 'Botón de pánico'}</b>` +
+                       (p.edificio ? `<br/>Edificio: ${p.edificio}` : '') +
+                       (p.nivel ? `<br/>Nivel: ${p.nivel}` : '') +
+                       `<br/><small>${lat.toFixed(6)}, ${lng.toFixed(6)}</small>`);
+          panicLayer.addLayer(m);
+          group.push([lat, lng]);
+        }
+      });
+      if(group.length) map.fitBounds(group, { padding:[30,30] });
+    }
+
+    // Control para subir archivo CSV/JSON localmente (no se envía a ningún servidor)
+    const UploadControl = L.Control.extend({
+      options: { position: 'topright' },
+      onAdd: function(){
+        const wrap = L.DomUtil.create('div');
+        wrap.style.cssText = 'background:#fff;padding:8px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.12);display:flex;align-items:center;gap:8px;';
+        const label = L.DomUtil.create('label','',wrap);
+        label.textContent = 'Cargar pánico:';
+        label.style.fontSize = '12px';
+        const input = L.DomUtil.create('input','',wrap);
+        input.type = 'file';
+        input.accept = '.csv,.json,.geojson';
+        input.style.fontSize = '12px';
+        L.DomEvent.disableClickPropagation(wrap);
+        L.DomEvent.disableScrollPropagation(wrap);
+        input.addEventListener('change', async (e)=>{
+          const file = e.target.files && e.target.files[0];
+          if(!file) return;
+          const text = await file.text();
+          try {
+            // Intentar JSON/GeoJSON primero
+            const obj = JSON.parse(text);
+            if(Array.isArray(obj)) {
+              renderPanic(obj);
+            } else if(obj && obj.type === 'FeatureCollection') {
+              const rows = (obj.features || []).map(f => ({
+                nombre: f.properties && (f.properties.nombre || f.properties.name),
+                edificio: f.properties && f.properties.edificio,
+                nivel: f.properties && f.properties.nivel,
+                lat: f.geometry && f.geometry.coordinates ? f.geometry.coordinates[1] : undefined,
+                lng: f.geometry && f.geometry.coordinates ? f.geometry.coordinates[0] : undefined,
+              }));
+              renderPanic(rows);
+            } else {
+              throw new Error('JSON no reconocido');
+            }
+          } catch(_) {
+            // CSV simple: encabezados esperados: nombre,lat,lng,edificio,nivel
+            const lines = text.split(/\r?\n/).filter(Boolean);
+            const headers = lines.shift().split(',').map(h => h.trim().toLowerCase());
+            const idx = (k) => headers.indexOf(k);
+            const rows = lines.map(line => {
+              const cols = line.split(',');
+              return {
+                nombre: cols[idx('nombre')] || cols[idx('titulo')] || cols[idx('name')],
+                lat: cols[idx('lat')] || cols[idx('latitude')],
+                lng: cols[idx('lng')] || cols[idx('lon')] || cols[idx('longitude')],
+                edificio: cols[idx('edificio')] || cols[idx('building')],
+                nivel: cols[idx('nivel')] || cols[idx('level')],
+              };
+            });
+            renderPanic(rows);
+          }
+          // limpiar input
+          e.target.value = '';
+        });
+        return wrap;
+      }
+    });
+    map.addControl(new UploadControl());
+
+    // Añadir al control de capas
+    L.control.layers(null, { 'Botones de pánico': panicLayer }, { collapsed: true }).addTo(map);
+
+    // ——— Notas ———
+    // * Si tendrás muchos marcadores, considera Leaflet.markercluster o un layer de clustering.
+    // * Para geocodificación libre, puedes integrar Nominatim (OpenStreetMap) respetando su política de uso.
+    // * Si necesitas rutas/tráfico, evalúa proveedores de servicios externos compatibles con Leaflet.
+  </script>
+</body>
+</html>

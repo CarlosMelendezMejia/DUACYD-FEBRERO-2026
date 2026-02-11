@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Ponte en contacto con la DUACyD FES Aragón mediante nuestros canales oficiales para resolver dudas y recibir orientación.">
+    <meta name="keywords" content="contacto, DUACyD, UNAM, FES Aragón, teléfono, correo">
+    <title>Contacto | DUACyD FES Aragón</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" href="resources/DUACyD_B-09.ico" type="image/x-icon">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+</head>
+
+<body class="landing-page">
+    <header>
+        <!-- Navbar principal -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
+            <div class="container">
+                <div class="logo-container d-flex align-items-center gap-4 me-4">
+                    <a class="navbar-brand" href="https://www.unam.mx/">
+                        <img src="resources/unam_blanco.png" alt="Logo UNAM" class="logo">
+                    </a>
+                    <a class="navbar-brand" href="https://www.aragon.unam.mx/fes-aragon/#!/inicio">
+                        <img src="resources/fesaragon-blanco.png" alt="Logo FES Aragón" class="logo">
+                    </a>
+                    <a class="navbar-brand" href="index.html">
+                        <img src="resources/DUACyD_B-09.png" alt="Logo DUACyD" class="logo">
+                    </a>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+                    <ul class="navbar-nav gap-lg-3">
+                        <li class="nav-item">
+                            <a class="nav-link px-3 py-2 rounded" href="index.html">
+                                <i class="bi bi-house-door me-2"></i>Inicio
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="comunidad.html">
+                                <i class="bi bi-people me-2"></i>Comunidad
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3 py-2 rounded" href="acercade.html">
+                                <i class="bi bi-info-circle me-2"></i>Acerca de
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3 py-2 rounded" href="oferta-educativa.html">
+                                <i class="bi bi-book me-2"></i>Oferta Educativa
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active px-3 py-2 rounded" href="contacto.html">
+                                <i class="bi bi-envelope me-2"></i>Contacto
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3 py-2 rounded" href="preguntas-frecuentes.html">
+                                <i class="bi bi-question-circle me-2"></i>Preguntas Frecuentes
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section comp-6-hero banner-overlay d-flex align-items-center"
+            style="background-image: url('resources/banner-faq.jpg'); background-size: cover; background-position: center; height: 75vh;">
+
+            <div class="container position-relative text-white">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <h1 class="display-4 fw-bold">Contacto</h1>
+                        <h2 class="fw-semibold mt-3">
+                            Comunícate con nosotros<br>
+                            a través de nuestros canales oficiales
+                        </h2>
+                        <p class="mt-4 fs-5 fst-italic text-white-50 d-none d-lg-block">
+                            Si tienes alguna duda, pregunta o comentario, no dudes en contactarnos. Estamos aquí para
+                            ayudarte y brindarte la información que necesitas sobre nuestros programas educativos y
+                            servicios.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Sección principal de contacto -->
+        <section class="py-5" style="background-color: #f8f9fa;">
+            <div class="container">
+                <!-- Encabezado de sección -->
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold custom-text-primary mb-3">
+                        <i class="bi bi-headset me-2"></i>Contáctanos
+                    </h2>
+                    <p class="fs-5 text-muted mb-0">
+                        Si tienes dudas sobre nuestras modalidades, inscripciones o servicios, estaremos encantados de
+                        ayudarte.
+                    </p>
+                </div>
+
+                <!-- Información de contacto -->
+                <div class="row g-4 mb-5">
+                    <!-- Dirección -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100 shadow border-0"
+                            style="border-left: 4px solid var(--primary-color) !important;">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center me-3"
+                                        style="width: 50px; height: 50px; background: rgba(0, 41, 107, 0.1);">
+                                        <i class="bi bi-geo-alt-fill fs-4" style="color: var(--primary-color);"></i>
+                                    </div>
+                                    <h5 class="mb-0 fw-bold" style="color: var(--primary-color);">Ubicación</h5>
+                                </div>
+                                <p class="mb-0 text-muted">
+                                    Edificio X, FES Aragón<br>
+                                    Av. Universidad Nacional S/N<br>
+                                    Bosques de Aragón, 57171<br>
+                                    Cdad. Nezahualcóyotl, Méx.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Teléfono y correo -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100 shadow border-0"
+                            style="border-left: 4px solid var(--suayed-color) !important;">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center me-3"
+                                        style="width: 50px; height: 50px; background: rgba(249, 65, 68, 0.1);">
+                                        <i class="bi bi-telephone-fill fs-4" style="color: var(--suayed-color);"></i>
+                                    </div>
+                                    <h5 class="mb-0 fw-bold" style="color: var(--suayed-color);">Teléfono y Correo</h5>
+                                </div>
+                                <p class="mb-2 text-muted">
+                                    <i class="bi bi-telephone me-2"></i>55 5623 0000 ext. XXXX
+                                </p>
+                                <p class="mb-0">
+                                    <i class="bi bi-envelope me-2 text-muted"></i>
+                                    <a href="mailto:contacto.duacyd@fesar.unam.mx" class="text-decoration-none"
+                                        style="color: var(--suayed-color);">
+                                        contacto.duacyd@fesar.unam.mx
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Horarios -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100 shadow border-0"
+                            style="border-left: 4px solid var(--edco-color) !important;">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center me-3"
+                                        style="width: 50px; height: 50px; background: rgba(67, 170, 139, 0.1);">
+                                        <i class="bi bi-clock-fill fs-4" style="color: var(--edco-color);"></i>
+                                    </div>
+                                    <h5 class="mb-0 fw-bold" style="color: var(--edco-color);">Horario de Atención</h5>
+                                </div>
+                                <p class="mb-2 text-muted">
+                                    <i class="bi bi-calendar-week me-2"></i>Lunes a Viernes
+                                </p>
+                                <p class="mb-0 text-muted">
+                                    <i class="bi bi-alarm me-2"></i>9:00 a 15:00 hrs.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Redes sociales -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100 shadow border-0"
+                            style="border-left: 4px solid var(--cle-color) !important;">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center me-3"
+                                        style="width: 50px; height: 50px; background: rgba(249, 199, 79, 0.1);">
+                                        <i class="bi bi-share-fill fs-4" style="color: var(--cle-color);"></i>
+                                    </div>
+                                    <h5 class="mb-0 fw-bold" style="color: var(--cle-color);">Redes Sociales</h5>
+                                </div>
+                                <div class="d-flex gap-3 mt-3">
+                                    <a href="https://www.facebook.com/duacyd" target="_blank"
+                                        class="btn btn-outline-primary rounded-circle d-flex align-items-center justify-content-center"
+                                        style="width: 45px; height: 45px;">
+                                        <i class="bi bi-facebook fs-5"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/duacyd" target="_blank"
+                                        class="btn btn-outline-danger rounded-circle d-flex align-items-center justify-content-center"
+                                        style="width: 45px; height: 45px;">
+                                        <i class="bi bi-instagram fs-5"></i>
+                                    </a>
+                                    <a href="https://www.youtube.com/@duacyd" target="_blank"
+                                        class="btn btn-outline-danger rounded-circle d-flex align-items-center justify-content-center"
+                                        style="width: 45px; height: 45px;">
+                                        <i class="bi bi-youtube fs-5"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Mapa -->
+        <section class="py-5">
+            <div class="container">
+                <div class="card shadow border-0" style="border-left: 4px solid var(--primary-color) !important;">
+                    <div class="card-body p-4">
+                        <h3 class="h4 mb-4 fw-bold custom-text-primary">
+                            <i class="bi bi-map-fill me-2"></i>¿Dónde estamos?
+                        </h3>
+
+                        <!-- Descripción detallada de la ubicación -->
+                        <div class="alert mb-4"
+                            style="background: linear-gradient(135deg, rgba(0, 41, 107, 0.05) 0%, rgba(0, 63, 136, 0.1) 100%); border-left: 4px solid var(--primary-color);">
+                            <div class="d-flex gap-3">
+                                <div>
+                                    <i class="bi bi-info-circle-fill fs-4" style="color: var(--primary-color);"></i>
+                                </div>
+                                <div>
+                                    <p class="mb-2">
+                                        El edificio de la <strong>División de Universidad Abierta, Continua y a
+                                            Distancia (DUACyD)</strong> se encuentra ubicado en el <strong>edificio
+                                            detrás del A8</strong>, justo <strong>frente a las canchas de
+                                            basquetbol</strong> y los <strong>anexos de la carrera de Derecho</strong>.
+                                    </p>
+                                    <p class="mb-0">
+                                        <i class="bi bi-building me-1"></i> El acceso a la oficina es por el frente del
+                                        edificio y se localiza en el <strong>2º piso</strong>.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mapa Leaflet -->
+                        <div id="map-ubicacion" class="rounded shadow overflow-hidden" style="height: 400px; width: 100%;"></div>
+
+                        <!-- Separador -->
+                        <hr class="my-5">
+
+                        <!-- Recorrido Virtual -->
+                        <div class="row align-items-center g-4">
+                            <div class="col-lg-6 text-center text-lg-start">
+                                <h4 class="fw-bold mb-3" style="color: var(--primary-color);">
+                                    <i class="bi bi-badge-vr me-2"></i>Recorrido Virtual
+                                </h4>
+                                <p class="text-muted mb-4">
+                                    Explora nuestras instalaciones desde la comodidad de tu hogar. Con nuestro recorrido virtual
+                                    podrás conocer las oficinas, aulas y espacios de la División de Universidad Abierta, Continua
+                                    y a Distancia antes de visitarnos en persona.
+                                </p>
+                                <a href="https://suayed-aragón.my.canva.site/dag33qxh-38"
+                                   target="_blank"
+                                   class="btn btn-lg px-4 py-2 shadow-sm"
+                                   style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--subprimary-color) 100%); color: white; border: none;">
+                                    <i class="bi bi-play-circle me-2"></i>Iniciar Recorrido Virtual
+                                </a>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="position-relative">
+                                    <img src="resources/recorrido_virtual.png" 
+                                         alt="Vista previa del recorrido virtual DUACyD" 
+                                         class="img-fluid rounded shadow"
+                                         style="width: 100%; height: auto; object-fit: cover;">
+                                    <!-- Overlay con ícono de play -->
+                                    <a href="https://suayed-aragón.my.canva.site/dag33qxh-38" 
+                                       target="_blank"
+                                       class="position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center rounded-circle shadow"
+                                       style="width: 80px; height: 80px; background: rgba(0, 41, 107, 0.85); color: white; text-decoration: none; transition: all 0.3s ease;">
+                                        <i class="bi bi-play-fill fs-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Formulario -->
+        <section class="py-5" style="background-color: #f8f9fa;">
+            <div class="container">
+                <div class="card shadow border-0" style="border-left: 4px solid var(--important-color) !important;">
+                    <div class="card-body p-4">
+                        <h3 class="h4 mb-3 fw-bold" style="color: var(--important-color);">
+                            <i class="bi bi-pencil-square me-2"></i>Formulario de Contacto
+                        </h3>
+                        <p class="text-muted mb-4">
+                            Completa el siguiente formulario para ponerte en contacto con el equipo de la DUACyD.
+                            Te responderemos a la brevedad posible.
+                        </p>
+
+                        <!-- Alerta informativa -->
+                        <div class="alert mb-4"
+                            style="background: linear-gradient(135deg, rgba(255, 186, 49, 0.1) 0%, rgba(255, 186, 49, 0.2) 100%); border-left: 4px solid var(--important-color);">
+                            <div class="d-flex gap-2 align-items-center">
+                                <i class="bi bi-lightbulb-fill" style="color: var(--important-color);"></i>
+                                <span><strong>Tip:</strong> Asegúrate de proporcionar un correo electrónico válido para
+                                    recibir nuestra respuesta.</span>
+                            </div>
+                        </div>
+
+                        <!-- Google Forms embebido -->
+                        <div class="ratio ratio-4x3 rounded shadow overflow-hidden" style="background: rgb(200, 240, 169);">
+                            <iframe
+                                src="https://docs.google.com/forms/d/e/1FAIpQLSfP-MbXJvYcyObaK58746U9q7yux9GDWKXv0WlqEWwPRNbcag/viewform?embedded=true"
+                                allowfullscreen style="border:0; width:100%; height:100%;" loading="lazy">
+                            </iframe>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Botones flotantes -->
+        <div class="social-floating-buttons">
+            <button type="button" class="social-btn whatsapp-btn" data-bs-toggle="modal"
+                data-bs-target="#whatsappModal">
+                <i class="bi bi-whatsapp"></i>
+            </button>
+
+            <button type="button" class="social-btn gmail-btn" data-bs-toggle="modal" data-bs-target="#gmailModal">
+                <i class="bi bi-envelope"></i>
+            </button>
+
+            <button type="button" class="social-btn suayed-btn" data-bs-toggle="modal" data-bs-target="#modalSuayed">
+                <img src="resources/SUAYED_Blanco-06.ico" alt="SUAYED" class="icono-btn">
+            </button>
+
+            <button type="button" class="social-btn edco-btn" data-bs-toggle="modal" data-bs-target="#modalEdco">
+                <img src="resources\Educación-Continua_Blanco-07.ico" alt="EDCO" class="icono-btn">
+            </button>
+
+            <button type="button" class="social-btn cle-btn" data-bs-toggle="modal" data-bs-target="#modalCle">
+                <img src="resources/CLE_B-09.png" alt="CLE" class="icono-btn">
+            </button>
+        </div>
+
+        <!-- Modal WhatsApp -->
+        <div class="modal fade" id="whatsappModal" tabindex="-1" aria-labelledby="whatsappModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="whatsappModalLabel">Contactar por WhatsApp</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <i class="bi bi-whatsapp display-1 text-success mb-3"></i>
+                        <p>¿Deseas contactarnos por WhatsApp?</p>
+                        <a href="https://wa.me/TUNUMERO" class="btn btn-success w-100 py-2" target="_blank">
+                            <i class="bi bi-whatsapp me-2"></i> Abrir WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Gmail -->
+        <div class="modal fade" id="gmailModal" tabindex="-1" aria-labelledby="gmailModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="gmailModalLabel">Enviar correo</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <i class="bi bi-envelope display-1 text-danger mb-3"></i>
+                        <p>¿Deseas escribirnos por correo electrónico?</p>
+                        <a href="mailto:tucorreo@ejemplo.com" class="btn btn-danger w-100 py-2">
+                            <i class="bi bi-envelope me-2"></i> Enviar correo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal SUAYED -->
+        <div class="modal fade" id="modalSuayed" tabindex="-1" aria-labelledby="modalSuayedLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content" style="border-color: var(--color-suayed);">
+                    <div class="modal-header" style="background-color: var(--color-suayed); color: white;">
+                        <h5 class="modal-title" id="modalSuayedLabel">Modalidad SUAyED</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <i class="bi bi-laptop display-1 mb-3" style="color: var(--color-suayed);"></i>
+                        <p>Consulta la información sobre la Universidad Abierta y a Distancia.</p>
+                        <a href="#" class="btn w-100 py-2" style="background-color: var(--color-suayed); color: white;">
+                            <i class="bi bi-box-arrow-up-right me-2"></i> Ir a SUAyED
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal EDCO -->
+        <div class="modal fade" id="modalEdco" tabindex="-1" aria-labelledby="modalEdcoLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content" style="border-color: var(--color-edco);">
+                    <div class="modal-header" style="background-color: var(--color-edco); color: white;">
+                        <h5 class="modal-title" id="modalEdcoLabel">Educación Continua</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <i class="bi bi-lightbulb display-1 mb-3" style="color: var(--color-edco);"></i>
+                        <p>Explora cursos, talleres y diplomados para tu actualización profesional.</p>
+                        <a href="#" class="btn w-100 py-2" style="background-color: var(--color-edco); color: white;">
+                            <i class="bi bi-box-arrow-up-right me-2"></i> Ver oferta EDCO
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal CLE -->
+        <div class="modal fade" id="modalCle" tabindex="-1" aria-labelledby="modalCleLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content" style="border-color: var(--color-cle);">
+                    <div class="modal-header" style="background-color: var(--color-cle); color: white;">
+                        <h5 class="modal-title" id="modalCleLabel">Centro de Lenguas Extranjeras (CLE)</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <i class="bi bi-translate display-1 mb-3" style="color: var(--color-cle);"></i>
+                        <p>Consulta la oferta de idiomas y modalidades del CLE.</p>
+                        <a href="#" class="btn w-100 py-2" style="background-color: var(--color-cle); color: white;">
+                            <i class="bi bi-box-arrow-up-right me-2"></i> Ir al CLE
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+    <footer class="footer-carbon py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>DUACyD FES Aragón</h5>
+                    <p>División de Universidad Abierta, Continua y a Distancia</p>
+                    <p>Facultad de Estudios Superiores Aragón</p>
+                    <p>Universidad Nacional Autónoma de México</p>
+                </div>
+
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><i class="bi bi-geo-alt-fill me-2"></i> Av. Universidad Nacional S/N, Bosques de Aragon,
+                            57171 Cdad. Nezahualcóyotl, Méx.</li>
+                        <li><i class="bi bi-telephone-fill me-2"></i> Teléfono: 55 5623 0000</li>
+                        <li><i class="bi bi-envelope-fill me-2"></i> Email: duacyd@aragon.unam.mx</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <h5>Síguenos</h5>
+                    <div class="social-icons mb-3">
+                        <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="bi bi-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="bi bi-youtube"></i></a>
+                    </div>
+                    <img src="resources/unam_blanco.png" alt="Logo UNAM" style="height: 60px;" class="me-3">
+                    <img src="resources/fesaragon-blanco.png" alt="Logo FES Aragón" style="height: 60px;">
+                </div>
+            </div>
+
+            <hr class="my-4 bg-light">
+
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2025 DUACyD FES Aragón - UNAM. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a
+                                href="https://www.aragon.unam.mx/fes-aragon/public_html/documents/aviso-de-privacidad/integral-de-la-fes-aragon.pdf"
+                                class="footer-links">Aviso de Privacidad</a></li>
+                        <li class="list-inline-item"><span class="mx-2">|</span></li>
+                        <li class="list-inline-item"><a href="#" class="footer-links">Términos de Uso</a></li>
+                        <li class="list-inline-item"><span class="mx-2">|</span></li>
+                        <li class="list-inline-item"><a href="creditos.html" class="footer-links">Créditos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contenido principal -->
+
+    <script>
+        // JavaScript con selectores actualizados
+        document.addEventListener('DOMContentLoaded', function () {
+            const container = document.querySelector('.lp-comp-1-container');
+            if (!container) return;
+
+            const boxes = container.querySelectorAll('.lp-comp-1-box');
+
+            // Verificar si es un dispositivo táctil
+            const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints;
+
+            if (isTouchDevice) {
+                boxes.forEach(box => {
+                    box.addEventListener('click', function (e) {
+                        e.stopPropagation();
+
+                        // Cerrar cualquier caja abierta primero
+                        boxes.forEach(b => {
+                            if (b !== box && b.classList.contains('lp-comp-1-active')) {
+                                b.classList.remove('lp-comp-1-active');
+                            }
+                        });
+
+                        // Alternar la clase active en la caja clickeada
+                        box.classList.toggle('lp-comp-1-active');
+                    });
+                });
+
+                // Cerrar al hacer click fuera de las cajas
+                document.addEventListener('click', function () {
+                    boxes.forEach(box => {
+                        box.classList.remove('lp-comp-1-active');
+                    });
+                });
+            }
+        });
+    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <!-- Inicialización del mapa de ubicación -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Coordenadas del DUACyD en FES Aragón
+            const duacydCoords = [19.474447, -99.043738];
+
+            // Inicialización del mapa
+            var mapUbicacion = L.map('map-ubicacion').setView(duacydCoords, 17);
+
+            // Capa de tiles de OpenStreetMap
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(mapUbicacion);
+
+            // Icono personalizado para el marcador
+            var iconoDuacyd = L.icon({
+                iconUrl: 'resources/DUACyD_B-09.png',
+                iconSize: [50, 50],
+                iconAnchor: [25, 50],
+                popupAnchor: [0, -50]
+            });
+
+            // Marcador del DUACyD
+            var marcadorDuacyd = L.marker(duacydCoords, { icon: iconoDuacyd })
+                .addTo(mapUbicacion)
+                .bindPopup(`
+                    <div style="text-align: center; min-width: 200px;">
+                        <img src="resources/banner-principal.jpg" alt="DUACyD" style="width: 60px; margin-bottom: 10px;">
+                        <h6 style="color: #00296b; margin-bottom: 8px; font-weight: bold;">DUACyD FES Aragón</h6>
+                        <p style="margin: 0; font-size: 12px; color: #666;">
+                            <strong>Edificio detrás del A8</strong><br>
+                            2° Piso<br>
+                            Frente a canchas de basquetbol
+                        </p>
+                        <a href="https://maps.google.com/?q=19.474447,-99.043738" 
+                           target="_blank" 
+                           class="btn btn-sm mt-2" 
+                           style="background-color: #00296b; color: white; font-size: 11px;">
+                            <i class="bi bi-geo-alt me-1"></i>Abrir en Google Maps
+                        </a>
+                    </div>
+                `)
+                .openPopup();
+
+            // Círculo indicador del área
+            L.circle(duacydCoords, {
+                color: '#00296b',
+                fillColor: '#00296b',
+                fillOpacity: 0.1,
+                radius: 50
+            }).addTo(mapUbicacion);
+
+            // Escala del mapa
+            L.control.scale({ imperial: false, metric: true }).addTo(mapUbicacion);
+        });
+    </script>
+</body>
+
+</html>
