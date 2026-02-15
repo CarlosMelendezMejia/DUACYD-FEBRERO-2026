@@ -21,6 +21,7 @@
             --ink: #111827;
             --muted: #6b7280;
             --grid: #e5e7eb;
+            --suayed-color: #f94144;
 
             /* Colores tipo leyenda (ajústalos a tu gusto) */
             --c-red: #e11d48;
@@ -60,6 +61,7 @@
             background: #f3f4f6;
             font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji";
             color: var(--ink);
+            padding-top: 100px;
         }
 
         /* "Póster" centrado */
@@ -68,28 +70,48 @@
             margin: 24px auto;
             background: var(--bg);
             border: 1px solid var(--grid);
+            border-top: 5px solid var(--suayed-color);
             border-radius: 14px;
             padding: 28px;
+            box-shadow: 0 4px 20px rgba(249, 65, 68, 0.15);
         }
 
         header {
             text-align: center;
             padding-bottom: 14px;
-            border-bottom: 1px solid var(--grid);
+            border-bottom: 3px solid var(--suayed-color);
             margin-bottom: 18px;
+            position: relative;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--suayed-color), transparent);
         }
 
         header .kicker {
             letter-spacing: 0.18em;
             font-weight: 700;
             font-size: 14px;
-            color: var(--muted);
+            color: var(--suayed-color);
+            text-transform: uppercase;
         }
 
         header h1 {
             margin: 10px 0 0 0;
             font-size: 44px;
             letter-spacing: 0.02em;
+            background: linear-gradient(135deg, var(--ink) 0%, var(--suayed-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
         }
 
         header h2 {
@@ -126,9 +148,16 @@
 
         .month {
             border: 1px solid var(--grid);
+            border-top: 3px solid var(--suayed-color);
             border-radius: 14px;
             padding: 14px 14px 12px;
             min-height: 240px;
+            transition: all 0.3s ease;
+        }
+
+        .month:hover {
+            box-shadow: 0 4px 12px rgba(249, 65, 68, 0.2);
+            transform: translateY(-2px);
         }
 
         .month-title {
@@ -137,7 +166,21 @@
             letter-spacing: 0.26em;
             font-size: 14px;
             margin: 2px 0 10px;
-            color: var(--ink);
+            color: var(--suayed-color);
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .month-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 2px;
+            background-color: var(--suayed-color);
+            opacity: 0.3;
         }
 
         .dow {
@@ -294,11 +337,23 @@
         /* Leyenda */
         .legend {
             margin-top: 20px;
-            border-top: 1px solid var(--grid);
+            border-top: 3px solid var(--suayed-color);
             padding-top: 16px;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 10px 18px;
+            position: relative;
+        }
+
+        .legend::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: var(--suayed-color);
+            box-shadow: 0 0 10px rgba(249, 65, 68, 0.5);
         }
 
         @media (max-width: 800px) {
