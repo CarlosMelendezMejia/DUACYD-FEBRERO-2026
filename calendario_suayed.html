@@ -1,0 +1,775 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Calendario Escolar SUAyED Aragón 2026-2</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" href="resources/DUACyD_B-09.ico" type="image/x-icon">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --ink: #111827;
+            --muted: #6b7280;
+            --grid: #e5e7eb;
+
+            /* Colores tipo leyenda (ajústalos a tu gusto) */
+            --c-red: #e11d48;
+            /* Inicio semestre / flecha (si quieres) */
+            --c-blue: #2563eb;
+            /* Altas y bajas */
+            --c-gray: #111827;
+            /* contornos */
+            --c-yellow: #eab308;
+            /* Registro extra 1a vuelta */
+            --c-yellow-dark: #a16207;
+            /* Realización extra 1a vuelta presenciales */
+            --c-green: #22c55e;
+            /* Registro extra 2a vuelta */
+            --c-green-dark: #16a34a;
+            /* Realización extra 2a vuelta presenciales */
+            --c-brown: #92400e;
+            /* Selección de área */
+            --c-cyan: #93c5fd;
+            /* Solicitud mayor número extra */
+            --c-magenta: #ec4899;
+            /* Último día asesorías presenciales */
+            --c-navy: #1e3a8a;
+            /* Último día asesorías virtuales */
+            --c-orange: #f97316;
+            /* Inscripción/reinscripción */
+            --c-purple: #a855f7;
+            /* Vacaciones administrativas */
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #f3f4f6;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+            color: var(--ink);
+        }
+
+        /* "Póster" centrado */
+        .sheet {
+            width: min(1080px, 96vw);
+            margin: 24px auto;
+            background: var(--bg);
+            border: 1px solid var(--grid);
+            border-radius: 14px;
+            padding: 28px;
+        }
+
+        header {
+            text-align: center;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--grid);
+            margin-bottom: 18px;
+        }
+
+        header .kicker {
+            letter-spacing: 0.18em;
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        header h1 {
+            margin: 10px 0 0 0;
+            font-size: 44px;
+            letter-spacing: 0.02em;
+        }
+
+        header h2 {
+            margin: 6px 0 0 0;
+            font-size: 14px;
+            letter-spacing: 0.2em;
+            color: var(--muted);
+            font-weight: 700;
+        }
+
+        /* Grid de meses */
+        .months {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 18px;
+        }
+
+        @media (max-width: 900px) {
+            .months {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            header h1 {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 620px) {
+            .months {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .month {
+            border: 1px solid var(--grid);
+            border-radius: 14px;
+            padding: 14px 14px 12px;
+            min-height: 240px;
+        }
+
+        .month-title {
+            text-align: center;
+            font-weight: 800;
+            letter-spacing: 0.26em;
+            font-size: 14px;
+            margin: 2px 0 10px;
+            color: var(--ink);
+        }
+
+        .dow {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 2px;
+            margin-bottom: 6px;
+            font-weight: 800;
+            color: var(--muted);
+            letter-spacing: 0.25em;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 2px;
+        }
+
+        .cell {
+            position: relative;
+            border-radius: 9px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #111827;
+            font-size: 13px;
+            user-select: none;
+        }
+
+        .cell.blank {
+            background: transparent;
+        }
+
+        .cell .n {
+            position: relative;
+            z-index: 2;
+            font-weight: 600;
+        }
+
+        /* ====== Estilos de marcadores ======
+       Puedes mezclar: relleno, borde, contorno, rectángulos, etc.
+    */
+        .mark-fill {
+            border-radius: 999px;
+            width: 28px;
+            height: 28px;
+            display: grid;
+            place-items: center;
+            color: #111827;
+            font-weight: 800;
+        }
+
+        .mark-ring {
+            border-radius: 999px;
+            width: 28px;
+            height: 28px;
+            display: grid;
+            place-items: center;
+            border: 3px solid var(--c-gray);
+            font-weight: 800;
+        }
+
+        .mark-ring.red {
+            border-color: var(--c-red);
+        }
+
+        .mark-ring.green {
+            border-color: var(--c-green-dark);
+        }
+
+        .mark-ring.black {
+            border-color: var(--c-gray);
+        }
+
+        /* Fondo circular (relleno) */
+        .fill-blue {
+            background: color-mix(in srgb, var(--c-blue) 20%, white);
+            border: 3px solid var(--c-blue);
+        }
+
+        .fill-yellow {
+            background: color-mix(in srgb, var(--c-yellow) 25%, white);
+            border: 3px solid var(--c-yellow);
+        }
+
+        .fill-brown {
+            background: color-mix(in srgb, var(--c-brown) 18%, white);
+            border: 3px solid var(--c-brown);
+        }
+
+        .fill-green {
+            background: color-mix(in srgb, var(--c-green) 20%, white);
+            border: 3px solid var(--c-green);
+        }
+
+        .fill-magenta {
+            background: color-mix(in srgb, var(--c-magenta) 18%, white);
+            border: 3px solid var(--c-magenta);
+        }
+
+        .fill-navy {
+            background: color-mix(in srgb, var(--c-navy) 18%, white);
+            border: 3px solid var(--c-navy);
+        }
+
+        .fill-cyan {
+            background: color-mix(in srgb, var(--c-cyan) 35%, white);
+            border: 3px solid var(--c-cyan);
+        }
+
+        .fill-orange {
+            background: color-mix(in srgb, var(--c-orange) 18%, white);
+            border: 3px solid var(--c-orange);
+        }
+
+        .fill-purple {
+            background: color-mix(in srgb, var(--c-purple) 18%, white);
+            border: 3px solid var(--c-purple);
+        }
+
+        /* Rangos: rectángulos de periodo (ej. vacaciones, exámenes) */
+        .range {
+            position: absolute;
+            inset: 4px 2px;
+            border-radius: 8px;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0.9;
+        }
+
+        .range.purple {
+            outline: 3px solid var(--c-purple);
+            outline-offset: -2px;
+        }
+
+        .range.orange {
+            outline: 3px solid var(--c-orange);
+            outline-offset: -2px;
+        }
+
+        .range.dashed-red {
+            outline: 3px dashed var(--c-red);
+            outline-offset: -2px;
+        }
+
+        .range.dashed-blue {
+            outline: 3px dashed var(--c-blue);
+            outline-offset: -2px;
+        }
+
+        /* Leyenda */
+        .legend {
+            margin-top: 20px;
+            border-top: 1px solid var(--grid);
+            padding-top: 16px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px 18px;
+        }
+
+        @media (max-width: 800px) {
+            .legend {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: #111827;
+        }
+
+        .swatch {
+            width: 18px;
+            height: 18px;
+            border-radius: 999px;
+            border: 3px solid transparent;
+            flex: 0 0 auto;
+        }
+
+        .swatch.fill {
+            border-color: var(--c-gray);
+            background: #fff;
+        }
+
+        .swatch.blue {
+            border-color: var(--c-blue);
+            background: color-mix(in srgb, var(--c-blue) 18%, white);
+        }
+
+        .swatch.yellow {
+            border-color: var(--c-yellow);
+            background: color-mix(in srgb, var(--c-yellow) 22%, white);
+        }
+
+        .swatch.yellow-dark {
+            border-color: var(--c-yellow-dark);
+            background: color-mix(in srgb, var(--c-yellow-dark) 18%, white);
+        }
+
+        .swatch.green {
+            border-color: var(--c-green);
+            background: color-mix(in srgb, var(--c-green) 18%, white);
+        }
+
+        .swatch.green-dark {
+            border-color: var(--c-green-dark);
+            background: color-mix(in srgb, var(--c-green-dark) 18%, white);
+        }
+
+        .swatch.brown {
+            border-color: var(--c-brown);
+            background: color-mix(in srgb, var(--c-brown) 18%, white);
+        }
+
+        .swatch.cyan {
+            border-color: var(--c-cyan);
+            background: color-mix(in srgb, var(--c-cyan) 35%, white);
+        }
+
+        .swatch.magenta {
+            border-color: var(--c-magenta);
+            background: color-mix(in srgb, var(--c-magenta) 18%, white);
+        }
+
+        .swatch.navy {
+            border-color: var(--c-navy);
+            background: color-mix(in srgb, var(--c-navy) 18%, white);
+        }
+
+        .swatch.orange {
+            border-color: var(--c-orange);
+            background: color-mix(in srgb, var(--c-orange) 18%, white);
+        }
+
+        .swatch.purple {
+            border-color: var(--c-purple);
+            background: color-mix(in srgb, var(--c-purple) 18%, white);
+        }
+
+        .swatch.square {
+            border-radius: 5px;
+            width: 18px;
+            height: 18px;
+            background: transparent;
+            border: 3px solid var(--c-gray);
+        }
+
+        .swatch.square.dashed-red {
+            border: 3px dashed var(--c-red);
+        }
+
+        .swatch.square.dashed-blue {
+            border: 3px dashed var(--c-blue);
+        }
+
+        .swatch.square.orange {
+            border-color: var(--c-orange);
+        }
+
+        .swatch.square.purple {
+            border-color: var(--c-purple);
+        }
+
+        .footnote {
+            margin-top: 10px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sheet">
+        <header>
+            <!-- Navbar principal -->
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
+                <div class="container">
+                    <div class="logo-container d-flex align-items-center gap-4 me-4">
+                        <a class="navbar-brand" href="https://www.unam.mx/">
+                            <img src="resources/unam_blanco.png" alt="Logo UNAM" class="logo">
+                        </a>
+                        <a class="navbar-brand" href="https://www.aragon.unam.mx/fes-aragon/#!/inicio">
+                            <img src="resources/fesaragon-blanco.png" alt="Logo FES Aragón" class="logo">
+                        </a>
+                        <a class="navbar-brand" href="index.html">
+                            <img src="resources/DUACyD_B-09.png" alt="Logo DUACyD" class="logo">
+                        </a>
+                    </div>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+                        <ul class="navbar-nav gap-lg-3">
+                            <li class="nav-item">
+                                <a class="nav-link px-3 py-2 rounded" href="index.html">
+                                    <i class="bi bi-house-door me-2"></i>Inicio
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link nav-cle px-3 py-2 rounded" href="CLE.html">
+                                    <i class="bi bi-award me-2"></i>CLe
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link nav-edco px-3 py-2 rounded" href="EDCO.html">
+                                    <i class="bi bi-book me-2"></i>EDCO
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link nav-suayed active px-3 py-2 rounded" href="SUAYED.html">
+                                    <i class="bi bi-journal-text me-2"></i>SUAyED
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link px-3 py-2 rounded" href="comunidad.html">
+                                    <i class="bi bi-people me-2"></i>Comunidad
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link px-3 py-2 rounded" href="preguntas-frecuentes.html">
+                                    <i class="bi bi-question-circle me-2"></i>Preguntas Frecuentes
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="kicker">CALENDARIO ESCOLAR SUAyED ARAGÓN</div>
+            <h1>2026-2</h1>
+            <h2>FEBRERO – AGOSTO 2026</h2>
+        </header>
+
+        <section id="months" class="months"></section>
+
+        <section class="legend">
+            <div class="legend-item"><span class="swatch fill"></span> Inicio del semestre 2026-2 (marca especial)</div>
+            <div class="legend-item"><span class="swatch blue"></span> Periodo de altas y bajas</div>
+            <div class="legend-item"><span class="swatch fill"
+                    style="border-color: var(--c-gray); background: #fff;"></span> Solicitud de suspensión temporal
+            </div>
+
+            <div class="legend-item"><span class="swatch yellow"></span> Registro exámenes extraordinarios (1ª vuelta)
+            </div>
+            <div class="legend-item"><span class="swatch yellow-dark"></span> Realización exámenes extraordinarios (1ª
+                vuelta) presenciales</div>
+
+            <div class="legend-item"><span class="swatch green"></span> Registro exámenes extraordinarios (2ª vuelta)
+            </div>
+            <div class="legend-item"><span class="swatch green-dark"></span> Realización exámenes extraordinarios (2ª
+                vuelta) presenciales</div>
+
+            <div class="legend-item"><span class="swatch brown"></span> Selección de área (solo carreras que aplique)
+            </div>
+            <div class="legend-item"><span class="swatch cyan"></span> Solicitud para presentar mayor número de
+                extraordinarios</div>
+
+            <div class="legend-item"><span class="swatch magenta"></span> Último día asesorías presenciales</div>
+            <div class="legend-item"><span class="swatch navy"></span> Último día asesorías virtuales</div>
+
+            <div class="legend-item"><span class="swatch square dashed-red"></span> Ordinarios 1ª vuelta (presenciales)
+            </div>
+            <div class="legend-item"><span class="swatch square dashed-blue"></span> Ordinarios 2ª vuelta (presenciales)
+            </div>
+
+            <div class="legend-item"><span class="swatch square orange"></span> Inscripción y reinscripción 2027-1</div>
+            <div class="legend-item"><span class="swatch square purple"></span> Vacaciones administrativas</div>
+
+            <div class="legend-item"><span class="swatch fill"
+                    style="border-color: var(--c-red); background: #fff;"></span> Días inhábiles</div>
+            <div class="legend-item"><span class="swatch fill"
+                    style="border-color: var(--c-blue); background: #fff;"></span> Inicio semestre 2027-1 (marca
+                especial)</div>
+        </section>
+    </div>
+    <footer class="footer-carbon py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>DUACyD FES Aragón</h5>
+                    <p>División de Universidad Abierta, Continua y a Distancia</p>
+                    <p>Facultad de Estudios Superiores Aragón</p>
+                    <p>Universidad Nacional Autónoma de México</p>
+                </div>
+
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><i class="bi bi-geo-alt-fill me-2"></i> Av. Universidad Nacional S/N, Bosques de Aragon, 57171 Cdad. Nezahualcóyotl, Méx.</li>
+                        <li><i class="bi bi-telephone-fill me-2"></i> Teléfono: 55 5623 0000</li>
+                        <li><i class="bi bi-envelope-fill me-2"></i> Email: duacyd@aragon.unam.mx</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <h5>Síguenos</h5>
+                    <div class="social-icons mb-3">
+                        <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="bi bi-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="bi bi-youtube"></i></a>
+                    </div>
+                    <img src="resources/unam_blanco.png" alt="Logo UNAM" style="height: 60px;" class="me-3">
+                    <img src="resources/fesaragon-blanco.png" alt="Logo FES Aragón" style="height: 60px;">
+                </div>
+            </div>
+
+            <hr class="my-4 bg-light">
+
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2025 DUACyD FES Aragón - UNAM. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a
+                                href="https://www.aragon.unam.mx/fes-aragon/public_html/documents/aviso-de-privacidad/integral-de-la-fes-aragon.pdf"
+                                class="footer-links">Aviso de Privacidad</a></li>
+                        <li class="list-inline-item"><span class="mx-2">|</span></li>
+                        <li class="list-inline-item"><a href="#" class="footer-links">Términos de Uso</a></li>
+                        <li class="list-inline-item"><span class="mx-2">|</span></li>
+                        <li class="list-inline-item"><a href="creditos.html" class="footer-links">Créditos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // === Config base ===
+        // Calendario con semana iniciando en Lunes (como el póster)
+        const WEEK_START = 1; // 0=Dom, 1=Lun
+
+        const monthNames = [
+            "ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", "JULIO", "AGOSTO",
+            "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE"
+        ];
+        const dowLabels = ["L", "M", "M", "J", "V", "S", "D"]; // Lunes..Domingo
+
+        // === Eventos por día (ejemplos; aquí ajustas según tu calendario real) ===
+        // key: "YYYY-MM-DD"
+        // type:
+        //  - "fill-blue" etc. (círculo relleno)
+        //  - "ring-red" (solo anillo)
+        //  - "ring-black"
+        //  - "special" (si quieres manejar flechas/otros)
+        const events = {
+            // Inicio semestre 2026-2 (ejemplo)
+            "2026-02-03": { kind: "ring-red", title: "Inicio semestre 2026-2" },
+
+            // Altas y bajas (ejemplo)
+            "2026-02-05": { kind: "fill-blue", title: "Altas y bajas" },
+            "2026-02-06": { kind: "fill-blue", title: "Altas y bajas" },
+
+            // Suspensión temporal (ejemplo)
+            "2026-02-11": { kind: "ring-black", title: "Suspensión temporal" },
+            "2026-02-12": { kind: "ring-black", title: "Suspensión temporal" },
+            "2026-02-13": { kind: "ring-black", title: "Suspensión temporal" },
+
+            // Registro extra 1a vuelta (ejemplo)
+            "2026-03-02": { kind: "fill-yellow", title: "Registro extraordinarios 1ª vuelta" },
+            "2026-03-03": { kind: "fill-yellow", title: "Registro extraordinarios 1ª vuelta" },
+            "2026-03-04": { kind: "fill-yellow", title: "Registro extraordinarios 1ª vuelta" },
+
+            // Realización extra 1a vuelta (ejemplo)
+            "2026-04-11": { kind: "fill-yellow-dark", title: "Extraordinarios 1ª vuelta (presenciales)" },
+
+            // Selección de área (ejemplo)
+            "2026-05-04": { kind: "fill-brown", title: "Selección de área" },
+            "2026-05-05": { kind: "fill-brown", title: "Selección de área" },
+            "2026-05-06": { kind: "fill-brown", title: "Selección de área" },
+
+            // Inicio semestre 2027-1 (ejemplo)
+            "2026-08-10": { kind: "fill-blue", title: "Inicio semestre 2027-1" },
+        };
+
+        // === Rangos (rectángulos tipo “marco” sobre celdas) ===
+        // kind:
+        //  - "purple" vacaciones
+        //  - "orange" reinscripción
+        //  - "dashed-red" ordinarios 1a vuelta
+        //  - "dashed-blue" ordinarios 2a vuelta
+        const ranges = [
+            { start: "2026-07-06", end: "2026-07-24", kind: "purple", title: "Vacaciones administrativas" },
+            { start: "2026-08-03", end: "2026-08-07", kind: "orange", title: "Inscripción y reinscripción 2027-1" },
+            { start: "2026-06-01", end: "2026-06-06", kind: "dashed-red", title: "Ordinarios 1ª vuelta" },
+            { start: "2026-06-08", end: "2026-06-13", kind: "dashed-blue", title: "Ordinarios 2ª vuelta" },
+        ];
+
+        // Días inhábiles (ejemplo: anillo rojo sin relleno)
+        const inhabilDays = new Set([
+            "2026-02-02",
+            "2026-03-16", "2026-03-30", "2026-03-31",
+            "2026-04-01", "2026-04-02", "2026-04-03", "2026-04-04",
+            "2026-05-01", "2026-05-10", "2026-05-15", "2026-05-16"
+        ]);
+
+        // === Meses a renderizar: Febrero a Agosto 2026 ===
+        const monthsToRender = [
+            { y: 2026, m: 1 }, // Feb (0=Ene)
+            { y: 2026, m: 2 }, // Mar
+            { y: 2026, m: 3 }, // Abr
+            { y: 2026, m: 4 }, // May
+            { y: 2026, m: 5 }, // Jun
+            { y: 2026, m: 6 }, // Jul
+            { y: 2026, m: 7 }, // Ago
+        ];
+
+        function pad2(n) { return String(n).padStart(2, "0"); }
+        function fmtDate(y, m, d) { return `${y}-${pad2(m + 1)}-${pad2(d)}`; }
+
+        function parseISO(s) {
+            const [y, mo, d] = s.split("-").map(Number);
+            return new Date(y, mo - 1, d);
+        }
+
+        function inRange(iso, startIso, endIso) {
+            const x = parseISO(iso).getTime();
+            const a = parseISO(startIso).getTime();
+            const b = parseISO(endIso).getTime();
+            return x >= a && x <= b;
+        }
+
+        function dayOfWeekMondayFirst(date) {
+            // JS: 0=Dom..6=Sab
+            // Queremos 0=Lun..6=Dom
+            const js = date.getDay();
+            return (js + 6) % 7;
+        }
+
+        function buildMonth(y, m) {
+            const first = new Date(y, m, 1);
+            const last = new Date(y, m + 1, 0);
+            const daysInMonth = last.getDate();
+
+            const monthEl = document.createElement("article");
+            monthEl.className = "month";
+            monthEl.setAttribute("data-month", `${y}-${pad2(m + 1)}`);
+
+            const title = document.createElement("div");
+            title.className = "month-title";
+            title.textContent = `${monthNames[m]} ${y}`;
+            monthEl.appendChild(title);
+
+            const dow = document.createElement("div");
+            dow.className = "dow";
+            dowLabels.forEach(l => {
+                const x = document.createElement("div");
+                x.textContent = l;
+                dow.appendChild(x);
+            });
+            monthEl.appendChild(dow);
+
+            const daysGrid = document.createElement("div");
+            daysGrid.className = "days";
+
+            // blanks antes del día 1
+            const offset = dayOfWeekMondayFirst(first); // 0..6
+            for (let i = 0; i < offset; i++) {
+                const c = document.createElement("div");
+                c.className = "cell blank";
+                daysGrid.appendChild(c);
+            }
+
+            for (let d = 1; d <= daysInMonth; d++) {
+                const iso = fmtDate(y, m, d);
+
+                const cell = document.createElement("div");
+                cell.className = "cell";
+                cell.dataset.date = iso;
+
+                // RANGOS (rectángulo marco)
+                // Si hay múltiples rangos aplicables, mostramos el primero (puedes apilar si quieres)
+                const range = ranges.find(r => inRange(iso, r.start, r.end));
+                if (range) {
+                    const r = document.createElement("div");
+                    r.className = `range ${range.kind}`;
+                    r.title = range.title;
+                    cell.appendChild(r);
+                }
+
+                // Marcador de inhábil (anillo rojo)
+                if (inhabilDays.has(iso) && !events[iso]) {
+                    events[iso] = { kind: "ring-red", title: "Día inhábil" };
+                }
+
+                // marcador por evento
+                const ev = events[iso];
+                if (ev) {
+                    const wrap = document.createElement("div");
+
+                    if (ev.kind.startsWith("fill-")) {
+                        wrap.className = `mark-fill ${ev.kind}`;
+                    } else if (ev.kind.startsWith("ring-")) {
+                        const color = ev.kind.split("-")[1]; // red/green/black
+                        wrap.className = `mark-ring ${color}`;
+                    } else {
+                        // fallback
+                        wrap.className = "mark-ring black";
+                    }
+                    wrap.title = ev.title ?? "";
+                    const n = document.createElement("span");
+                    n.className = "n";
+                    n.textContent = d;
+                    wrap.appendChild(n);
+                    cell.appendChild(wrap);
+                } else {
+                    const n = document.createElement("span");
+                    n.className = "n";
+                    n.textContent = d;
+                    cell.appendChild(n);
+                }
+
+                daysGrid.appendChild(cell);
+            }
+
+            monthEl.appendChild(daysGrid);
+            return monthEl;
+        }
+
+        const root = document.getElementById("months");
+        monthsToRender.forEach(({ y, m }) => root.appendChild(buildMonth(y, m)));
+    </script>
+</body>
+
+</html>
