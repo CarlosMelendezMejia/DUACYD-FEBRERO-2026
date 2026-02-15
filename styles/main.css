@@ -50,6 +50,10 @@
   color: var(--secondary-color) !important;
 }
 
+.custom-text-justify {
+  text-align: justify;
+}
+
 /* Navbar principal */
 .navbar {
   padding: 10px 0;
