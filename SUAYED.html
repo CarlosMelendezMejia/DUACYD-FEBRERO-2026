@@ -22,6 +22,11 @@
 </head>
 
 <body class="landing-page">
+    <!-- Facebook SDK -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v24.0"></script>
+
     <header>
         <!-- Navbar principal -->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
@@ -237,7 +242,8 @@
                             <div style="height: 200px; background: linear-gradient(135deg, var(--suayed-color) 0%, #c63437 100%); 
                                         position: relative; overflow: hidden;">
                                 <div class="position-absolute top-50 start-50 translate-middle text-center w-100">
-                                    <img src="resources/logos_licenciaturas/Derecho SUAyED blanco-03.svg" alt="Logo Derecho" style="height: 200px; width: auto; opacity: 0.3;">
+                                    <img src="resources/logos_licenciaturas/Derecho SUAyED blanco-03.svg"
+                                        alt="Logo Derecho" style="height: 200px; width: auto; opacity: 0.3;">
                                 </div>
                                 <div class="position-absolute bottom-0 start-0 w-100 p-4">
                                     <h3 class="text-white fw-bold mb-0">
@@ -280,7 +286,9 @@
                             <div style="height: 200px; background: linear-gradient(135deg, var(--suayed-color) 0%, #c63437 100%); 
                                         position: relative; overflow: hidden;">
                                 <div class="position-absolute top-50 start-50 translate-middle text-center w-100">
-                                    <img src="resources/logos_licenciaturas/R I  SUAyED blanco-03.svg" alt="Logo Relaciones Internacionales" style="height: 200px; width: auto; opacity: 0.3;">
+                                    <img src="resources/logos_licenciaturas/R I  SUAyED blanco-03.svg"
+                                        alt="Logo Relaciones Internacionales"
+                                        style="height: 200px; width: auto; opacity: 0.3;">
                                 </div>
                                 <div class="position-absolute bottom-0 start-0 w-100 p-4">
                                     <h3 class="text-white fw-bold mb-0">
@@ -323,7 +331,8 @@
                             <div style="height: 200px; background: linear-gradient(135deg, var(--suayed-color) 0%, #c63437 100%); 
                                         position: relative; overflow: hidden;">
                                 <div class="position-absolute top-50 start-50 translate-middle text-center w-100">
-                                    <img src="resources/logos_licenciaturas/Economía SUAyED blanco-03.svg" alt="Logo Economía" style="height: 200px; width: auto; opacity: 0.3;">
+                                    <img src="resources/logos_licenciaturas/Economía SUAyED blanco-03.svg"
+                                        alt="Logo Economía" style="height: 200px; width: auto; opacity: 0.3;">
                                 </div>
                                 <div class="position-absolute bottom-0 start-0 w-100 p-4">
                                     <h3 class="text-white fw-bold mb-0">
@@ -393,8 +402,10 @@
                 <div class="row align-items-center g-4">
                     <div class="col-lg-6" data-aos="fade-right">
                         <div class="position-relative">
-                            <div class="p-4 rounded" style="background: linear-gradient(135deg, #fff 0%, #fff5f5 100%); border: 2px solid var(--suayed-color);">
-                                <img src="resources\banner_acercade.jpg" alt="" class="img-fluid" style="border-radius: 8px;">
+                            <div class="p-4 rounded"
+                                style="background: linear-gradient(135deg, #fff 0%, #fff5f5 100%); border: 2px solid var(--suayed-color);">
+                                <img src="resources\banner_acercade.jpg" alt="" class="img-fluid"
+                                    style="border-radius: 8px;">
                             </div>
                         </div>
                     </div>
@@ -404,8 +415,8 @@
                             Calendario Escolar SUAyED
                         </h2>
                         <p class="mb-4 custom-text-justify">
-                            Consulta el calendario académico del Sistema Universidad Abierta y Educación a Distancia. 
-                            Conoce las fechas importantes del semestre: inicio de clases, periodos de exámenes, 
+                            Consulta el calendario académico del Sistema Universidad Abierta y Educación a Distancia.
+                            Conoce las fechas importantes del semestre: inicio de clases, periodos de exámenes,
                             inscripciones, vacaciones y todos los eventos relevantes para tu formación académica.
                         </p>
                         <ul class="list-unstyled mb-4">
@@ -433,6 +444,51 @@
                             <i class="bi bi-calendar3 me-2"></i>
                             Ver Calendario Completo
                         </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Síguenos en Facebook -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 text-center">
+                        <h2 class="fw-bold mb-3" style="color: var(--suayed-color);">
+                            <i class="bi bi-facebook me-2"></i>
+                            Mantente Conectado con SUAyED
+                        </h2>
+                        <p class="text-muted mb-5">
+                            Síguenos en Facebook para estar al día con noticias, eventos, convocatorias y todo lo
+                            relacionado con el SUAyED FES Aragón
+                        </p>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-8">
+                        <div class="card border-0 shadow-lg"
+                            style="border-top: 4px solid var(--suayed-color) !important; border-radius: 15px; overflow: hidden;">
+                            <div class="card-body p-4">
+                                <div class="fb-page" data-href="https://www.facebook.com/FESAragon.SUAyED?locale=es_LA"
+                                    data-tabs="timeline" data-width="600" data-height="1000" data-small-header="true"
+                                    data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true">
+                                    <blockquote cite="https://www.facebook.com/FESAragon.SUAyED?locale=es_LA"
+                                        class="fb-xfbml-parse-ignore"><a
+                                            href="https://www.facebook.com/FESAragon.SUAyED?locale=es_LA">SUAyED FES
+                                            Aragón</a></blockquote>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-4">
+                            <a href="https://www.facebook.com/FESAragon.SUAyED?locale=es_LA" target="_blank"
+                                rel="noopener noreferrer" class="btn btn-lg px-5 py-3 text-white shadow"
+                                style="background-color: #1877f2; transition: all 0.3s ease; font-weight: 600;"
+                                onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 16px rgba(24, 119, 242, 0.3)'"
+                                onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.15)'">
+                                <i class="bi bi-facebook me-2"></i>
+                                Visitar Página de Facebook
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
