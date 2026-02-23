@@ -17,6 +17,7 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/flip-cards.css">
     <link rel="icon" href="resources/DUACyD_B-09.ico" type="image/x-icon">
 
 </head>
@@ -185,6 +186,73 @@
             </div>
         </section>
 
+        <!-- Sección: Misión y Visión -->
+        <section class="comp-3-section py-5">
+            <div class="container">
+                <h2 class="text-center mb-2 fw-bold" style="font-size: 2.5rem; color: var(--suayed-color);">Nuestra Esencia</h2>
+                <p class="text-center text-muted mb-5">Los principios que guían al SUAyED FES Aragón</p>
+                <div class="row g-4">
+                    <!-- Flip Card Misión -->
+                    <div class="col-lg-6">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front"
+                                    style="background: linear-gradient(135deg, var(--suayed-color) 0%, #c63437 100%);">
+                                    <div class="flip-card-icon">
+                                        <i class="bi bi-bullseye"></i>
+                                    </div>
+                                    <h3 class="flip-card-title">Nuestra Misión</h3>
+                                    <p class="flip-card-hint">Pasa el cursor para leer más</p>
+                                </div>
+                                <div class="flip-card-back"
+                                    style="background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%); color: var(--suayed-color);">
+                                    <h3 class="mb-3">Nuestra Misión</h3>
+                                    <p style="color: #333;">
+                                        Brindar educación superior y posgrado a un sector más amplio de la sociedad, mediante
+                                        una modalidad educativa con altos estándares de calidad, a través de la optimización
+                                        de espacios de interacción y generación de ambientes propicios para el aprendizaje,
+                                        que integren las particularidades de la comunidad estudiantil, académica y
+                                        administrativa, con un sentido ético y de responsabilidad social, para construir y
+                                        compartir conocimiento de manera permanente y a lo largo de la vida, soportados en
+                                        el empleo de la tecnología.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Flip Card Visión -->
+                    <div class="col-lg-6">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front"
+                                    style="background: linear-gradient(135deg, #c63437 0%, var(--suayed-color) 100%);">
+                                    <div class="flip-card-icon">
+                                        <i class="bi bi-eye"></i>
+                                    </div>
+                                    <h3 class="flip-card-title">Nuestra Visión</h3>
+                                    <p class="flip-card-hint">Pasa el cursor para leer más</p>
+                                </div>
+                                <div class="flip-card-back"
+                                    style="background: linear-gradient(135deg, #ffffff 0%, #fff5f5 100%); color: var(--suayed-color);">
+                                    <h3 class="mb-3">Nuestra Visión</h3>
+                                    <p style="color: #333;">
+                                        Ser la mejor alternativa de la UNAM para quien pretende cursar el nivel superior en
+                                        esta modalidad, por su acreditada calidad internacional, reconocido prestigio,
+                                        sustentable y congruente con el contexto de la sociedad del conocimiento y las
+                                        necesidades sociales y productivas, mediante una amplia oferta educativa pertinente,
+                                        innovadora y flexible, que integra una comunidad de aprendizaje determinada por la
+                                        ética y conformada por estudiantes con sólida formación académica, egresados
+                                        competentes con sentido humano, docentes comprometidos con la investigación
+                                        educativa y personal administrativo enfocado en fortalecer la calidad educativa.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Sección: Licenciaturas -->
         <section class="py-5">
             <div class="container">
@@ -199,18 +267,12 @@
                     <!-- Derecho -->
                     <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
                         <div class="card h-100 shadow border-0" style="transition: all 0.4s ease; overflow: hidden;">
-                            <div style="height: 200px; background: linear-gradient(135deg, var(--suayed-color) 0%, #c63437 100%); 
-                                        position: relative; overflow: hidden;">
-                                <div class="position-absolute top-50 start-50 translate-middle text-center w-100">
-                                    <img src="resources/logos_licenciaturas/Derecho SUAyED blanco-03.svg"
-                                        alt="Logo Derecho" style="height: 200px; width: auto; opacity: 0.3;">
-                                </div>
-                                <div class="position-absolute bottom-0 start-0 w-100 p-4">
-                                    <h3 class="text-white fw-bold mb-0">
-                                        <i class="bi bi-mortarboard-fill me-2"></i>
-                                        Derecho
-                                    </h3>
-                                </div>
+                            <div style="background: linear-gradient(135deg, var(--suayed-color) 0%, #c63437 100%); padding: 1.5rem 1rem 1rem; display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
+                                <img src="resources/logos_licenciaturas/Derecho SUAyED blanco-03.svg"
+                                    alt="Logo Derecho" style="height: 180px; width: auto;">
+                                <h3 class="text-white fw-bold mb-0 text-center">
+                                    Derecho
+                                </h3>
                             </div>
                             <div class="card-body p-4">
                                 <p class="mb-4">
@@ -243,19 +305,14 @@
                     <!-- Relaciones Internacionales -->
                     <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
                         <div class="card h-100 shadow border-0" style="transition: all 0.4s ease; overflow: hidden;">
-                            <div style="height: 200px; background: linear-gradient(135deg, var(--suayed-color) 0%, #c63437 100%); 
-                                        position: relative; overflow: hidden;">
-                                <div class="position-absolute top-50 start-50 translate-middle text-center w-100">
-                                    <img src="resources/logos_licenciaturas/R I  SUAyED blanco-03.svg"
-                                        alt="Logo Relaciones Internacionales"
-                                        style="height: 200px; width: auto; opacity: 0.3;">
-                                </div>
-                                <div class="position-absolute bottom-0 start-0 w-100 p-4">
-                                    <h3 class="text-white fw-bold mb-0">
-                                        <i class="bi bi-mortarboard-fill me-2"></i>
-                                        Relaciones Internacionales
-                                    </h3>
-                                </div>
+                            <div style="background: linear-gradient(135deg, var(--suayed-color) 0%, #c63437 100%); padding: 1.5rem 1rem 1rem; display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
+                                <img src="resources/logos_licenciaturas/R I  SUAyED blanco-03.svg"
+                                    alt="Logo Relaciones Internacionales"
+                                    style="height: 180px; width: auto;">
+                                <h3 class="text-white fw-bold mb-0 text-center"
+                                style="font-size: 26px;">
+                                    Relaciones Internacionales
+                                </h3>
                             </div>
                             <div class="card-body p-4">
                                 <p class="mb-4">
@@ -288,18 +345,12 @@
                     <!-- Economía -->
                     <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
                         <div class="card h-100 shadow border-0" style="transition: all 0.4s ease; overflow: hidden;">
-                            <div style="height: 200px; background: linear-gradient(135deg, var(--suayed-color) 0%, #c63437 100%); 
-                                        position: relative; overflow: hidden;">
-                                <div class="position-absolute top-50 start-50 translate-middle text-center w-100">
-                                    <img src="resources/logos_licenciaturas/Economía SUAyED blanco-03.svg"
-                                        alt="Logo Economía" style="height: 200px; width: auto; opacity: 0.3;">
-                                </div>
-                                <div class="position-absolute bottom-0 start-0 w-100 p-4">
-                                    <h3 class="text-white fw-bold mb-0">
-                                        <i class="bi bi-mortarboard-fill me-2"></i>
-                                        Economía
-                                    </h3>
-                                </div>
+                            <div style="background: linear-gradient(135deg, var(--suayed-color) 0%, #c63437 100%); padding: 1.5rem 1rem 1rem; display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
+                                <img src="resources/logos_licenciaturas/Economía SUAyED blanco-03.svg"
+                                    alt="Logo Economía" style="height: 180px; width: auto;">
+                                <h3 class="text-white fw-bold mb-0 text-center">
+                                    Economía
+                                </h3>
                             </div>
                             <div class="card-body p-4">
                                 <p class="mb-4">
