@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Licenciatura en Derecho del Sistema Universidad Abierta y Educación a Distancia - FES Aragón UNAM. Formación jurídica humanista con responsabilidad social.">
+    <meta name="keywords" content="Derecho, SUAYED, FES Aragón, licenciatura, educación a distancia, abogacía">
+    <title>Derecho SUAyED | DUACyD FES Aragón</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" href="resources/DUACyD_B-09.ico" type="image/x-icon">
+
+</head>
+
+<body class="landing-page">
+    <!-- Facebook SDK -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v24.0"></script>
+
+    <header>
+        <!-- Navbar principal -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
+            <div class="container">
+                <div class="logo-container d-flex align-items-center gap-4 me-4">
+                    <a class="navbar-brand" href="https://www.unam.mx/">
+                        <img src="resources/unam_blanco.png" alt="Logo UNAM" class="logo">
+                    </a>
+                    <a class="navbar-brand" href="https://www.aragon.unam.mx/fes-aragon/#!/inicio">
+                        <img src="resources/fesaragon-blanco.png" alt="Logo FES Aragón" class="logo">
+                    </a>
+                    <a class="navbar-brand" href="https://www.aragon.unam.mx/fes-aragon/#!/inicio">
+                        <img src="resources/logo_50_aniversario.png" alt="50 Aniversario FES Aragón" class="logo">
+                    </a>
+                    <a class="navbar-brand" href="index.html">
+                        <img src="resources/DUACyD_B-09.png" alt="Logo DUACyD" class="logo">
+                    </a>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+                    <ul class="navbar-nav gap-lg-3">
+                        <li class="nav-item">
+                            <a class="nav-link px-3 py-2 rounded" href="index.html">
+                                <i class="bi bi-house-door me-2"></i>Inicio
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-cle px-3 py-2 rounded" href="CLE.html">
+                                <i class="bi bi-award me-2"></i>CLE
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-edco px-3 py-2 rounded" href="EDCO.html">
+                                <i class="bi bi-book me-2"></i>EDCO
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-suayed active px-3 py-2 rounded" href="SUAYED.html">
+                                <i class="bi bi-journal-text me-2"></i>SUAyED
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3 py-2 rounded" href="comunidad.html">
+                                <i class="bi bi-people me-2"></i>Comunidad
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3 py-2 rounded" href="preguntas-frecuentes.html">
+                                <i class="bi bi-question-circle me-2"></i>Preguntas Frecuentes
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section Minimalista -->
+        <section class="py-5" style="background: linear-gradient(135deg, var(--suayed-color) 0%, #c63437 100%); margin-top: 7rem;">
+            <div class="container">
+                <div class="row align-items-center py-5">
+                    <div class="col-lg-8 text-white">
+                        <nav aria-label="breadcrumb" class="mb-3">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="SUAYED.html" class="text-white text-decoration-none opacity-75">
+                                        <i class="bi bi-arrow-left me-2"></i>SUAyED
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item active text-white" aria-current="page">Derecho</li>
+                            </ol>
+                        </nav>
+                        <h1 class="display-4 fw-bold mb-3">
+                            <i class="bi bi-book-half me-3"></i>
+                            Licenciatura en Derecho
+                        </h1>
+                        <p class="lead mb-0 opacity-90">
+                            Sistema Universidad Abierta y Educación a Distancia
+                        </p>
+                    </div>
+                    <div class="col-lg-4 text-center text-lg-end mt-4 mt-lg-0">
+                        <div class="bg-white rounded-3 p-4 shadow">
+                            <i class="bi bi-mortarboard-fill" style="font-size: 4rem; color: var(--suayed-color);"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Presentación -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="mb-5 text-center">
+                            <span class="badge px-3 py-2 mb-3" 
+                                  style="background-color: var(--suayed-color); font-size: 0.9rem; font-weight: 500;">
+                                Presentación
+                            </span>
+                            <h2 class="fw-bold mb-4" style="color: var(--primary-color);">
+                                Formación Jurídica Humanista
+                            </h2>
+                        </div>
+
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-body p-5">
+                                <p class="mb-4" style="line-height: 1.8; text-align: justify;">
+                                    La licenciatura en Derecho del SUAyED se caracteriza por formar profesionistas en el 
+                                    ámbito legal con gran sentido humanista y responsabilidad social, con los conocimientos 
+                                    y habilidades necesarias para comprender y generar propuestas que solucionen la 
+                                    problemática inherente a la disciplina jurídica; de esta forma, se lograrán los fines y 
+                                    principios de esta área del conocimiento: justicia, equidad, bien común y paz social.
+                                </p>
+
+                                <p class="mb-4" style="line-height: 1.8; text-align: justify;">
+                                    Está sustentada en una educación integral y de investigación con espíritu de superación 
+                                    permanente, cultura del esfuerzo y una acreditada calidad académica. La carrera brinda 
+                                    además una formación integral, científica, humanística y ética, tanto en lo teórico como 
+                                    en lo práctico, fomentando en la comunidad estudiantil una sólida conciencia de su 
+                                    lealtad, compromiso y responsabilidad con la sociedad.
+                                </p>
+
+                                <p class="mb-0" style="line-height: 1.8; text-align: justify;">
+                                    La comunidad profesional de la licenciatura en Derecho del SUAyED tendrá una visión 
+                                    dinámica del fenómeno jurídico, dotada de las herramientas intelectuales que le 
+                                    permitirán encauzar, interpretar y aplicar con justicia el orden normativo, así como poner 
+                                    su saber al servicio de la comunidad, a través de una construcción pedagógica 
+                                    interdisciplinaria y multidisciplinaria, mediante una modalidad educativa flexible e 
+                                    innovadora, mediante el uso de las Tecnologías de la Información y Comunicación (TIC).
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Características destacadas -->
+                        <div class="row g-3">
+                            <div class="col-md-3 col-6">
+                                <div class="text-center p-3 rounded-3 h-100" style="background-color: #fff5f5;">
+                                    <i class="bi bi-lightbulb-fill mb-2" 
+                                       style="font-size: 2rem; color: var(--suayed-color);"></i>
+                                    <p class="small mb-0 fw-semibold">Formación Humanista</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="text-center p-3 rounded-3 h-100" style="background-color: #fff5f5;">
+                                    <i class="bi bi-laptop mb-2" 
+                                       style="font-size: 2rem; color: var(--suayed-color);"></i>
+                                    <p class="small mb-0 fw-semibold">Uso de TIC</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="text-center p-3 rounded-3 h-100" style="background-color: #fff5f5;">
+                                    <i class="bi bi-people-fill mb-2" 
+                                       style="font-size: 2rem; color: var(--suayed-color);"></i>
+                                    <p class="small mb-0 fw-semibold">Responsabilidad Social</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="text-center p-3 rounded-3 h-100" style="background-color: #fff5f5;">
+                                    <i class="bi bi-award-fill mb-2" 
+                                       style="font-size: 2rem; color: var(--suayed-color);"></i>
+                                    <p class="small mb-0 fw-semibold">Calidad Académica</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Perfil de Egreso -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="mb-5 text-center">
+                            <span class="badge px-3 py-2 mb-3" 
+                                  style="background-color: var(--suayed-color); font-size: 0.9rem; font-weight: 500;">
+                                Perfil de Egreso
+                            </span>
+                            <h2 class="fw-bold mb-4" style="color: var(--primary-color);">
+                                ¿Qué lograrás al egresar?
+                            </h2>
+                        </div>
+
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body p-5">
+                                <div class="row g-4">
+                                    <div class="col-md-6">
+                                        <div class="d-flex mb-4">
+                                            <div class="flex-shrink-0">
+                                                <div class="rounded-circle d-flex align-items-center justify-content-center"
+                                                     style="width: 50px; height: 50px; background-color: #fff5f5;">
+                                                    <i class="bi bi-eye-fill" style="color: var(--suayed-color); font-size: 1.5rem;"></i>
+                                                </div>
+                                            </div>
+                                            <div class="ms-3">
+                                                <h5 class="fw-bold mb-2" style="color: var(--suayed-color);">Visión Dinámica</h5>
+                                                <p class="mb-0 small" style="line-height: 1.6;">
+                                                    Contarás con una visión dinámica del fenómeno jurídico, dotada de las 
+                                                    herramientas intelectuales necesarias.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="d-flex mb-4">
+                                            <div class="flex-shrink-0">
+                                                <div class="rounded-circle d-flex align-items-center justify-content-center"
+                                                     style="width: 50px; height: 50px; background-color: #fff5f5;">
+                                                    <i class="bi bi-gear-fill" style="color: var(--suayed-color); font-size: 1.5rem;"></i>
+                                                </div>
+                                            </div>
+                                            <div class="ms-3">
+                                                <h5 class="fw-bold mb-2" style="color: var(--suayed-color);">Agente de Cambio</h5>
+                                                <p class="mb-0 small" style="line-height: 1.6;">
+                                                    Serás un promotor de cambio para mejorar el orden social y poner tu 
+                                                    saber al servicio de la comunidad.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="d-flex mb-4">
+                                            <div class="flex-shrink-0">
+                                                <div class="rounded-circle d-flex align-items-center justify-content-center"
+                                                     style="width: 50px; height: 50px; background-color: #fff5f5;">
+                                                    <i class="bi bi-briefcase-fill" style="color: var(--suayed-color); font-size: 1.5rem;"></i>
+                                                </div>
+                                            </div>
+                                            <div class="ms-3">
+                                                <h5 class="fw-bold mb-2" style="color: var(--suayed-color);">Ejercicio Profesional</h5>
+                                                <p class="mb-0 small" style="line-height: 1.6;">
+                                                    Utilizarás los conocimientos de la Ciencia del Derecho para la defensa 
+                                                    de intereses ante órganos judiciales.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="d-flex mb-4">
+                                            <div class="flex-shrink-0">
+                                                <div class="rounded-circle d-flex align-items-center justify-content-center"
+                                                     style="width: 50px; height: 50px; background-color: #fff5f5;">
+                                                    <i class="bi bi-shield-fill-check" style="color: var(--suayed-color); font-size: 1.5rem;"></i>
+                                                </div>
+                                            </div>
+                                            <div class="ms-3">
+                                                <h5 class="fw-bold mb-2" style="color: var(--suayed-color);">Defensa de Derechos</h5>
+                                                <p class="mb-0 small" style="line-height: 1.6;">
+                                                    Defenderás los intereses legítimos de los gobernados y del Estado mexicano 
+                                                    ante transgresiones gubernamentales.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mapa Curricular y Programa -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="mb-5 text-center">
+                            <span class="badge px-3 py-2 mb-3" 
+                                  style="background-color: var(--suayed-color); font-size: 0.9rem; font-weight: 500;">
+                                Plan de Estudios
+                            </span>
+                            <h2 class="fw-bold mb-4" style="color: var(--primary-color);">
+                                Consulta el Programa Académico
+                            </h2>
+                        </div>
+
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="card border-0 shadow-sm h-100" 
+                                     style="transition: all 0.3s ease;">
+                                    <div class="card-body p-4 text-center">
+                                        <div class="mb-4">
+                                            <i class="bi bi-diagram-3-fill" 
+                                               style="font-size: 4rem; color: var(--suayed-color);"></i>
+                                        </div>
+                                        <h4 class="fw-bold mb-3" style="color: var(--primary-color);">Mapa Curricular</h4>
+                                        <p class="text-muted mb-4">
+                                            Visualiza la estructura completa del plan de estudios, semestres y asignaturas.
+                                        </p>
+                                        <a href="https://www.aragon.unam.mx/fes-aragon/public_html/documents/licenciaturas/derecho-sua/mapa-derecho-sua.pdf" 
+                                           target="_blank"
+                                           class="btn btn-lg px-4 text-white" 
+                                           style="background-color: var(--suayed-color); transition: all 0.3s ease;">
+                                            <i class="bi bi-file-earmark-pdf me-2"></i>
+                                            Descargar PDF
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card border-0 shadow-sm h-100" 
+                                     style="transition: all 0.3s ease;">
+                                    <div class="card-body p-4 text-center">
+                                        <div class="mb-4">
+                                            <i class="bi bi-journal-bookmark-fill" 
+                                               style="font-size: 4rem; color: var(--suayed-color);"></i>
+                                        </div>
+                                        <h4 class="fw-bold mb-3" style="color: var(--primary-color);">Programas de Estudio</h4>
+                                        <p class="text-muted mb-4">
+                                            Conoce el contenido detallado de cada asignatura del plan de estudios.
+                                        </p>
+                                        <a href="https://www.aragon.unam.mx/fes-aragon/public_html/documents/licenciaturas/derecho-sua/programas-derecho-sua.pdf" 
+                                           target="_blank"
+                                           class="btn btn-lg px-4 text-white" 
+                                           style="background-color: var(--suayed-color); transition: all 0.3s ease;">
+                                            <i class="bi bi-file-earmark-pdf me-2"></i>
+                                            Descargar PDF
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proceso de Titulación -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="mb-5 text-center">
+                            <span class="badge px-3 py-2 mb-3" 
+                                  style="background-color: var(--suayed-color); font-size: 0.9rem; font-weight: 500;">
+                                Titulación
+                            </span>
+                            <h2 class="fw-bold mb-4" style="color: var(--primary-color);">
+                                Proceso de Titulación
+                            </h2>
+                            <p class="text-muted">
+                                Información sobre requisitos, modalidades y procedimiento para obtener tu título profesional
+                            </p>
+                        </div>
+
+                        <!-- Requisitos -->
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-header border-0 py-3" 
+                                 style="background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);">
+                                <h4 class="fw-bold mb-0" style="color: var(--suayed-color);">
+                                    <i class="bi bi-list-check me-2"></i>
+                                    Requisitos de Titulación
+                                </h4>
+                            </div>
+                            <div class="card-body p-4">
+                                <p class="mb-4">
+                                    De conformidad con lo estipulado en el Plan de Estudios y en las Reglas de Operación, 
+                                    deberás cumplir con los siguientes requisitos:
+                                </p>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="d-flex align-items-start">
+                                            <i class="bi bi-check-circle-fill me-3 mt-1" 
+                                               style="color: var(--suayed-color); font-size: 1.2rem;"></i>
+                                            <span>Certificado de estudios</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="d-flex align-items-start">
+                                            <i class="bi bi-check-circle-fill me-3 mt-1" 
+                                               style="color: var(--suayed-color); font-size: 1.2rem;"></i>
+                                            <span>Carta de liberación del Servicio Social</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="d-flex align-items-start">
+                                            <i class="bi bi-check-circle-fill me-3 mt-1" 
+                                               style="color: var(--suayed-color); font-size: 1.2rem;"></i>
+                                            <span>Revisión de estudios documental</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="d-flex align-items-start">
+                                            <i class="bi bi-check-circle-fill me-3 mt-1" 
+                                               style="color: var(--suayed-color); font-size: 1.2rem;"></i>
+                                            <span>Constancia de idioma</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="d-flex align-items-start">
+                                            <i class="bi bi-check-circle-fill me-3 mt-1" 
+                                               style="color: var(--suayed-color); font-size: 1.2rem;"></i>
+                                            <span>Constancia de cómputo</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modalidades de Titulación -->
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-header border-0 py-3" 
+                                 style="background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);">
+                                <h4 class="fw-bold mb-0" style="color: var(--suayed-color);">
+                                    <i class="bi bi-gear-fill me-2"></i>
+                                    Modalidades de Titulación Vigentes
+                                </h4>
+                            </div>
+                            <div class="card-body p-4">
+                                <!-- Con trabajo escrito y réplica oral -->
+                                <div class="mb-4">
+                                    <h5 class="fw-bold mb-3" style="color: var(--primary-color);">
+                                        <i class="bi bi-1-circle-fill me-2" style="color: var(--suayed-color);"></i>
+                                        Con trabajo escrito y réplica oral
+                                    </h5>
+                                    <ul class="list-unstyled ms-4">
+                                        <li class="mb-2">
+                                            <i class="bi bi-arrow-right-short me-2" style="color: var(--suayed-color);"></i>
+                                            Titulación mediante tesis o tesina y examen profesional
+                                        </li>
+                                        <li class="mb-2">
+                                            <i class="bi bi-arrow-right-short me-2" style="color: var(--suayed-color);"></i>
+                                            Titulación por seminario de tesis o tesina
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <hr class="my-4">
+
+                                <!-- Con trabajo escrito, sin réplica oral -->
+                                <div class="mb-4">
+                                    <h5 class="fw-bold mb-3" style="color: var(--primary-color);">
+                                        <i class="bi bi-2-circle-fill me-2" style="color: var(--suayed-color);"></i>
+                                        Con trabajo escrito, sin réplica oral
+                                    </h5>
+                                    <ul class="list-unstyled ms-4">
+                                        <li class="mb-2">
+                                            <i class="bi bi-arrow-right-short me-2" style="color: var(--suayed-color);"></i>
+                                            Titulación por trabajo profesional
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <hr class="my-4">
+
+                                <!-- Sin trabajo escrito -->
+                                <div class="mb-0">
+                                    <h5 class="fw-bold mb-3" style="color: var(--primary-color);">
+                                        <i class="bi bi-3-circle-fill me-2" style="color: var(--suayed-color);"></i>
+                                        Sin trabajo escrito
+                                    </h5>
+                                    <ul class="list-unstyled ms-4">
+                                        <li class="mb-2">
+                                            <i class="bi bi-arrow-right-short me-2" style="color: var(--suayed-color);"></i>
+                                            Titulación por totalidad de créditos y alto nivel académico
+                                        </li>
+                                        <li class="mb-2">
+                                            <i class="bi bi-arrow-right-short me-2" style="color: var(--suayed-color);"></i>
+                                            Titulación mediante estudios en posgrado
+                                        </li>
+                                        <li class="mb-2">
+                                            <i class="bi bi-arrow-right-short me-2" style="color: var(--suayed-color);"></i>
+                                            Titulación por ampliación y profundización de conocimientos en su 
+                                            alternativa de cursos o diplomados de educación continua
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Inicio y Seguimiento del Trámite -->
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-header border-0 py-3" 
+                                 style="background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);">
+                                <h4 class="fw-bold mb-0" style="color: var(--suayed-color);">
+                                    <i class="bi bi-clipboard-check-fill me-2"></i>
+                                    Inicio y Seguimiento del Trámite
+                                </h4>
+                            </div>
+                            <div class="card-body p-4">
+                                <p class="mb-4">
+                                    El Sistema de seguimiento del proceso de titulación universitaria, es la plataforma 
+                                    institucional de la UNAM que gestiona la Dirección General de Administración Escolar 
+                                    (DGAE). El proceso incluye las siguientes etapas:
+                                </p>
+
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="p-3 rounded-3 h-100" style="background-color: #fff5f5;">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="rounded-circle d-flex align-items-center justify-content-center me-2"
+                                                     style="width: 30px; height: 30px; background-color: var(--suayed-color); color: white; font-weight: bold; font-size: 0.8rem;">
+                                                    1
+                                                </div>
+                                                <span class="fw-semibold small">Registro de la solicitud</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="p-3 rounded-3 h-100" style="background-color: #fff5f5;">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="rounded-circle d-flex align-items-center justify-content-center me-2"
+                                                     style="width: 30px; height: 30px; background-color: var(--suayed-color); color: white; font-weight: bold; font-size: 0.8rem;">
+                                                    2
+                                                </div>
+                                                <span class="fw-semibold small">Aceptación de la solicitud</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="p-3 rounded-3 h-100" style="background-color: #fff5f5;">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="rounded-circle d-flex align-items-center justify-content-center me-2"
+                                                     style="width: 30px; height: 30px; background-color: var(--suayed-color); color: white; font-weight: bold; font-size: 0.8rem;">
+                                                    3
+                                                </div>
+                                                <span class="fw-semibold small">Aprobación, desarrollo y conclusión del trabajo académico</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="p-3 rounded-3 h-100" style="background-color: #fff5f5;">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="rounded-circle d-flex align-items-center justify-content-center me-2"
+                                                     style="width: 30px; height: 30px; background-color: var(--suayed-color); color: white; font-weight: bold; font-size: 0.8rem;">
+                                                    4
+                                                </div>
+                                                <span class="fw-semibold small">Entrega electrónica y física de documentos</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="p-3 rounded-3 h-100" style="background-color: #fff5f5;">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="rounded-circle d-flex align-items-center justify-content-center me-2"
+                                                     style="width: 30px; height: 30px; background-color: var(--suayed-color); color: white; font-weight: bold; font-size: 0.8rem;">
+                                                    5
+                                                </div>
+                                                <span class="fw-semibold small">Incorporación del Acta de titulación</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="p-3 rounded-3 h-100" style="background-color: #fff5f5;">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="rounded-circle d-flex align-items-center justify-content-center me-2"
+                                                     style="width: 30px; height: 30px; background-color: var(--suayed-color); color: white; font-weight: bold; font-size: 0.8rem;">
+                                                    6
+                                                </div>
+                                                <span class="fw-semibold small">Integración de carpeta física</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="p-3 rounded-3 h-100" style="background-color: #fff5f5;">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="rounded-circle d-flex align-items-center justify-content-center me-2"
+                                                     style="width: 30px; height: 30px; background-color: var(--suayed-color); color: white; font-weight: bold; font-size: 0.8rem;">
+                                                    7
+                                                </div>
+                                                <span class="fw-semibold small">Entrega de carpeta física a la DGAE</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card border-0 shadow-sm text-center" 
+                             style="background: linear-gradient(135deg, var(--suayed-color) 0%, #c63437 100%);">
+                            <div class="card-body p-5 text-white">
+                                <i class="bi bi-info-circle-fill mb-3" style="font-size: 3rem;"></i>
+                                <h3 class="fw-bold mb-3">¿Necesitas más información?</h3>
+                                <p class="mb-4 opacity-90">
+                                    Para más detalles sobre requisitos de admisión, proceso de inscripción o 
+                                    cualquier consulta adicional, no dudes en contactarnos.
+                                </p>
+                                <a href="preguntas-frecuentes.html" 
+                                   class="btn btn-light btn-lg px-5 shadow" 
+                                   style="font-weight: 600;">
+                                    <i class="bi bi-question-circle me-2"></i>
+                                    Preguntas Frecuentes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Botones flotantes -->
+        <div class="social-floating-buttons">
+            <button type="button" class="social-btn facebook-btn" data-bs-toggle="modal" data-bs-target="#facebookModal"
+                aria-label="Facebook">
+                <i class="bi bi-facebook"></i>
+            </button>
+
+            <button type="button" class="social-btn instagram-btn" data-bs-toggle="modal"
+                data-bs-target="#instagramModal" aria-label="Instagram">
+                <i class="bi bi-instagram"></i>
+            </button>
+
+            <button type="button" class="social-btn suayed-btn" data-bs-toggle="modal" data-bs-target="#modalSuayed">
+                <img src="resources/SUAYED_Blanco-06.ico" alt="SUAYED" class="icono-btn">
+            </button>
+
+            <button type="button" class="social-btn edco-btn" data-bs-toggle="modal" data-bs-target="#modalEdco">
+                <img src="resources\Educación-Continua_Blanco-07.ico" alt="EDCO" class="icono-btn">
+            </button>
+
+            <button type="button" class="social-btn cle-btn" data-bs-toggle="modal" data-bs-target="#modalCle">
+                <img src="resources/CLE_B-09.png" alt="CLE" class="icono-btn">
+            </button>
+        </div>
+
+        <!-- Modal Instagram -->
+        <div class="modal fade" id="instagramModal" tabindex="-1" aria-labelledby="instagramModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="instagramModalLabel">Instagram | Áreas DUACyD</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <i class="bi bi-instagram display-1 mb-3"
+                            style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
+                        <p class="mb-4">Selecciona la jefatura para abrir su página oficial en Instagram.</p>
+
+                        <a href="https://www.instagram.com/suayedfesaragon/" target="_blank" rel="noopener noreferrer"
+                            class="btn w-100 py-3 mb-3 d-flex align-items-center justify-content-between"
+                            style="background-color: var(--suayed-color); color: white; border-radius: 10px; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
+                            onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.2)'"
+                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'">
+                            <span class="d-flex align-items-center">
+                                <i class="bi bi-book fs-4 me-3"></i>
+                                <span class="fw-semibold">SUAyED</span>
+                            </span>
+                            <i class="bi bi-instagram fs-5"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/educacioncontinuaaragon/" target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn w-100 py-3 mb-3 d-flex align-items-center justify-content-between"
+                            style="background-color: var(--edco-color); color: white; border-radius: 10px; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
+                            onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.2)'"
+                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'">
+                            <span class="d-flex align-items-center">
+                                <i class="bi bi-lightbulb fs-4 me-3"></i>
+                                <span class="fw-semibold">Educación Continua</span>
+                            </span>
+                            <i class="bi bi-instagram fs-5"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/lenguas_fesaragon/" target="_blank" rel="noopener noreferrer"
+                            class="btn w-100 py-3 d-flex align-items-center justify-content-between"
+                            style="background-color: var(--cle-color); color: white; border-radius: 10px; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
+                            onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.2)'"
+                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'">
+                            <span class="d-flex align-items-center">
+                                <i class="bi bi-translate fs-4 me-3"></i>
+                                <span class="fw-semibold">Centro de Lenguas Extranjeras</span>
+                            </span>
+                            <i class="bi bi-instagram fs-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Facebook -->
+        <div class="modal fade" id="facebookModal" tabindex="-1" aria-labelledby="facebookModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color: var(--primary-color); color: white;">
+                        <h5 class="modal-title" id="facebookModalLabel">Facebook | Áreas DUACyD</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <i class="bi bi-facebook display-1 mb-3" style="color: var(--primary-color);"></i>
+                        <p class="mb-4">Selecciona la jefatura para visitar su página oficial en Facebook.</p>
+
+                        <a href="https://www.facebook.com/SUAYEDFESARAGON/?locale=es_LA" target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn w-100 py-3 mb-3 d-flex align-items-center justify-content-between"
+                            style="background-color: var(--suayed-color); color: white; border-radius: 10px; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
+                            onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.2)'"
+                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'">
+                            <span class="d-flex align-items-center">
+                                <i class="bi bi-book fs-4 me-3"></i>
+                                <span class="fw-semibold">SUAyED</span>
+                            </span>
+                            <i class="bi bi-facebook fs-5"></i>
+                        </a>
+
+                        <a href="https://www.facebook.com/FESAragon.educacioncontinua?locale=es_LA" target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn w-100 py-3 d-flex align-items-center justify-content-between"
+                            style="background-color: var(--edco-color); color: white; border-radius: 10px; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
+                            onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.2)'"
+                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'">
+                            <span class="d-flex align-items-center">
+                                <i class="bi bi-lightbulb fs-4 me-3"></i>
+                                <span class="fw-semibold">Educación Continua</span>
+                            </span>
+                            <i class="bi bi-facebook fs-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal SUAYED -->
+        <div class="modal fade" id="modalSuayed" tabindex="-1" aria-labelledby="modalSuayedLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content" style="border-color: var(--color-suayed);">
+                    <div class="modal-header" style="background-color: var(--suayed-color); color: white;">
+                        <h5 class="modal-title" id="modalSuayedLabel">Sistema Universidad Abierta</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <i class="bi bi-journal-text display-1 mb-3" style="color: var(--suayed-color);"></i>
+                        <p>Explora la oferta académica de licenciaturas en línea y a distancia.</p>
+                        <a href="SUAYED.html" class="btn w-100 py-2" style="background-color: var(--suayed-color); color: white;">
+                            <i class="bi bi-box-arrow-up-right me-2"></i> Ir a SUAyED
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal EDCO -->
+        <div class="modal fade" id="modalEdco" tabindex="-1" aria-labelledby="modalEdcoLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content" style="border-color: var(--color-edco);">
+                    <div class="modal-header" style="background-color: var(--edco-color); color: white;">
+                        <h5 class="modal-title" id="modalEdcoLabel">Educación Continua</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <i class="bi bi-lightbulb display-1 mb-3" style="color: var(--edco-color);"></i>
+                        <p>Explora cursos, talleres y diplomados para tu actualización profesional.</p>
+                        <a href="EDCO.html" class="btn w-100 py-2" style="background-color: var(--edco-color); color: white;">
+                            <i class="bi bi-box-arrow-up-right me-2"></i> Ver oferta EDCO
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal CLE -->
+        <div class="modal fade" id="modalCle" tabindex="-1" aria-labelledby="modalCleLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content" style="border-color: var(--color-cle);">
+                    <div class="modal-header" style="background-color: var(--cle-color); color: white;">
+                        <h5 class="modal-title" id="modalCleLabel">Centro de Lenguas Extranjeras (CLE)</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <i class="bi bi-translate display-1 mb-3" style="color: var(--cle-color);"></i>
+                        <p>Consulta la oferta de idiomas y modalidades del CLE.</p>
+                        <a href="CLE.html" class="btn w-100 py-2" style="background-color: var(--cle-color); color: white;">
+                            <i class="bi bi-box-arrow-up-right me-2"></i> Ir al CLE
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+    <footer class="footer-carbon py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>DUACyD FES Aragón</h5>
+                    <p>División de Universidad Abierta, Continua y a Distancia</p>
+                    <p>Facultad de Estudios Superiores Aragón</p>
+                    <p>Universidad Nacional Autónoma de México</p>
+                </div>
+
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><i class="bi bi-geo-alt-fill me-2"></i> Av. Universidad Nacional S/N, Bosques de Aragón,
+                            57171 Cdad. Nezahualcóyotl, Méx.</li>
+                        <li><i class="bi bi-telephone-fill me-2"></i> Teléfono: 55 5623 0000</li>
+                        <li><i class="bi bi-envelope-fill me-2"></i> Email: contacto@aragon.unam.mx</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <h5>Síguenos</h5>
+                    <div class="social-icons mb-3">
+                        <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="bi bi-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="bi bi-youtube"></i></a>
+                    </div>
+                    <img src="resources/unam_blanco.png" alt="Logo UNAM" style="height: 60px;" class="me-3">
+                    <img src="resources/fesaragon-blanco.png" alt="Logo FES Aragón" style="height: 60px;">
+                </div>
+            </div>
+
+            <hr class="my-4 bg-light">
+
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2025 DUACyD FES Aragón - UNAM. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a
+                                href="https://www.aragon.unam.mx/fes-aragon/public_html/documents/aviso-de-privacidad/integral-de-la-fes-aragon.pdf"
+                                class="footer-links">Aviso de Privacidad</a></li>
+                        <li class="list-inline-item"><span class="mx-2">|</span></li>
+                        <li class="list-inline-item"><a href="#" class="footer-links">Términos de Uso</a></li>
+                        <li class="list-inline-item"><span class="mx-2">|</span></li>
+                        <li class="list-inline-item"><a href="creditos.html" class="footer-links">Créditos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Efectos hover -->
+    <style>
+        .card {
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12) !important;
+        }
+
+        .btn {
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .breadcrumb {
+            background: transparent;
+            padding: 0;
+            margin: 0;
+        }
+
+        .breadcrumb-item + .breadcrumb-item::before {
+            color: rgba(255, 255, 255, 0.5);
+        }
+    </style>
+
+</body>
+
+</html>
