@@ -380,6 +380,16 @@
             </div>
         </section>
 
+        <style>
+            .collapse-chevron {
+                transition: transform 0.3s ease;
+                flex-shrink: 0;
+            }
+            [aria-expanded="true"] .collapse-chevron {
+                transform: rotate(180deg);
+            }
+        </style>
+
         <!-- Proceso de Titulación -->
         <section class="py-5 bg-light">
             <div class="container">
@@ -403,16 +413,17 @@
                         <div class="card border-0 shadow-sm mb-4">
                             <div class="card-header border-0 py-3" id="titulacionRequisitosHeader"
                                 style="background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);">
-                                <button class="btn w-100 text-start p-0 border-0 bg-transparent" type="button"
+                                <button class="btn w-100 text-start p-0 border-0 bg-transparent d-flex justify-content-between align-items-center" type="button"
                                     data-bs-toggle="collapse" data-bs-target="#titulacionRequisitosCollapse"
-                                    aria-expanded="true" aria-controls="titulacionRequisitosCollapse">
+                                    aria-expanded="false" aria-controls="titulacionRequisitosCollapse">
                                     <h4 class="fw-bold mb-0" style="color: var(--suayed-color);">
                                         <i class="bi bi-list-check me-2"></i>
                                         Requisitos de Titulación
                                     </h4>
+                                    <i class="bi bi-chevron-down collapse-chevron" style="color: var(--suayed-color);"></i>
                                 </button>
                             </div>
-                            <div id="titulacionRequisitosCollapse" class="collapse show"
+                            <div id="titulacionRequisitosCollapse" class="collapse"
                                 aria-labelledby="titulacionRequisitosHeader">
                                 <div class="card-body p-4">
                                     <p class="mb-4">
@@ -470,16 +481,17 @@
                         <div class="card border-0 shadow-sm mb-4">
                             <div class="card-header border-0 py-3" id="titulacionModalidadesHeader"
                                 style="background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);">
-                                <button class="btn w-100 text-start p-0 border-0 bg-transparent" type="button"
+                                <button class="btn w-100 text-start p-0 border-0 bg-transparent d-flex justify-content-between align-items-center" type="button"
                                     data-bs-toggle="collapse" data-bs-target="#titulacionModalidadesCollapse"
-                                    aria-expanded="true" aria-controls="titulacionModalidadesCollapse">
+                                    aria-expanded="false" aria-controls="titulacionModalidadesCollapse">
                                     <h4 class="fw-bold mb-0" style="color: var(--suayed-color);">
                                         <i class="bi bi-gear-fill me-2"></i>
                                         Modalidades de Titulación Vigentes
                                     </h4>
+                                    <i class="bi bi-chevron-down collapse-chevron" style="color: var(--suayed-color);"></i>
                                 </button>
                             </div>
-                            <div id="titulacionModalidadesCollapse" class="collapse show"
+                            <div id="titulacionModalidadesCollapse" class="collapse"
                                 aria-labelledby="titulacionModalidadesHeader">
                                 <div class="card-body p-4">
                                     <!-- Con trabajo escrito y réplica oral -->
@@ -554,16 +566,17 @@
                         <div class="card border-0 shadow-sm">
                             <div class="card-header border-0 py-3" id="titulacionSeguimientoHeader"
                                 style="background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);">
-                                <button class="btn w-100 text-start p-0 border-0 bg-transparent" type="button"
+                                <button class="btn w-100 text-start p-0 border-0 bg-transparent d-flex justify-content-between align-items-center" type="button"
                                     data-bs-toggle="collapse" data-bs-target="#titulacionSeguimientoCollapse"
-                                    aria-expanded="true" aria-controls="titulacionSeguimientoCollapse">
+                                    aria-expanded="false" aria-controls="titulacionSeguimientoCollapse">
                                     <h4 class="fw-bold mb-0" style="color: var(--suayed-color);">
                                         <i class="bi bi-clipboard-check-fill me-2"></i>
                                         Inicio y Seguimiento del Trámite
                                     </h4>
+                                    <i class="bi bi-chevron-down collapse-chevron" style="color: var(--suayed-color);"></i>
                                 </button>
                             </div>
-                            <div id="titulacionSeguimientoCollapse" class="collapse show"
+                            <div id="titulacionSeguimientoCollapse" class="collapse"
                                 aria-labelledby="titulacionSeguimientoHeader">
                                 <div class="card-body p-4">
                                     <p class="mb-4">
@@ -672,16 +685,17 @@
                         <div class="card border-0 shadow-sm">
                             <div class="card-header border-0 py-3" id="titulacionReglasHeader"
                                 style="background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);">
-                                <button class="btn w-100 text-start p-0 border-0 bg-transparent" type="button"
+                                <button class="btn w-100 text-start p-0 border-0 bg-transparent d-flex justify-content-between align-items-center" type="button"
                                     data-bs-toggle="collapse" data-bs-target="#titulacionReglasCollapse"
-                                    aria-expanded="true" aria-controls="titulacionReglasCollapse">
+                                    aria-expanded="false" aria-controls="titulacionReglasCollapse">
                                     <h4 class="fw-bold mb-0" style="color: var(--suayed-color);">
                                         <i class="bi bi-journal-text me-2"></i>
                                         Reglas de Operación para la Titulación
                                     </h4>
+                                    <i class="bi bi-chevron-down collapse-chevron" style="color: var(--suayed-color);"></i>
                                 </button>
                             </div>
-                            <div id="titulacionReglasCollapse" class="collapse show"
+                            <div id="titulacionReglasCollapse" class="collapse"
                                 aria-labelledby="titulacionReglasHeader">
                                 <div class="card-body p-4">
                                     <p class="mb-4">
@@ -703,33 +717,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Call to Action -->
-        <section class="py-5">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="card border-0 shadow-sm text-center"
-                            style="background: linear-gradient(135deg, var(--suayed-color) 0%, #c63437 100%);">
-                            <div class="card-body p-5 text-white">
-                                <i class="bi bi-info-circle-fill mb-3" style="font-size: 3rem;"></i>
-                                <h3 class="fw-bold mb-3">¿Necesitas más información?</h3>
-                                <p class="mb-4 opacity-90">
-                                    Para más detalles sobre requisitos de admisión, proceso de inscripción o
-                                    cualquier consulta adicional, no dudes en contactarnos.
-                                </p>
-                                <a href="preguntas-frecuentes.html" class="btn btn-light btn-lg px-5 shadow"
-                                    style="font-weight: 600;">
-                                    <i class="bi bi-question-circle me-2"></i>
-                                    Preguntas Frecuentes
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Botones flotantes -->
         <div class="social-floating-buttons">
             <button type="button" class="social-btn facebook-btn" data-bs-toggle="modal" data-bs-target="#facebookModal"
