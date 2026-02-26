@@ -401,53 +401,65 @@
 
                         <!-- Requisitos -->
                         <div class="card border-0 shadow-sm mb-4">
-                            <div class="card-header border-0 py-3"
+                            <div class="card-header border-0 py-3" id="titulacionRequisitosHeader"
                                 style="background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);">
-                                <h4 class="fw-bold mb-0" style="color: var(--suayed-color);">
-                                    <i class="bi bi-list-check me-2"></i>
-                                    Requisitos de Titulación
-                                </h4>
+                                <button class="btn w-100 text-start p-0 border-0 bg-transparent" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#titulacionRequisitosCollapse"
+                                    aria-expanded="true" aria-controls="titulacionRequisitosCollapse">
+                                    <h4 class="fw-bold mb-0" style="color: var(--suayed-color);">
+                                        <i class="bi bi-list-check me-2"></i>
+                                        Requisitos de Titulación
+                                    </h4>
+                                </button>
                             </div>
-                            <div class="card-body p-4">
-                                <p class="mb-4">
-                                    De conformidad con lo estipulado en el Plan de Estudios y en las Reglas de
-                                    Operación,
-                                    deberás cumplir con los siguientes requisitos:
-                                </p>
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <div class="d-flex align-items-start">
-                                            <i class="bi bi-check-circle-fill me-3 mt-1"
-                                                style="color: var(--suayed-color); font-size: 1.2rem;"></i>
-                                            <span><a href="https://www.aragon.unam.mx/fes-aragon/public_html/templates/cise/titulacionfesar/certificado-de-estudios.pdf" target="_blank">Certificado de estudios</a></span>
+                            <div id="titulacionRequisitosCollapse" class="collapse show"
+                                aria-labelledby="titulacionRequisitosHeader">
+                                <div class="card-body p-4">
+                                    <p class="mb-4">
+                                        De conformidad con lo estipulado en el Plan de Estudios y en las Reglas de
+                                        Operación,
+                                        deberás cumplir con los siguientes requisitos:
+                                    </p>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <div class="d-flex align-items-start">
+                                                <i class="bi bi-check-circle-fill me-3 mt-1"
+                                                    style="color: var(--suayed-color); font-size: 1.2rem;"></i>
+                                                <span><a href="https://www.aragon.unam.mx/fes-aragon/public_html/templates/cise/titulacionfesar/certificado-de-estudios.pdf"
+                                                        target="_blank">Certificado de estudios</a></span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="d-flex align-items-start">
-                                            <i class="bi bi-check-circle-fill me-3 mt-1"
-                                                style="color: var(--suayed-color); font-size: 1.2rem;"></i>
-                                            <span><a href="https://www.aragon.unam.mx/fes-aragon/public_html/templates/cise/titulacionfesar/carta-liberacion-servicio.pdf" target="_blank">Carta de liberación del Servicio Social</a></span>
+                                        <div class="col-md-6">
+                                            <div class="d-flex align-items-start">
+                                                <i class="bi bi-check-circle-fill me-3 mt-1"
+                                                    style="color: var(--suayed-color); font-size: 1.2rem;"></i>
+                                                <span><a href="https://www.aragon.unam.mx/fes-aragon/public_html/templates/cise/titulacionfesar/carta-liberacion-servicio.pdf"
+                                                        target="_blank">Carta de liberación del Servicio
+                                                        Social</a></span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="d-flex align-items-start">
-                                            <i class="bi bi-check-circle-fill me-3 mt-1"
-                                                style="color: var(--suayed-color); font-size: 1.2rem;"></i>
-                                            <span><a href="https://www.aragon.unam.mx/fes-aragon/public_html/templates/cise/titulacionfesar/revision-de-estudios-documental.pdf" target="_blank">Revisión de estudios documental</a></span>
+                                        <div class="col-md-6">
+                                            <div class="d-flex align-items-start">
+                                                <i class="bi bi-check-circle-fill me-3 mt-1"
+                                                    style="color: var(--suayed-color); font-size: 1.2rem;"></i>
+                                                <span><a href="https://www.aragon.unam.mx/fes-aragon/public_html/templates/cise/titulacionfesar/revision-de-estudios-documental.pdf"
+                                                        target="_blank">Revisión de estudios documental</a></span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="d-flex align-items-start">
-                                            <i class="bi bi-check-circle-fill me-3 mt-1"
-                                                style="color: var(--suayed-color); font-size: 1.2rem;"></i>
-                                            <span><a href="https://www.aragon.unam.mx/fes-aragon/public_html/templates/cise/titulacionfesar/constancia-de-idiomas.pdf" target="_blank">Constancia de idioma</a></span>
+                                        <div class="col-md-6">
+                                            <div class="d-flex align-items-start">
+                                                <i class="bi bi-check-circle-fill me-3 mt-1"
+                                                    style="color: var(--suayed-color); font-size: 1.2rem;"></i>
+                                                <span><a href="https://www.aragon.unam.mx/fes-aragon/public_html/templates/cise/titulacionfesar/constancia-de-idiomas.pdf"
+                                                        target="_blank">Constancia de idioma</a></span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="d-flex align-items-start">
-                                            <i class="bi bi-check-circle-fill me-3 mt-1"
-                                                style="color: var(--suayed-color); font-size: 1.2rem;"></i>
-                                            <span>Constancia de cómputo</span>
+                                        <div class="col-md-6">
+                                            <div class="d-flex align-items-start">
+                                                <i class="bi bi-check-circle-fill me-3 mt-1"
+                                                    style="color: var(--suayed-color); font-size: 1.2rem;"></i>
+                                                <span>Constancia de cómputo</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -456,209 +468,235 @@
 
                         <!-- Modalidades de Titulación -->
                         <div class="card border-0 shadow-sm mb-4">
-                            <div class="card-header border-0 py-3"
+                            <div class="card-header border-0 py-3" id="titulacionModalidadesHeader"
                                 style="background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);">
-                                <h4 class="fw-bold mb-0" style="color: var(--suayed-color);">
-                                    <i class="bi bi-gear-fill me-2"></i>
-                                    Modalidades de Titulación Vigentes
-                                </h4>
+                                <button class="btn w-100 text-start p-0 border-0 bg-transparent" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#titulacionModalidadesCollapse"
+                                    aria-expanded="true" aria-controls="titulacionModalidadesCollapse">
+                                    <h4 class="fw-bold mb-0" style="color: var(--suayed-color);">
+                                        <i class="bi bi-gear-fill me-2"></i>
+                                        Modalidades de Titulación Vigentes
+                                    </h4>
+                                </button>
                             </div>
-                            <div class="card-body p-4">
-                                <!-- Con trabajo escrito y réplica oral -->
-                                <div class="mb-4">
-                                    <h5 class="fw-bold mb-3" style="color: var(--primary-color);">
-                                        <i class="bi bi-1-circle-fill me-2" style="color: var(--suayed-color);"></i>
-                                        Con trabajo escrito y réplica oral
-                                    </h5>
-                                    <ul class="list-unstyled ms-4">
-                                        <li class="mb-2">
-                                            <i class="bi bi-arrow-right-short me-2"
-                                                style="color: var(--suayed-color);"></i>
-                                            Titulación mediante tesis o tesina y examen profesional
-                                        </li>
-                                        <li class="mb-2">
-                                            <i class="bi bi-arrow-right-short me-2"
-                                                style="color: var(--suayed-color);"></i>
-                                            Titulación por seminario de tesis o tesina
-                                        </li>
-                                    </ul>
-                                </div>
+                            <div id="titulacionModalidadesCollapse" class="collapse show"
+                                aria-labelledby="titulacionModalidadesHeader">
+                                <div class="card-body p-4">
+                                    <!-- Con trabajo escrito y réplica oral -->
+                                    <div class="mb-4">
+                                        <h5 class="fw-bold mb-3" style="color: var(--primary-color);">
+                                            <i class="bi bi-1-circle-fill me-2" style="color: var(--suayed-color);"></i>
+                                            Con trabajo escrito y réplica oral
+                                        </h5>
+                                        <ul class="list-unstyled ms-4">
+                                            <li class="mb-2">
+                                                <i class="bi bi-arrow-right-short me-2"
+                                                    style="color: var(--suayed-color);"></i>
+                                                Titulación mediante tesis o tesina y examen profesional
+                                            </li>
+                                            <li class="mb-2">
+                                                <i class="bi bi-arrow-right-short me-2"
+                                                    style="color: var(--suayed-color);"></i>
+                                                Titulación por seminario de tesis o tesina
+                                            </li>
+                                        </ul>
+                                    </div>
 
-                                <hr class="my-4">
+                                    <hr class="my-4">
 
-                                <!-- Con trabajo escrito, sin réplica oral -->
-                                <div class="mb-4">
-                                    <h5 class="fw-bold mb-3" style="color: var(--primary-color);">
-                                        <i class="bi bi-2-circle-fill me-2" style="color: var(--suayed-color);"></i>
-                                        Con trabajo escrito, sin réplica oral
-                                    </h5>
-                                    <ul class="list-unstyled ms-4">
-                                        <li class="mb-2">
-                                            <i class="bi bi-arrow-right-short me-2"
-                                                style="color: var(--suayed-color);"></i>
-                                            Titulación por trabajo profesional
-                                        </li>
-                                    </ul>
-                                </div>
+                                    <!-- Con trabajo escrito, sin réplica oral -->
+                                    <div class="mb-4">
+                                        <h5 class="fw-bold mb-3" style="color: var(--primary-color);">
+                                            <i class="bi bi-2-circle-fill me-2" style="color: var(--suayed-color);"></i>
+                                            Con trabajo escrito, sin réplica oral
+                                        </h5>
+                                        <ul class="list-unstyled ms-4">
+                                            <li class="mb-2">
+                                                <i class="bi bi-arrow-right-short me-2"
+                                                    style="color: var(--suayed-color);"></i>
+                                                Titulación por trabajo profesional
+                                            </li>
+                                        </ul>
+                                    </div>
 
-                                <hr class="my-4">
+                                    <hr class="my-4">
 
-                                <!-- Sin trabajo escrito -->
-                                <div class="mb-0">
-                                    <h5 class="fw-bold mb-3" style="color: var(--primary-color);">
-                                        <i class="bi bi-3-circle-fill me-2" style="color: var(--suayed-color);"></i>
-                                        Sin trabajo escrito
-                                    </h5>
-                                    <ul class="list-unstyled ms-4">
-                                        <li class="mb-2">
-                                            <i class="bi bi-arrow-right-short me-2"
-                                                style="color: var(--suayed-color);"></i>
-                                            Titulación por totalidad de créditos y alto nivel académico
-                                        </li>
-                                        <li class="mb-2">
-                                            <i class="bi bi-arrow-right-short me-2"
-                                                style="color: var(--suayed-color);"></i>
-                                            Titulación mediante estudios en posgrado
-                                        </li>
-                                        <li class="mb-2">
-                                            <i class="bi bi-arrow-right-short me-2"
-                                                style="color: var(--suayed-color);"></i>
-                                            Titulación por ampliación y profundización de conocimientos en su
-                                            alternativa de cursos o diplomados de educación continua
-                                        </li>
-                                    </ul>
+                                    <!-- Sin trabajo escrito -->
+                                    <div class="mb-0">
+                                        <h5 class="fw-bold mb-3" style="color: var(--primary-color);">
+                                            <i class="bi bi-3-circle-fill me-2" style="color: var(--suayed-color);"></i>
+                                            Sin trabajo escrito
+                                        </h5>
+                                        <ul class="list-unstyled ms-4">
+                                            <li class="mb-2">
+                                                <i class="bi bi-arrow-right-short me-2"
+                                                    style="color: var(--suayed-color);"></i>
+                                                Titulación por totalidad de créditos y alto nivel académico
+                                            </li>
+                                            <li class="mb-2">
+                                                <i class="bi bi-arrow-right-short me-2"
+                                                    style="color: var(--suayed-color);"></i>
+                                                Titulación mediante estudios en posgrado
+                                            </li>
+                                            <li class="mb-2">
+                                                <i class="bi bi-arrow-right-short me-2"
+                                                    style="color: var(--suayed-color);"></i>
+                                                Titulación por ampliación y profundización de conocimientos en su
+                                                alternativa de cursos o diplomados de educación continua
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Inicio y Seguimiento del Trámite -->
                         <div class="card border-0 shadow-sm">
-                            <div class="card-header border-0 py-3"
+                            <div class="card-header border-0 py-3" id="titulacionSeguimientoHeader"
                                 style="background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);">
-                                <h4 class="fw-bold mb-0" style="color: var(--suayed-color);">
-                                    <i class="bi bi-clipboard-check-fill me-2"></i>
-                                    Inicio y Seguimiento del Trámite
-                                </h4>
+                                <button class="btn w-100 text-start p-0 border-0 bg-transparent" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#titulacionSeguimientoCollapse"
+                                    aria-expanded="true" aria-controls="titulacionSeguimientoCollapse">
+                                    <h4 class="fw-bold mb-0" style="color: var(--suayed-color);">
+                                        <i class="bi bi-clipboard-check-fill me-2"></i>
+                                        Inicio y Seguimiento del Trámite
+                                    </h4>
+                                </button>
                             </div>
-                            <div class="card-body p-4">
-                                <p class="mb-4">
-                                    El Sistema de seguimiento del proceso de titulación universitaria, es la plataforma
-                                    institucional de la UNAM que gestiona la Dirección General de Administración Escolar
-                                    (DGAE). El proceso incluye las siguientes etapas:
-                                </p>
+                            <div id="titulacionSeguimientoCollapse" class="collapse show"
+                                aria-labelledby="titulacionSeguimientoHeader">
+                                <div class="card-body p-4">
+                                    <p class="mb-4">
+                                        El Sistema de seguimiento del proceso de titulación universitaria, es la
+                                        plataforma
+                                        institucional de la UNAM que gestiona la Dirección General de Administración
+                                        Escolar
+                                        (DGAE). El proceso incluye las siguientes etapas:
+                                    </p>
 
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <div class="p-3 rounded-3 h-100" style="background-color: #fff5f5;">
-                                            <div class="d-flex align-items-center mb-2">
-                                                <div class="rounded-circle d-flex align-items-center justify-content-center me-2"
-                                                    style="width: 30px; height: 30px; background-color: var(--suayed-color); color: white; font-weight: bold; font-size: 0.8rem;">
-                                                    1
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <div class="p-3 rounded-3 h-100" style="background-color: #fff5f5;">
+                                                <div class="d-flex align-items-center mb-2">
+                                                    <div class="rounded-circle d-flex align-items-center justify-content-center me-2"
+                                                        style="width: 30px; height: 30px; background-color: var(--suayed-color); color: white; font-weight: bold; font-size: 0.8rem;">
+                                                        1
+                                                    </div>
+                                                    <span class="fw-semibold small">Registro de la solicitud</span>
                                                 </div>
-                                                <span class="fw-semibold small">Registro de la solicitud</span>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="col-md-6">
-                                        <div class="p-3 rounded-3 h-100" style="background-color: #fff5f5;">
-                                            <div class="d-flex align-items-center mb-2">
-                                                <div class="rounded-circle d-flex align-items-center justify-content-center me-2"
-                                                    style="width: 30px; height: 30px; background-color: var(--suayed-color); color: white; font-weight: bold; font-size: 0.8rem;">
-                                                    2
+                                        <div class="col-md-6">
+                                            <div class="p-3 rounded-3 h-100" style="background-color: #fff5f5;">
+                                                <div class="d-flex align-items-center mb-2">
+                                                    <div class="rounded-circle d-flex align-items-center justify-content-center me-2"
+                                                        style="width: 30px; height: 30px; background-color: var(--suayed-color); color: white; font-weight: bold; font-size: 0.8rem;">
+                                                        2
+                                                    </div>
+                                                    <span class="fw-semibold small">Aceptación de la solicitud</span>
                                                 </div>
-                                                <span class="fw-semibold small">Aceptación de la solicitud</span>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="col-md-6">
-                                        <div class="p-3 rounded-3 h-100" style="background-color: #fff5f5;">
-                                            <div class="d-flex align-items-center mb-2">
-                                                <div class="rounded-circle d-flex align-items-center justify-content-center me-2"
-                                                    style="width: 30px; height: 30px; background-color: var(--suayed-color); color: white; font-weight: bold; font-size: 0.8rem;">
-                                                    3
+                                        <div class="col-md-6">
+                                            <div class="p-3 rounded-3 h-100" style="background-color: #fff5f5;">
+                                                <div class="d-flex align-items-center mb-2">
+                                                    <div class="rounded-circle d-flex align-items-center justify-content-center me-2"
+                                                        style="width: 30px; height: 30px; background-color: var(--suayed-color); color: white; font-weight: bold; font-size: 0.8rem;">
+                                                        3
+                                                    </div>
+                                                    <span class="fw-semibold small">Aprobación, desarrollo y conclusión
+                                                        del
+                                                        trabajo académico</span>
                                                 </div>
-                                                <span class="fw-semibold small">Aprobación, desarrollo y conclusión del
-                                                    trabajo académico</span>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="col-md-6">
-                                        <div class="p-3 rounded-3 h-100" style="background-color: #fff5f5;">
-                                            <div class="d-flex align-items-center mb-2">
-                                                <div class="rounded-circle d-flex align-items-center justify-content-center me-2"
-                                                    style="width: 30px; height: 30px; background-color: var(--suayed-color); color: white; font-weight: bold; font-size: 0.8rem;">
-                                                    4
+                                        <div class="col-md-6">
+                                            <div class="p-3 rounded-3 h-100" style="background-color: #fff5f5;">
+                                                <div class="d-flex align-items-center mb-2">
+                                                    <div class="rounded-circle d-flex align-items-center justify-content-center me-2"
+                                                        style="width: 30px; height: 30px; background-color: var(--suayed-color); color: white; font-weight: bold; font-size: 0.8rem;">
+                                                        4
+                                                    </div>
+                                                    <span class="fw-semibold small">Entrega electrónica y física de
+                                                        documentos</span>
                                                 </div>
-                                                <span class="fw-semibold small">Entrega electrónica y física de
-                                                    documentos</span>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="col-md-6">
-                                        <div class="p-3 rounded-3 h-100" style="background-color: #fff5f5;">
-                                            <div class="d-flex align-items-center mb-2">
-                                                <div class="rounded-circle d-flex align-items-center justify-content-center me-2"
-                                                    style="width: 30px; height: 30px; background-color: var(--suayed-color); color: white; font-weight: bold; font-size: 0.8rem;">
-                                                    5
+                                        <div class="col-md-6">
+                                            <div class="p-3 rounded-3 h-100" style="background-color: #fff5f5;">
+                                                <div class="d-flex align-items-center mb-2">
+                                                    <div class="rounded-circle d-flex align-items-center justify-content-center me-2"
+                                                        style="width: 30px; height: 30px; background-color: var(--suayed-color); color: white; font-weight: bold; font-size: 0.8rem;">
+                                                        5
+                                                    </div>
+                                                    <span class="fw-semibold small">Incorporación del Acta de
+                                                        titulación</span>
                                                 </div>
-                                                <span class="fw-semibold small">Incorporación del Acta de
-                                                    titulación</span>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="col-md-6">
-                                        <div class="p-3 rounded-3 h-100" style="background-color: #fff5f5;">
-                                            <div class="d-flex align-items-center mb-2">
-                                                <div class="rounded-circle d-flex align-items-center justify-content-center me-2"
-                                                    style="width: 30px; height: 30px; background-color: var(--suayed-color); color: white; font-weight: bold; font-size: 0.8rem;">
-                                                    6
+                                        <div class="col-md-6">
+                                            <div class="p-3 rounded-3 h-100" style="background-color: #fff5f5;">
+                                                <div class="d-flex align-items-center mb-2">
+                                                    <div class="rounded-circle d-flex align-items-center justify-content-center me-2"
+                                                        style="width: 30px; height: 30px; background-color: var(--suayed-color); color: white; font-weight: bold; font-size: 0.8rem;">
+                                                        6
+                                                    </div>
+                                                    <span class="fw-semibold small">Integración de carpeta física</span>
                                                 </div>
-                                                <span class="fw-semibold small">Integración de carpeta física</span>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="col-md-6">
-                                        <div class="p-3 rounded-3 h-100" style="background-color: #fff5f5;">
-                                            <div class="d-flex align-items-center mb-2">
-                                                <div class="rounded-circle d-flex align-items-center justify-content-center me-2"
-                                                    style="width: 30px; height: 30px; background-color: var(--suayed-color); color: white; font-weight: bold; font-size: 0.8rem;">
-                                                    7
+                                        <div class="col-md-6">
+                                            <div class="p-3 rounded-3 h-100" style="background-color: #fff5f5;">
+                                                <div class="d-flex align-items-center mb-2">
+                                                    <div class="rounded-circle d-flex align-items-center justify-content-center me-2"
+                                                        style="width: 30px; height: 30px; background-color: var(--suayed-color); color: white; font-weight: bold; font-size: 0.8rem;">
+                                                        7
+                                                    </div>
+                                                    <span class="fw-semibold small">Entrega de carpeta física a la
+                                                        DGAE</span>
                                                 </div>
-                                                <span class="fw-semibold small">Entrega de carpeta física a la
-                                                    DGAE</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
+                        <br>
                         <!-- Reglas de Operación -->
                         <div class="card border-0 shadow-sm">
-                            <div class="card-header border-0 py-3"
+                            <div class="card-header border-0 py-3" id="titulacionReglasHeader"
                                 style="background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);">
-                                <h4 class="fw-bold mb-0" style="color: var(--suayed-color);">
-                                    <i class="bi bi-journal-text me-2"></i>
-                                    Reglas de Operación para la Titulación
-                                </h4>
+                                <button class="btn w-100 text-start p-0 border-0 bg-transparent" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#titulacionReglasCollapse"
+                                    aria-expanded="true" aria-controls="titulacionReglasCollapse">
+                                    <h4 class="fw-bold mb-0" style="color: var(--suayed-color);">
+                                        <i class="bi bi-journal-text me-2"></i>
+                                        Reglas de Operación para la Titulación
+                                    </h4>
+                                </button>
                             </div>
-                            <div class="card-body p-4">
-                                <p class="mb-4">
-                                    De acuerdo con los Lineamientos Internos (LITL FES Aragón), este documento establece
-                                    las modalidades y opciones vigentes para que la comunidad egresada de la Licenciatura
-                                    en Derecho (SUAyED) obtenga su título profesional.
-                                </p>
-                                <a href="https://www.aragon.unam.mx/fes-aragon/public_html/documents/titulacion/suayed-derecho/reglas-de-operacion.pdf" target="_blank"
-                                    class="btn btn-outline-danger">
-                                    <i class="bi bi-file-earmark-pdf-fill me-2"></i>
-                                    Consulta las reglas aquí
-                                </a>
+                            <div id="titulacionReglasCollapse" class="collapse show"
+                                aria-labelledby="titulacionReglasHeader">
+                                <div class="card-body p-4">
+                                    <p class="mb-4">
+                                        De acuerdo con los Lineamientos Internos (LITL FES Aragón), este documento
+                                        establece
+                                        las modalidades y opciones vigentes para que la comunidad egresada de la
+                                        Licenciatura
+                                        en Derecho (SUAyED) obtenga su título profesional.
+                                    </p>
+                                    <a href="https://www.aragon.unam.mx/fes-aragon/public_html/documents/titulacion/suayed-derecho/reglas-de-operacion.pdf"
+                                        target="_blank" class="btn btn-outline-danger">
+                                        <i class="bi bi-file-earmark-pdf-fill me-2"></i>
+                                        Consulta las reglas aquí
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -986,7 +1024,7 @@
             background-color: rgba(37, 37, 48, 0.88);
         }
 
-        .parallax-section > .container {
+        .parallax-section>.container {
             position: relative;
             z-index: 1;
         }
