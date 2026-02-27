@@ -502,14 +502,22 @@
                                         </h5>
                                         <ul class="list-unstyled ms-4">
                                             <li class="mb-2">
-                                                <i class="bi bi-arrow-right-short me-2"
-                                                    style="color: var(--suayed-color);"></i>
-                                                Titulación mediante tesis o tesina y examen profesional
+                                                <button type="button"
+                                                    class="btn btn-link p-0 text-start text-decoration-none fw-semibold"
+                                                    style="color: var(--suayed-color);"
+                                                    data-bs-toggle="modal" data-bs-target="#modalTesisTesina">
+                                                    <i class="bi bi-arrow-right-circle-fill me-2"></i>
+                                                    Titulación mediante tesis o tesina y examen profesional
+                                                </button>
                                             </li>
                                             <li class="mb-2">
-                                                <i class="bi bi-arrow-right-short me-2"
-                                                    style="color: var(--suayed-color);"></i>
-                                                Titulación por seminario de tesis o tesina
+                                                <button type="button"
+                                                    class="btn btn-link p-0 text-start text-decoration-none fw-semibold"
+                                                    style="color: var(--suayed-color);"
+                                                    data-bs-toggle="modal" data-bs-target="#modalSeminarioTesis">
+                                                    <i class="bi bi-arrow-right-circle-fill me-2"></i>
+                                                    Titulación por seminario de tesis o tesina
+                                                </button>
                                             </li>
                                         </ul>
                                     </div>
@@ -524,9 +532,13 @@
                                         </h5>
                                         <ul class="list-unstyled ms-4">
                                             <li class="mb-2">
-                                                <i class="bi bi-arrow-right-short me-2"
-                                                    style="color: var(--suayed-color);"></i>
-                                                Titulación por trabajo profesional
+                                                <button type="button"
+                                                    class="btn btn-link p-0 text-start text-decoration-none fw-semibold"
+                                                    style="color: var(--suayed-color);"
+                                                    data-bs-toggle="modal" data-bs-target="#modalTrabajoProfesional">
+                                                    <i class="bi bi-arrow-right-circle-fill me-2"></i>
+                                                    Titulación por trabajo profesional
+                                                </button>
                                             </li>
                                         </ul>
                                     </div>
@@ -541,20 +553,32 @@
                                         </h5>
                                         <ul class="list-unstyled ms-4">
                                             <li class="mb-2">
-                                                <i class="bi bi-arrow-right-short me-2"
-                                                    style="color: var(--suayed-color);"></i>
-                                                Titulación por totalidad de créditos y alto nivel académico
+                                                <button type="button"
+                                                    class="btn btn-link p-0 text-start text-decoration-none fw-semibold"
+                                                    style="color: var(--suayed-color);"
+                                                    data-bs-toggle="modal" data-bs-target="#modalTotalidadCreditos">
+                                                    <i class="bi bi-arrow-right-circle-fill me-2"></i>
+                                                    Titulación por totalidad de créditos y alto nivel académico
+                                                </button>
                                             </li>
                                             <li class="mb-2">
-                                                <i class="bi bi-arrow-right-short me-2"
-                                                    style="color: var(--suayed-color);"></i>
-                                                Titulación mediante estudios en posgrado
+                                                <button type="button"
+                                                    class="btn btn-link p-0 text-start text-decoration-none fw-semibold"
+                                                    style="color: var(--suayed-color);"
+                                                    data-bs-toggle="modal" data-bs-target="#modalEstudiosPosgrado">
+                                                    <i class="bi bi-arrow-right-circle-fill me-2"></i>
+                                                    Titulación mediante estudios en posgrado
+                                                </button>
                                             </li>
                                             <li class="mb-2">
-                                                <i class="bi bi-arrow-right-short me-2"
-                                                    style="color: var(--suayed-color);"></i>
-                                                Titulación por ampliación y profundización de conocimientos en su
-                                                alternativa de cursos o diplomados de educación continua
+                                                <button type="button"
+                                                    class="btn btn-link p-0 text-start text-decoration-none fw-semibold"
+                                                    style="color: var(--suayed-color);"
+                                                    data-bs-toggle="modal" data-bs-target="#modalAmpliacionConocimientos">
+                                                    <i class="bi bi-arrow-right-circle-fill me-2"></i>
+                                                    Titulación por ampliación y profundización de conocimientos en su
+                                                    alternativa de cursos o diplomados de educación continua
+                                                </button>
                                             </li>
                                         </ul>
                                     </div>
@@ -899,6 +923,226 @@
                             style="background-color: var(--cle-color); color: white;">
                             <i class="bi bi-box-arrow-up-right me-2"></i> Ir al CLE
                         </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════════════ -->
+        <!-- MODALES DE MODALIDADES DE TITULACIÓN                       -->
+        <!-- ══════════════════════════════════════════════════════════ -->
+
+        <!-- Modal: Tesis o Tesina y Examen Profesional -->
+        <div class="modal fade" id="modalTesisTesina" tabindex="-1" aria-labelledby="modalTesisTesinaLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header" style="background: linear-gradient(135deg, var(--suayed-color) 0%, #c63437 100%); color: white;">
+                        <h5 class="modal-title" id="modalTesisTesinaLabel">
+                            <i class="bi bi-journal-text me-2"></i>
+                            Tesis o Tesina y Examen Profesional
+                        </h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body p-4">
+                        <p class="mb-3">Esta modalidad consiste en la elaboración de un trabajo escrito original (tesis o tesina) sobre un tema jurídico, seguido de un examen profesional oral ante un jurado designado por la Facultad.</p>
+                        <h6 class="fw-bold mb-2" style="color: var(--suayed-color);">Requisitos específicos</h6>
+                        <ul class="mb-3">
+                            <li>Haber cubierto el 100% de los créditos del plan de estudios.</li>
+                            <li>Contar con la aprobación de tema y director de tesis/tesina.</li>
+                            <li>Presentar y defender el trabajo ante el jurado calificador.</li>
+                        </ul>
+                        <h6 class="fw-bold mb-2" style="color: var(--suayed-color);">Documentos de consulta</h6>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="#" class="btn btn-outline-danger btn-sm">
+                                <i class="bi bi-file-earmark-pdf-fill me-1"></i> Lineamientos para tesis
+                            </a>
+                            <a href="#" class="btn btn-outline-danger btn-sm">
+                                <i class="bi bi-file-earmark-pdf-fill me-1"></i> Formato de solicitud
+                            </a>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal: Seminario de Tesis o Tesina -->
+        <div class="modal fade" id="modalSeminarioTesis" tabindex="-1" aria-labelledby="modalSeminarioTesisLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header" style="background: linear-gradient(135deg, var(--suayed-color) 0%, #c63437 100%); color: white;">
+                        <h5 class="modal-title" id="modalSeminarioTesisLabel">
+                            <i class="bi bi-people-fill me-2"></i>
+                            Seminario de Tesis o Tesina
+                        </h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body p-4">
+                        <p class="mb-3">En esta modalidad, el egresado elabora su tesis o tesina bajo la guía de un seminario temático organizado por la Facultad, con sesiones de retroalimentación colectiva entre pares y asesores.</p>
+                        <h6 class="fw-bold mb-2" style="color: var(--suayed-color);">Requisitos específicos</h6>
+                        <ul class="mb-3">
+                            <li>Inscribirse y acreditar el seminario correspondiente.</li>
+                            <li>Presentar avances periódicos ante el grupo del seminario.</li>
+                            <li>Entregar la versión final aprobada por el coordinador del seminario.</li>
+                        </ul>
+                        <h6 class="fw-bold mb-2" style="color: var(--suayed-color);">Documentos de consulta</h6>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="#" class="btn btn-outline-danger btn-sm">
+                                <i class="bi bi-file-earmark-pdf-fill me-1"></i> Convocatoria de seminarios
+                            </a>
+                            <a href="#" class="btn btn-outline-danger btn-sm">
+                                <i class="bi bi-file-earmark-pdf-fill me-1"></i> Formato de inscripción
+                            </a>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal: Trabajo Profesional -->
+        <div class="modal fade" id="modalTrabajoProfesional" tabindex="-1" aria-labelledby="modalTrabajoProfesionalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header" style="background: linear-gradient(135deg, var(--suayed-color) 0%, #c63437 100%); color: white;">
+                        <h5 class="modal-title" id="modalTrabajoProfesionalLabel">
+                            <i class="bi bi-briefcase-fill me-2"></i>
+                            Trabajo Profesional
+                        </h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body p-4">
+                        <p class="mb-3">Esta opción permite titularse mediante un informe escrito que documenta y analiza la experiencia laboral del egresado en el campo jurídico. No requiere réplica oral ante jurado.</p>
+                        <h6 class="fw-bold mb-2" style="color: var(--suayed-color);">Requisitos específicos</h6>
+                        <ul class="mb-3">
+                            <li>Acreditar experiencia profesional mínima de un año en el área jurídica.</li>
+                            <li>Elaborar un informe escrito que vincule la práctica con la teoría jurídica.</li>
+                            <li>Obtener el visto bueno del tutor o asesor asignado.</li>
+                        </ul>
+                        <h6 class="fw-bold mb-2" style="color: var(--suayed-color);">Documentos de consulta</h6>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="#" class="btn btn-outline-danger btn-sm">
+                                <i class="bi bi-file-earmark-pdf-fill me-1"></i> Guía para informe profesional
+                            </a>
+                            <a href="#" class="btn btn-outline-danger btn-sm">
+                                <i class="bi bi-file-earmark-pdf-fill me-1"></i> Formato de solicitud
+                            </a>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal: Totalidad de Créditos y Alto Nivel Académico -->
+        <div class="modal fade" id="modalTotalidadCreditos" tabindex="-1" aria-labelledby="modalTotalidadCreditosLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header" style="background: linear-gradient(135deg, var(--suayed-color) 0%, #c63437 100%); color: white;">
+                        <h5 class="modal-title" id="modalTotalidadCreditosLabel">
+                            <i class="bi bi-award-fill me-2"></i>
+                            Totalidad de Créditos y Alto Nivel Académico
+                        </h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body p-4">
+                        <p class="mb-3">Modalidad destinada a egresados con desempeño académico sobresaliente. Se titula quien haya cubierto la totalidad de créditos con un promedio mínimo de 9.0 (o el establecido en las reglas vigentes) sin materias reprobadas.</p>
+                        <h6 class="fw-bold mb-2" style="color: var(--suayed-color);">Requisitos específicos</h6>
+                        <ul class="mb-3">
+                            <li>Haber aprobado el 100% de los créditos en primera oportunidad.</li>
+                            <li>Obtener un promedio mínimo de 9.0 en el plan de estudios.</li>
+                            <li>No tener materias no acreditadas ni en calidad de oyente.</li>
+                        </ul>
+                        <h6 class="fw-bold mb-2" style="color: var(--suayed-color);">Documentos de consulta</h6>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="#" class="btn btn-outline-danger btn-sm">
+                                <i class="bi bi-file-earmark-pdf-fill me-1"></i> Requisitos detallados
+                            </a>
+                            <a href="#" class="btn btn-outline-danger btn-sm">
+                                <i class="bi bi-file-earmark-pdf-fill me-1"></i> Formato de solicitud
+                            </a>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal: Estudios en Posgrado -->
+        <div class="modal fade" id="modalEstudiosPosgrado" tabindex="-1" aria-labelledby="modalEstudiosPosgradoLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header" style="background: linear-gradient(135deg, var(--suayed-color) 0%, #c63437 100%); color: white;">
+                        <h5 class="modal-title" id="modalEstudiosPosgradoLabel">
+                            <i class="bi bi-mortarboard-fill me-2"></i>
+                            Titulación mediante Estudios en Posgrado
+                        </h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body p-4">
+                        <p class="mb-3">Esta modalidad permite obtener el título de licenciatura al egresado que haya sido aceptado y cursado al menos un semestre en un programa de posgrado (especialización, maestría o doctorado) reconocido por la UNAM.</p>
+                        <h6 class="fw-bold mb-2" style="color: var(--suayed-color);">Requisitos específicos</h6>
+                        <ul class="mb-3">
+                            <li>Haber sido admitido en un programa de posgrado reconocido.</li>
+                            <li>Acreditar al menos un semestre de estudios de posgrado.</li>
+                            <li>Presentar la constancia de estudios del posgrado correspondiente.</li>
+                        </ul>
+                        <h6 class="fw-bold mb-2" style="color: var(--suayed-color);">Documentos de consulta</h6>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="#" class="btn btn-outline-danger btn-sm">
+                                <i class="bi bi-file-earmark-pdf-fill me-1"></i> Lineamientos de posgrado
+                            </a>
+                            <a href="#" class="btn btn-outline-danger btn-sm">
+                                <i class="bi bi-file-earmark-pdf-fill me-1"></i> Formato de solicitud
+                            </a>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal: Ampliación y Profundización de Conocimientos -->
+        <div class="modal fade" id="modalAmpliacionConocimientos" tabindex="-1" aria-labelledby="modalAmpliacionConocimientosLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header" style="background: linear-gradient(135deg, var(--suayed-color) 0%, #c63437 100%); color: white;">
+                        <h5 class="modal-title" id="modalAmpliacionConocimientosLabel">
+                            <i class="bi bi-book-fill me-2"></i>
+                            Ampliación y Profundización de Conocimientos
+                        </h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body p-4">
+                        <p class="mb-3">Modalidad que permite titularse mediante la acreditación de cursos o diplomados de educación continua reconocidos por la Facultad, orientados a la actualización y profundización en áreas del Derecho.</p>
+                        <h6 class="fw-bold mb-2" style="color: var(--suayed-color);">Requisitos específicos</h6>
+                        <ul class="mb-3">
+                            <li>Acreditar los cursos o diplomados señalados en las Reglas de Operación vigentes.</li>
+                            <li>Obtener una calificación mínima aprobatoria en cada módulo.</li>
+                            <li>Presentar constancias emitidas por la institución organizadora.</li>
+                        </ul>
+                        <h6 class="fw-bold mb-2" style="color: var(--suayed-color);">Documentos de consulta</h6>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="#" class="btn btn-outline-danger btn-sm">
+                                <i class="bi bi-file-earmark-pdf-fill me-1"></i> Oferta de cursos y diplomados
+                            </a>
+                            <a href="#" class="btn btn-outline-danger btn-sm">
+                                <i class="bi bi-file-earmark-pdf-fill me-1"></i> Formato de solicitud
+                            </a>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                     </div>
                 </div>
             </div>
