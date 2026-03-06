@@ -24,6 +24,11 @@
 </head>
 
 <body class="landing-page">
+    <!-- Facebook SDK -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v24.0"></script>
+
     <header>
         <!-- Navbar principal -->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
@@ -378,7 +383,7 @@
                             style="transition: all 0.4s ease; overflow: hidden; border-radius: 1rem;">
                             <div class="py-4"
                                 style="background: linear-gradient(135deg, var(--edco-color) 0%, #2d7a62 100%);">
-                                <i class="bi bi-building-fill text-white" style="font-size: 3rem;"></i>
+                                <i class="bi bi-building text-white" style="font-size: 3rem;"></i>
                             </div>
                             <div class="card-body p-4">
                                 <h5 class="fw-bold mb-3" style="color: var(--edco-color);">Presencial</h5>
@@ -429,7 +434,7 @@
                             style="transition: all 0.4s ease; overflow: hidden; border-radius: 1rem;">
                             <div class="py-4"
                                 style="background: linear-gradient(135deg, #2d7a62 0%, var(--edco-color) 100%);">
-                                <i class="bi bi-person-workspace text-white" style="font-size: 3rem;"></i>
+                                <i class="bi bi-flag-fill text-white" style="font-size: 3rem;"></i>
                             </div>
                             <div class="card-body p-4">
                                 <h5 class="fw-bold mb-3" style="color: var(--edco-color);">Autogestivo</h5>
@@ -751,6 +756,39 @@
                 </div>
             </div>
         </div>
+
+        <!-- Sección: Síguenos en Facebook -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 text-center">
+                        <h2 class="fw-bold mb-3" style="color: var(--edco-color);">
+                            <i class="bi bi-facebook me-2"></i>
+                            Mantente Conectado con EDCO
+                        </h2>
+                        <p class="text-muted mb-5">
+                            Síguenos en Facebook para estar al día con noticias, eventos, convocatorias y todo lo
+                            relacionado con Educación Continua FES Aragón
+                        </p>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-md-10">
+                        <div class="card border-0 shadow-lg"
+                            style="border-top: 4px solid var(--edco-color) !important; border-radius: 15px; overflow: hidden;">
+                            <div class="card-body p-0" style="display:flex; justify-content:center; overflow:hidden;">
+                                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FFESAragon.educacioncontinua%3Flocale%3Des_LA&tabs=timeline&width=500&height=1000&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                                    width="500" height="1000"
+                                    style="border:none;overflow:hidden;display:block;"
+                                    scrolling="no" frameborder="0" allowfullscreen="true"
+                                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Modal CLE -->
         <div class="modal fade" id="modalCle" tabindex="-1" aria-labelledby="modalCleLabel" aria-hidden="true">
