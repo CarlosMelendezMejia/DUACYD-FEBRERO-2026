@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Sección en desarrollo de la DUACyD FES Aragón; pronto encontrarás información y recursos actualizados.">
-    <meta name="keywords" content="página en construcción, DUACyD, UNAM, FES Aragón, próximamente">
-    <title>Página en Construcción | DUACyD FES Aragón</title>
+        content="Centro de Lenguas de la FES Aragón — Aprende inglés, francés, alemán, italiano, japonés, portugués, ruso y latín con el respaldo académico de la UNAM.">
+    <meta name="keywords" content="Centro de Lenguas, CLe, idiomas, UNAM, FES Aragón, inglés, francés, alemán, japonés, cursos, exámenes">
+    <title>CLe — Centro de Lenguas | DUACyD FES Aragón</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
@@ -17,13 +17,327 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/flip-cards.css">
     <link rel="icon" href="resources/DUACyD_B-09.ico" type="image/x-icon">
 
+    <style>
+        /* ── Advisory cards (patrón SUAYED) ── */
+        .advisory-card {
+            background: #f8f9fa;
+            border: 1px solid rgba(0, 41, 107, 0.08);
+            transition: all 0.3s ease;
+        }
+        .advisory-card:hover {
+            background: rgba(0, 41, 107, 0.04);
+            border-color: var(--cle-color);
+            transform: translateX(4px);
+        }
+        .advisory-desc {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        .advisory-card:hover .advisory-desc {
+            max-height: 200px;
+        }
+
+        /* ── Hero CLe ── */
+        .cle-hero {
+            position: relative;
+            min-height: 75vh;
+            background: linear-gradient(135deg, #000d2e 0%, #00296b 60%, #003f88 100%);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+        .cle-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('resources/banner_cle.jpg') center/cover no-repeat;
+            opacity: 0.25;
+            z-index: 0;
+        }
+        .cle-hero-pattern {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .cle-float-letter {
+            position: absolute;
+            font-weight: 900;
+            color: var(--cle-color);
+            opacity: 0.065;
+            line-height: 1;
+            user-select: none;
+            font-size: clamp(5rem, 9vw, 11rem);
+        }
+        .cle-hero .container { z-index: 2; }
+
+        /* ── Stat cards ── */
+        .cle-stat-card {
+            border-radius: var(--border-radius);
+            padding: 1.5rem 1rem;
+            text-align: center;
+            background: #fff;
+            box-shadow: 0 2px 14px rgba(0, 0, 0, 0.07);
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                        box-shadow 0.35s ease;
+        }
+        .cle-stat-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 32px rgba(0, 41, 107, 0.14);
+        }
+        .cle-stat-num {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+        .cle-stat-num span { color: var(--cle-color); }
+        .cle-stat-label {
+            font-size: 0.8rem;
+            color: #6c757d;
+            margin-top: 0.4rem;
+        }
+
+        /* ── Language cards ── */
+        .cle-lang-card {
+            border: none;
+            border-radius: var(--border-radius);
+            background: #fff;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                        box-shadow 0.35s ease;
+            overflow: hidden;
+        }
+        .cle-lang-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 41, 107, 0.15);
+        }
+        .cle-lang-card .lang-top {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--tertiary-color) 100%);
+            padding: 1.4rem 1rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cle-lang-card .lang-top::after {
+            content: '';
+            position: absolute;
+            width: 80px; height: 80px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.07);
+            bottom: -30px; right: -20px;
+        }
+        .cle-lang-card .lang-flag { font-size: 3rem; line-height: 1; }
+        .cle-lang-card .lang-body { padding: 0.85rem 0.75rem 1rem; text-align: center; }
+        .cle-lang-card .lang-name {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--primary-color);
+            margin-bottom: 0.45rem;
+        }
+        .lang-badge {
+            font-size: 0.68rem;
+            padding: 0.18rem 0.55rem;
+            border-radius: 100px;
+            display: inline-block;
+            margin: 0.1rem;
+        }
+
+        /* ── Tab pills CLe ── */
+        .cle-nav-pills .nav-link {
+            color: var(--primary-color) !important;
+            background: rgba(0, 41, 107, 0.07);
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            padding: 0.5rem 1.35rem;
+            transition: all 0.3s ease;
+        }
+        .cle-nav-pills .nav-link:hover {
+            background: rgba(0, 41, 107, 0.13);
+            transform: none !important;
+        }
+        .cle-nav-pills .nav-link:hover::after { display: none !important; }
+        .cle-nav-pills .nav-link.active {
+            background: var(--primary-color) !important;
+            color: #fff !important;
+            box-shadow: 0 4px 16px rgba(0, 41, 107, 0.28);
+        }
+        .cle-nav-pills .nav-link::after { display: none !important; }
+
+        /* ── Note / alert boxes ── */
+        .cle-note {
+            border-left: 4px solid var(--cle-color);
+            background: rgba(249, 199, 79, 0.09);
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            padding: 0.85rem 1.2rem;
+            font-size: 0.87rem;
+        }
+        .cle-note-primary {
+            border-left-color: var(--primary-color);
+            background: rgba(0, 41, 107, 0.05);
+        }
+
+        /* ── Exam cards ── */
+        .cle-exam-card {
+            border: none;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                        box-shadow 0.35s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .cle-exam-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 22px 44px rgba(0, 41, 107, 0.16);
+        }
+        .cle-exam-card .exam-header {
+            padding: 2rem 1.5rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #001a4d 100%);
+            color: #fff;
+            text-align: center;
+        }
+        .cle-exam-card .exam-header i {
+            font-size: 2.8rem;
+            margin-bottom: 0.75rem;
+            display: block;
+            color: var(--cle-color);
+        }
+        .cle-exam-card .exam-body {
+            padding: 1.5rem;
+            background: #fff;
+            flex: 1;
+        }
+
+        /* ── Calendar table ── */
+        .cle-calendar-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 0.35rem;
+        }
+        .cle-calendar-table thead th {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 0.7rem 1rem;
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+        .cle-calendar-table thead th:first-child { border-radius: 8px 0 0 8px; }
+        .cle-calendar-table thead th:last-child  { border-radius: 0 8px 8px 0; }
+        .cle-calendar-table tbody tr td {
+            background: #fff;
+            padding: 0.65rem 1rem;
+            font-size: 0.87rem;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+        }
+        .cle-calendar-table tbody tr td:first-child {
+            border-radius: 8px 0 0 8px;
+            font-weight: 600;
+            color: var(--primary-color);
+            min-width: 140px;
+        }
+        .cle-calendar-table tbody tr td:last-child { border-radius: 0 8px 8px 0; }
+        .cle-calendar-table tbody tr:hover td { background: #f0f5fb; }
+        .cle-cal-highlight td {
+            background: rgba(0, 41, 107, 0.04) !important;
+            border-left: 3px solid var(--cle-color);
+        }
+        .cle-cal-highlight td:last-child { border-left: none; }
+
+        /* ── Aportaciones / titulación tables ── */
+        .cle-table th {
+            background-color: var(--primary-color);
+            color: #fff;
+            font-size: 0.79rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+        }
+        .cle-table td { font-size: 0.87rem; vertical-align: middle; }
+        .cle-table tbody tr:hover { background-color: #f0f5fb; }
+
+        /* ── Accordion CLe ── */
+        .cle-accordion .accordion-button {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        .cle-accordion .accordion-button:not(.collapsed) {
+            background-color: var(--primary-color);
+            color: #fff;
+            box-shadow: none;
+        }
+        .cle-accordion .accordion-button:not(.collapsed)::after {
+            filter: brightness(10);
+        }
+        .cle-accordion .accordion-button:focus { box-shadow: none; }
+
+        /* ── Vuelta cards ── */
+        .vuelta-card {
+            border: none;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+        }
+        .vuelta-card .vuelta-header {
+            padding: 0.7rem 1.2rem;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        /* ── CTA ── */
+        .cle-cta {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #000d2e 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .cle-cta::before, .cle-cta::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.04);
+            pointer-events: none;
+        }
+        .cle-cta::before { width: 420px; height: 420px; top: -150px; left: -100px; }
+        .cle-cta::after  { width: 320px; height: 320px; bottom: -100px; right: -80px; }
+
+        /* ── Section accent separator ── */
+        .cle-sep {
+            display: block;
+            width: 56px; height: 4px;
+            background: var(--cle-color);
+            border-radius: 2px;
+        }
+        .cle-sep.mx-auto { margin: 0.6rem auto 0; }
+        .cle-sep.align-start { margin: 0.6rem 0 0; }
+
+        /* ── lp-title-wrap color override for CLe ── */
+        .cle-title-wrap::after {
+            background: var(--cle-color) !important;
+        }
+
+        @media (max-width: 768px) {
+            .cle-hero { min-height: 60vh; }
+            .cle-stat-num { font-size: 2rem; }
+            .cle-float-letter { opacity: 0.04; }
+        }
+    </style>
 </head>
 
 <body class="landing-page">
+
     <header>
-        <!-- Navbar principal -->
+        <!-- ══════════════════════════════════════
+             NAVBAR — idéntica al resto del sitio
+        ══════════════════════════════════════ -->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
             <div class="container">
                 <div class="logo-container d-flex align-items-center gap-4 me-4">
@@ -85,83 +399,1135 @@
     </header>
 
     <main>
-        
-        
 
-        <!-- Botones flotantes -->
+        <!-- ══════════════════════════════════════
+             1. HERO
+        ══════════════════════════════════════ -->
+        <section class="cle-hero">
+            <!-- Letras decorativas flotantes -->
+            <div class="cle-hero-pattern">
+                <span class="cle-float-letter" style="top:6%;left:2%;">A</span>
+                <span class="cle-float-letter" style="top:55%;left:0.5%;font-size:7rem;">語</span>
+                <span class="cle-float-letter" style="top:12%;right:3%;">Б</span>
+                <span class="cle-float-letter" style="top:58%;right:1.5%;font-size:8rem;">Ω</span>
+                <span class="cle-float-letter" style="bottom:8%;left:22%;font-size:6rem;">C</span>
+                <span class="cle-float-letter" style="top:28%;right:19%;font-size:5rem;">文</span>
+                <span class="cle-float-letter" style="top:72%;left:42%;font-size:6rem;">α</span>
+                <span class="cle-float-letter" style="top:8%;left:52%;font-size:7rem;">Z</span>
+            </div>
+
+            <div class="container position-relative text-white">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <span class="lp-section-label on-dark hero-animate hero-animate-1">
+                            DUACyD · FES Aragón · UNAM
+                        </span>
+                        <h1 class="display-4 fw-bold mt-2 hero-animate hero-animate-2" style="letter-spacing:-0.02em;">
+                            Centro de Lenguas
+                            <span class="hero-title-accent"></span>
+                        </h1>
+                        <h2 class="fw-semibold hero-animate hero-animate-3" style="color:var(--cle-color);">
+                            Abre tu mundo con un nuevo idioma
+                        </h2>
+                        <p class="mt-3 fs-5 text-white-50 d-none d-lg-block hero-animate hero-animate-4">
+                            Desde 1977, formando hablantes de 8 idiomas con el respaldo académico de la UNAM.
+                        </p>
+                        <div class="d-flex flex-wrap gap-3 mt-4 hero-animate hero-animate-4">
+                            <a href="#cursos"
+                                class="btn fw-semibold px-4 py-2"
+                                style="background:var(--cle-color);color:var(--primary-color);border-radius:100px;">
+                                <i class="bi bi-book-fill me-2"></i>Ver cursos
+                            </a>
+                            <a href="#calendario"
+                                class="btn btn-outline-light fw-semibold px-4 py-2"
+                                style="border-radius:100px;">
+                                <i class="bi bi-calendar3 me-2"></i>Calendario 2026-2
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ══════════════════════════════════════
+             2. ¿QUÉ ES EL CLe? / HISTORIA
+        ══════════════════════════════════════ -->
+        <section class="py-5 bg-light" id="que-es">
+            <div class="container">
+                <div class="row align-items-center g-5">
+
+                    <!-- Texto -->
+                    <div class="col-lg-7 reveal">
+                        <span class="lp-section-label">Nuestra Historia</span>
+                        <div class="lp-title-wrap cle-title-wrap align-start mt-2">
+                            <h2 class="fw-bold" style="color:var(--primary-color);">¿Qué es el Centro de Lenguas?</h2>
+                        </div>
+                        <p class="custom-text-justify text-secondary mt-3">
+                            El Centro de Lenguas de la Facultad de Estudios Superiores Aragón inició sus funciones en
+                            <strong>noviembre de 1977</strong> para responder a las necesidades requeridas en los planes
+                            de estudio de cuatro de las diez carreras con las que inició esta dependencia.
+                        </p>
+                        <p class="custom-text-justify text-secondary">
+                            Inglés y Francés en Comprensión de Lectura y Lengua son los primeros idiomas con los que inicia
+                            la impartición de cursos el Centro de Lenguas. En la actualidad se imparten
+                            <strong>ocho idiomas: Inglés, Francés, Italiano, Portugués, Japonés, Alemán, Ruso y Latín.</strong>
+                        </p>
+                        <p class="custom-text-justify text-secondary">
+                            La difusión de la cultura es uno de los rubros contemplados por los Centros de Lenguas de la UNAM,
+                            y para cumplir con este propósito el CLe Aragón organiza diversos eventos académicos, culturales,
+                            de intercambio, exposiciones, conferencias, muestras de cine-debate y talleres, con el apoyo de
+                            embajadas y representaciones culturales.
+                        </p>
+                        <p class="custom-text-justify text-secondary mb-0">
+                            A partir del <strong>16 de octubre de 2017</strong>, el Centro de Lenguas Aragón forma parte de
+                            la División de Universidad Abierta, Continua y a Distancia (DUACyD).
+                        </p>
+                    </div>
+
+                    <!-- Stats + nota -->
+                    <div class="col-lg-5 reveal reveal-delay-2">
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="cle-stat-card">
+                                    <div class="cle-stat-num">19<span>77</span></div>
+                                    <div class="cle-stat-label">Año de fundación</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="cle-stat-card">
+                                    <div class="cle-stat-num"><span>8</span></div>
+                                    <div class="cle-stat-label">Idiomas disponibles</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="cle-stat-card">
+                                    <div class="cle-stat-num"><span>58</span></div>
+                                    <div class="cle-stat-label">Profesores en plantilla</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="cle-stat-card">
+                                    <div class="cle-stat-num">6<span>k</span></div>
+                                    <div class="cle-stat-label">Alumnos por semestre</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cle-note mt-3">
+                            <i class="bi bi-patch-check-fill me-2" style="color:var(--cle-color);"></i>
+                            <strong>Convenios institucionales</strong> con el IFAL, Instituto Goethe, Asociación
+                            Dante Alighieri y la Embajada Rusa, entre otros.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ══════════════════════════════════════
+             3. IDIOMAS
+        ══════════════════════════════════════ -->
+        <section class="py-5 bg-white" id="idiomas">
+            <div class="container">
+                <div class="text-center mb-5 reveal">
+                    <span class="lp-section-label">Oferta Académica</span>
+                    <div class="lp-title-wrap cle-title-wrap mt-2">
+                        <h2 class="fw-bold" style="color:var(--primary-color);">Idiomas que Ofrecemos</h2>
+                    </div>
+                    <p class="text-muted mt-2">Elige el idioma que quieres aprender y descubre las modalidades disponibles</p>
+                </div>
+
+                <div class="row g-4 justify-content-center">
+                    <!-- Alemán -->
+                    <div class="col-6 col-md-4 col-lg-3 reveal reveal-delay-1">
+                        <div class="cle-lang-card">
+                            <div class="lang-top"><div class="lang-flag">🇩🇪</div></div>
+                            <div class="lang-body">
+                                <div class="lang-name">Alemán</div>
+                                <span class="lang-badge text-white" style="background:var(--primary-color);">Lengua · 6 niv.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Francés -->
+                    <div class="col-6 col-md-4 col-lg-3 reveal reveal-delay-1">
+                        <div class="cle-lang-card">
+                            <div class="lang-top"><div class="lang-flag">🇫🇷</div></div>
+                            <div class="lang-body">
+                                <div class="lang-name">Francés</div>
+                                <span class="lang-badge text-white" style="background:var(--primary-color);">Lengua · 6 niv.</span>
+                                <span class="lang-badge" style="background:var(--cle-color);color:var(--primary-color);">C.L. · 2 niv.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Inglés -->
+                    <div class="col-6 col-md-4 col-lg-3 reveal reveal-delay-2">
+                        <div class="cle-lang-card">
+                            <div class="lang-top"><div class="lang-flag">🇬🇧</div></div>
+                            <div class="lang-body">
+                                <div class="lang-name">Inglés</div>
+                                <span class="lang-badge text-white" style="background:var(--primary-color);">Lengua · 6 niv.</span>
+                                <span class="lang-badge" style="background:var(--cle-color);color:var(--primary-color);">C.L. · 3 niv.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Italiano -->
+                    <div class="col-6 col-md-4 col-lg-3 reveal reveal-delay-2">
+                        <div class="cle-lang-card">
+                            <div class="lang-top"><div class="lang-flag">🇮🇹</div></div>
+                            <div class="lang-body">
+                                <div class="lang-name">Italiano</div>
+                                <span class="lang-badge text-white" style="background:var(--primary-color);">Lengua · 6 niv.</span>
+                                <span class="lang-badge" style="background:var(--cle-color);color:var(--primary-color);">C.L. · 2 niv.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Japonés -->
+                    <div class="col-6 col-md-4 col-lg-3 reveal reveal-delay-3">
+                        <div class="cle-lang-card">
+                            <div class="lang-top"><div class="lang-flag">🇯🇵</div></div>
+                            <div class="lang-body">
+                                <div class="lang-name">Japonés</div>
+                                <span class="lang-badge text-white" style="background:var(--primary-color);">Lengua · 6 niv.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Latín -->
+                    <div class="col-6 col-md-4 col-lg-3 reveal reveal-delay-3">
+                        <div class="cle-lang-card">
+                            <div class="lang-top"><div class="lang-flag">🏛️</div></div>
+                            <div class="lang-body">
+                                <div class="lang-name">Latín</div>
+                                <span class="lang-badge" style="background:var(--cle-color);color:var(--primary-color);">C.L. · 3 niv.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Portugués -->
+                    <div class="col-6 col-md-4 col-lg-3 reveal reveal-delay-4">
+                        <div class="cle-lang-card">
+                            <div class="lang-top"><div class="lang-flag">🇧🇷</div></div>
+                            <div class="lang-body">
+                                <div class="lang-name">Portugués</div>
+                                <span class="lang-badge text-white" style="background:var(--primary-color);">Lengua · 5 niv.</span>
+                                <span class="lang-badge" style="background:var(--cle-color);color:var(--primary-color);">C.L. · 2 niv.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Ruso -->
+                    <div class="col-6 col-md-4 col-lg-3 reveal reveal-delay-4">
+                        <div class="cle-lang-card">
+                            <div class="lang-top"><div class="lang-flag">🇷🇺</div></div>
+                            <div class="lang-body">
+                                <div class="lang-name">Ruso</div>
+                                <span class="lang-badge text-white" style="background:var(--primary-color);">Lengua · 6 niv.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leyenda -->
+                <div class="text-center mt-4 reveal">
+                    <span class="badge me-2 px-3 py-2" style="background:var(--primary-color);font-size:0.78rem;border-radius:100px;">
+                        <i class="bi bi-mic-fill me-1"></i>Lengua — 4 habilidades comunicativas
+                    </span>
+                    <span class="badge px-3 py-2" style="background:var(--cle-color);color:var(--primary-color);font-size:0.78rem;border-radius:100px;">
+                        <i class="bi bi-book-fill me-1"></i>C.L. — Comprensión de Lectura
+                    </span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ══════════════════════════════════════
+             4. CURSOS
+        ══════════════════════════════════════ -->
+        <section class="py-5 lp-que-es-modern" id="cursos">
+            <div class="container">
+                <div class="text-center mb-5 reveal">
+                    <span class="lp-section-label">Formación en Idiomas</span>
+                    <div class="lp-title-wrap cle-title-wrap mt-2">
+                        <h2 class="fw-bold" style="color:var(--primary-color);">Modalidades de Curso</h2>
+                    </div>
+                </div>
+
+                <!-- Tabs -->
+                <ul class="nav cle-nav-pills justify-content-center mb-4 gap-2 reveal" id="cursoTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="lengua-tab" data-bs-toggle="tab"
+                            data-bs-target="#lengua-pane" type="button" role="tab">
+                            <i class="bi bi-mic-fill me-2"></i>Lengua
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="cl-tab" data-bs-toggle="tab"
+                            data-bs-target="#cl-pane" type="button" role="tab">
+                            <i class="bi bi-book-fill me-2"></i>Comprensión de Lectura
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="cursoTabsContent">
+
+                    <!-- ─── TAB LENGUA ─── -->
+                    <div class="tab-pane fade show active" id="lengua-pane" role="tabpanel">
+                        <div class="row g-4 align-items-start">
+                            <div class="col-lg-5">
+                                <div class="card border-0 shadow-sm h-100" style="border-radius:var(--border-radius);">
+                                    <div class="card-body p-4">
+                                        <h4 class="fw-bold mb-1" style="color:var(--primary-color);">Cursos de Lengua</h4>
+                                        <span class="cle-sep align-start mb-3 d-block"></span>
+                                        <p class="text-secondary mt-3 custom-text-justify">
+                                            Los cursos de Lengua te permitirán desarrollar las cuatro habilidades
+                                            comunicativas: <strong>producción oral, producción escrita,
+                                            comprensión auditiva y comprensión de lectura.</strong>
+                                        </p>
+
+                                        <h6 class="fw-bold mt-4 mb-3" style="color:var(--primary-color);">
+                                            <i class="bi bi-clock me-2" style="color:var(--cle-color);"></i>Duración de las sesiones
+                                        </h6>
+                                        <div class="d-flex flex-column gap-2 mb-4">
+                                            <div class="advisory-card d-flex align-items-center gap-3 p-3 rounded">
+                                                <i class="bi bi-calendar-week flex-shrink-0" style="color:var(--cle-color);font-size:1.5rem;"></i>
+                                                <div>
+                                                    <div class="fw-semibold small" style="color:var(--primary-color);">Curso Regular</div>
+                                                    <div class="text-muted small">1 hora diaria · Lunes a Viernes · 1 nivel por semestre</div>
+                                                </div>
+                                            </div>
+                                            <div class="advisory-card d-flex align-items-center gap-3 p-3 rounded">
+                                                <i class="bi bi-lightning-fill flex-shrink-0" style="color:var(--cle-color);font-size:1.5rem;"></i>
+                                                <div>
+                                                    <div class="fw-semibold small" style="color:var(--primary-color);">Curso Intensivo</div>
+                                                    <div class="text-muted small">2 horas diarias · Lunes a Viernes · 2 niveles por semestre</div>
+                                                </div>
+                                            </div>
+                                            <div class="advisory-card d-flex align-items-center gap-3 p-3 rounded">
+                                                <i class="bi bi-rocket-fill flex-shrink-0" style="color:var(--cle-color);font-size:1.5rem;"></i>
+                                                <div>
+                                                    <div class="fw-semibold small" style="color:var(--primary-color);">Curso Super Intensivo</div>
+                                                    <div class="text-muted small">3 niveles por semestre</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-7">
+                                <!-- Tabla idiomas Lengua -->
+                                <div class="card border-0 shadow-sm mb-4" style="border-radius:var(--border-radius);">
+                                    <div class="card-body p-4">
+                                        <h6 class="fw-bold mb-3" style="color:var(--primary-color);">
+                                            <i class="bi bi-globe me-2" style="color:var(--cle-color);"></i>Idiomas disponibles
+                                        </h6>
+                                        <div class="table-responsive">
+                                            <table class="table table-hover cle-table mb-0">
+                                                <thead>
+                                                    <tr><th>Idioma</th><th class="text-center">Duración</th></tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr><td>🇩🇪 Alemán</td><td class="text-center"><span class="badge" style="background:var(--primary-color);">6 niveles</span></td></tr>
+                                                    <tr><td>🇫🇷 Francés</td><td class="text-center"><span class="badge" style="background:var(--primary-color);">6 niveles</span></td></tr>
+                                                    <tr><td>🇬🇧 Inglés</td><td class="text-center"><span class="badge" style="background:var(--primary-color);">6 niveles</span></td></tr>
+                                                    <tr><td>🇮🇹 Italiano</td><td class="text-center"><span class="badge" style="background:var(--primary-color);">6 niveles</span></td></tr>
+                                                    <tr><td>🇯🇵 Japonés</td><td class="text-center"><span class="badge" style="background:var(--primary-color);">6 niveles</span></td></tr>
+                                                    <tr><td>🇧🇷 Portugués</td><td class="text-center"><span class="badge" style="background:var(--primary-color);">5 niveles</span></td></tr>
+                                                    <tr><td>🇷🇺 Ruso</td><td class="text-center"><span class="badge" style="background:var(--primary-color);">6 niveles</span></td></tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Inscripción -->
+                                <div class="card border-0 shadow-sm" style="border-radius:var(--border-radius);">
+                                    <div class="card-body p-4">
+                                        <h6 class="fw-bold mb-3" style="color:var(--primary-color);">
+                                            <i class="bi bi-pencil-square me-2" style="color:var(--cle-color);"></i>Proceso de Inscripción
+                                        </h6>
+                                        <p class="text-secondary small mb-3">
+                                            Las inscripciones se realizan <strong>vía electrónica</strong> en el sitio del CLe Aragón,
+                                            con previo registro en el sistema. El día de la inscripción no habrá registro;
+                                            se cuenta con <strong>30 minutos</strong> para realizarla.
+                                        </p>
+                                        <div class="row g-3 mb-3">
+                                            <div class="col-md-6">
+                                                <div class="vuelta-card">
+                                                    <div class="vuelta-header" style="background:var(--primary-color);color:#fff;">
+                                                        <i class="bi bi-1-circle-fill me-2"></i>Primera Vuelta
+                                                    </div>
+                                                    <ul class="list-unstyled p-3 mb-0 small text-secondary">
+                                                        <li class="mb-2">
+                                                            <i class="bi bi-check-circle-fill me-2" style="color:var(--cle-color);"></i>
+                                                            Alumnos FES Aragón (tira vigente) — nivel 1
+                                                        </li>
+                                                        <li>
+                                                            <i class="bi bi-check-circle-fill me-2" style="color:var(--cle-color);"></i>
+                                                            Alumnos CLe niveles 2–6 con calificación aprobatoria
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="vuelta-card">
+                                                    <div class="vuelta-header" style="background:var(--tertiary-color);color:#fff;">
+                                                        <i class="bi bi-2-circle-fill me-2"></i>Segunda Vuelta
+                                                    </div>
+                                                    <ul class="list-unstyled p-3 mb-0 small text-secondary">
+                                                        <li class="mb-1"><i class="bi bi-check-circle-fill me-2" style="color:var(--cle-color);"></i>CLe niveles 2–6 sin calificación aprobatoria</li>
+                                                        <li class="mb-1"><i class="bi bi-check-circle-fill me-2" style="color:var(--cle-color);"></i>Egresados FES Aragón</li>
+                                                        <li class="mb-1"><i class="bi bi-check-circle-fill me-2" style="color:var(--cle-color);"></i>Comunidad UNAM</li>
+                                                        <li class="mb-1"><i class="bi bi-check-circle-fill me-2" style="color:var(--cle-color);"></i>Comunidad Externa</li>
+                                                        <li class="mb-1"><i class="bi bi-check-circle-fill me-2" style="color:var(--cle-color);"></i>Administrativos</li>
+                                                        <li><i class="bi bi-check-circle-fill me-2" style="color:var(--cle-color);"></i>Académicos</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cle-note">
+                                            <i class="bi bi-exclamation-circle me-2"></i>
+                                            El Centro de Lenguas se reserva el derecho de hacer cambios en horarios y grupos por razones administrativas.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ─── TAB COMPRENSIÓN DE LECTURA ─── -->
+                    <div class="tab-pane fade" id="cl-pane" role="tabpanel">
+                        <div class="row g-4 align-items-start">
+                            <div class="col-lg-5">
+                                <div class="card border-0 shadow-sm h-100" style="border-radius:var(--border-radius);">
+                                    <div class="card-body p-4">
+                                        <h4 class="fw-bold mb-1" style="color:var(--primary-color);">Comprensión de Lectura</h4>
+                                        <span class="cle-sep align-start mb-3 d-block"></span>
+                                        <p class="text-secondary mt-3 custom-text-justify">
+                                            La comprensión lectora te permitirá desarrollar exclusivamente la habilidad
+                                            de <strong>extraer información de un texto escrito en una lengua extranjera.</strong>
+                                        </p>
+                                        <p class="text-secondary custom-text-justify">
+                                            Es la modalidad requerida para el <strong>requisito de titulación</strong>
+                                            en la mayoría de las licenciaturas de FES Aragón.
+                                        </p>
+                                        <h6 class="fw-bold mt-4 mb-3" style="color:var(--primary-color);">
+                                            <i class="bi bi-clock me-2" style="color:var(--cle-color);"></i>Duración de las sesiones
+                                        </h6>
+                                        <div class="d-flex flex-column gap-2">
+                                            <div class="advisory-card d-flex align-items-center gap-3 p-3 rounded">
+                                                <i class="bi bi-calendar-week flex-shrink-0" style="color:var(--cle-color);font-size:1.5rem;"></i>
+                                                <div>
+                                                    <div class="fw-semibold small" style="color:var(--primary-color);">Curso Regular</div>
+                                                    <div class="text-muted small">1 hora diaria · Lunes a Viernes</div>
+                                                </div>
+                                            </div>
+                                            <div class="advisory-card d-flex align-items-center gap-3 p-3 rounded">
+                                                <i class="bi bi-lightning-fill flex-shrink-0" style="color:var(--cle-color);font-size:1.5rem;"></i>
+                                                <div>
+                                                    <div class="fw-semibold small" style="color:var(--primary-color);">Curso Intensivo</div>
+                                                    <div class="text-muted small">2 horas diarias · Lunes a Viernes</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-7">
+                                <div class="card border-0 shadow-sm mb-4" style="border-radius:var(--border-radius);">
+                                    <div class="card-body p-4">
+                                        <h6 class="fw-bold mb-3" style="color:var(--primary-color);">
+                                            <i class="bi bi-globe me-2" style="color:var(--cle-color);"></i>Idiomas disponibles
+                                        </h6>
+                                        <div class="table-responsive">
+                                            <table class="table table-hover cle-table mb-0">
+                                                <thead>
+                                                    <tr><th>Idioma</th><th class="text-center">Duración</th></tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr><td>🇫🇷 Francés</td><td class="text-center"><span class="badge" style="background:var(--cle-color);color:var(--primary-color);">2 niveles</span></td></tr>
+                                                    <tr><td>🇬🇧 Inglés</td><td class="text-center"><span class="badge" style="background:var(--cle-color);color:var(--primary-color);">3 niveles</span></td></tr>
+                                                    <tr><td>🇮🇹 Italiano</td><td class="text-center"><span class="badge" style="background:var(--cle-color);color:var(--primary-color);">2 niveles</span></td></tr>
+                                                    <tr><td>🏛️ Latín</td><td class="text-center"><span class="badge" style="background:var(--cle-color);color:var(--primary-color);">3 niveles</span></td></tr>
+                                                    <tr><td>🇧🇷 Portugués</td><td class="text-center"><span class="badge" style="background:var(--cle-color);color:var(--primary-color);">2 niveles</span></td></tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Requisitos -->
+                                <div class="card border-0 shadow-sm" style="border-radius:var(--border-radius);">
+                                    <div class="card-body p-4">
+                                        <h6 class="fw-bold mb-3" style="color:var(--primary-color);">
+                                            <i class="bi bi-clipboard-check me-2" style="color:var(--cle-color);"></i>Requisitos de Inscripción
+                                        </h6>
+                                        <ul class="list-unstyled small text-secondary mb-3">
+                                            <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color:var(--cle-color);"></i>Ser alumno de FES Aragón a partir del 2° semestre</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color:var(--cle-color);"></i>Ser mayor de edad (18 años) para comunidad externa</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color:var(--cle-color);"></i>Pago correspondiente en cajas de la FES Aragón</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color:var(--cle-color);"></i>Llenar el formulario e imprimir el comprobante de inscripción</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color:var(--cle-color);"></i>El primer día de clases: mostrar comprobante y recibo original de pago</li>
+                                        </ul>
+                                        <div class="cle-note cle-note-primary">
+                                            <strong><i class="bi bi-id-card me-2"></i>Identificaciones aceptadas:</strong>
+                                            Credencial UNAM, Exalumno, INE/IFE, Pasaporte vigente, Cartilla Militar, Cédula Profesional.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /tab-content -->
+            </div>
+        </section>
+
+
+        <!-- ══════════════════════════════════════
+             5. EXÁMENES
+        ══════════════════════════════════════ -->
+        <section class="py-5 bg-light" id="examenes">
+            <div class="container">
+                <div class="text-center mb-5 reveal">
+                    <span class="lp-section-label">Evaluaciones</span>
+                    <div class="lp-title-wrap cle-title-wrap mt-2">
+                        <h2 class="fw-bold" style="color:var(--primary-color);">Tipos de Examen</h2>
+                    </div>
+                    <p class="text-muted mt-2">Tres modalidades de examen para acreditar el requisito de idioma</p>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Examen Global General -->
+                    <div class="col-lg-4 reveal reveal-delay-1">
+                        <div class="cle-exam-card">
+                            <div class="exam-header">
+                                <i class="bi bi-mortarboard-fill"></i>
+                                <h5 class="fw-bold mb-1">Examen Global General</h5>
+                                <small class="text-white-50">Para alumnos que cursaron el idioma</small>
+                            </div>
+                            <div class="exam-body">
+                                <p class="text-secondary small custom-text-justify">
+                                    Prueba diseñada para medir si los sustentantes poseen las habilidades equivalentes
+                                    a las desarrolladas en los programas de idiomas, tanto en modalidad de Lengua como
+                                    de Comprensión de Lectura.
+                                </p>
+                                <h6 class="fw-semibold mb-2 small" style="color:var(--primary-color);">Idiomas disponibles:</h6>
+                                <div class="d-flex flex-wrap gap-1 mb-3">
+                                    <span class="badge" style="background:var(--primary-color);font-size:0.7rem;">🇩🇪 Alemán</span>
+                                    <span class="badge" style="background:var(--primary-color);font-size:0.7rem;">🇫🇷 Francés</span>
+                                    <span class="badge" style="background:var(--primary-color);font-size:0.7rem;">🇬🇧 Inglés</span>
+                                    <span class="badge" style="background:var(--primary-color);font-size:0.7rem;">🇮🇹 Italiano</span>
+                                    <span class="badge" style="background:var(--primary-color);font-size:0.7rem;">🇯🇵 Japonés</span>
+                                    <span class="badge" style="background:var(--primary-color);font-size:0.7rem;">🏛️ Latín</span>
+                                    <span class="badge" style="background:var(--primary-color);font-size:0.7rem;">🇧🇷 Portugués</span>
+                                    <span class="badge" style="background:var(--primary-color);font-size:0.7rem;">🇷🇺 Ruso</span>
+                                </div>
+                                <div class="cle-note">
+                                    <small><i class="bi bi-info-circle me-1"></i>Modalidades: Lengua y Comprensión de Lectura. Resultado <strong>inapelable</strong>.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Examen Global Extemporáneo -->
+                    <div class="col-lg-4 reveal reveal-delay-2">
+                        <div class="cle-exam-card">
+                            <div class="exam-header" style="background:linear-gradient(135deg,#001a4d,#00296b);">
+                                <i class="bi bi-clock-history"></i>
+                                <h5 class="fw-bold mb-1">Examen Global Extemporáneo</h5>
+                                <small class="text-white-50">Comprensión de Lectura</small>
+                            </div>
+                            <div class="exam-body">
+                                <p class="text-secondary small custom-text-justify">
+                                    Prueba para medir habilidades de Comprensión de Lectura equivalentes a las desarrolladas
+                                    en los programas de idiomas. Cupo limitado; no se permite inscribirse a más de un examen.
+                                </p>
+                                <h6 class="fw-semibold mb-2 small" style="color:var(--primary-color);">Idiomas disponibles:</h6>
+                                <div class="d-flex flex-wrap gap-1 mb-3">
+                                    <span class="badge" style="background:var(--primary-color);font-size:0.7rem;">🇫🇷 Francés</span>
+                                    <span class="badge" style="background:var(--primary-color);font-size:0.7rem;">🇬🇧 Inglés</span>
+                                    <span class="badge" style="background:var(--primary-color);font-size:0.7rem;">🇮🇹 Italiano</span>
+                                    <span class="badge" style="background:var(--primary-color);font-size:0.7rem;">🏛️ Latín</span>
+                                    <span class="badge" style="background:var(--primary-color);font-size:0.7rem;">🇧🇷 Portugués</span>
+                                </div>
+                                <div class="cle-note">
+                                    <small>
+                                        <i class="bi bi-check2 me-1 d-block mb-1"></i>Se permiten diccionarios impresos.<br>
+                                        <i class="bi bi-x-lg me-1"></i>No se permiten dispositivos electrónicos.
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Examen de Colocación -->
+                    <div class="col-lg-4 reveal reveal-delay-3">
+                        <div class="cle-exam-card">
+                            <div class="exam-header" style="background:linear-gradient(135deg,#000d2e,#001a4d);">
+                                <i class="bi bi-patch-question-fill"></i>
+                                <h5 class="fw-bold mb-1">Examen de Colocación</h5>
+                                <small class="text-white-50">Para el siguiente semestre</small>
+                            </div>
+                            <div class="exam-body">
+                                <p class="text-secondary small custom-text-justify">
+                                    Permite a los alumnos determinar el nivel adecuado para inscribirse en los cursos
+                                    del siguiente semestre. Disponible para todos los idiomas y modalidades.
+                                </p>
+                                <h6 class="fw-semibold mb-2 small" style="color:var(--primary-color);">Todos los idiomas y modalidades</h6>
+                                <div class="d-flex flex-wrap gap-1 mb-3">
+                                    <span class="badge" style="background:rgba(0,41,107,0.12);color:var(--primary-color);font-size:0.7rem;">Lengua</span>
+                                    <span class="badge" style="background:rgba(249,199,79,0.35);color:var(--primary-color);font-size:0.7rem;">Comprensión de Lectura</span>
+                                </div>
+                                <div class="cle-note cle-note-primary">
+                                    <small><i class="bi bi-calendar-event me-1"></i>Inscripción y aplicación al final del semestre. Consulta el calendario para fechas exactas.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nota general exámenes -->
+                <div class="row mt-4 reveal">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="cle-note cle-note-primary text-center">
+                            <i class="bi bi-cash-coin me-2"></i>
+                            Realizar el pago <strong>mínimo un día hábil antes</strong> de la aplicación del examen.
+                            Una vez iniciado el examen <strong>no se permitirá el acceso.</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ══════════════════════════════════════
+             6. CALENDARIO 2026-2
+        ══════════════════════════════════════ -->
+        <section class="py-5 lp-areas-section" id="calendario" style="background:var(--primary-color);">
+            <div class="container">
+                <div class="text-center mb-5 reveal">
+                    <span class="lp-section-label on-dark">Semestre 2026-2</span>
+                    <div class="lp-title-wrap cle-title-wrap mt-2">
+                        <h2 class="fw-bold text-white">Calendario del Centro de Lenguas</h2>
+                    </div>
+                    <p style="color:rgba(255,255,255,0.55);" class="mt-2">Fechas clave del semestre 2026-2</p>
+                </div>
+
+                <ul class="nav cle-nav-pills justify-content-center mb-4 gap-2 flex-wrap reveal" id="calTabs" role="tablist">
+                    <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#cal-cursos" type="button"><i class="bi bi-book me-2"></i>Cursos</button></li>
+                    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#cal-global" type="button"><i class="bi bi-mortarboard me-2"></i>Global General</button></li>
+                    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#cal-ext" type="button"><i class="bi bi-clock-history me-2"></i>Extemporáneo</button></li>
+                    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#cal-col" type="button"><i class="bi bi-patch-question me-2"></i>Colocación</button></li>
+                </ul>
+
+                <div class="tab-content reveal">
+                    <!-- Cursos -->
+                    <div class="tab-pane fade show active" id="cal-cursos">
+                        <div class="bg-white rounded-3 p-4">
+                            <div class="table-responsive">
+                                <table class="cle-calendar-table">
+                                    <thead><tr><th>Fecha</th><th>Actividad</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>3 de Febrero</td><td>Sorteo de horarios de inscripción — a partir de las 10:00 hrs</td></tr>
+                                        <tr class="cle-cal-highlight"><td>4, 5 y 6 de Febrero</td><td><strong>Inscripción en primera vuelta</strong> (Lengua y/o Comprensión de Lectura) — según horario asignado por sorteo</td></tr>
+                                        <tr class="cle-cal-highlight"><td>9 y 10 de Febrero</td><td><strong>Inscripción en segunda vuelta</strong>, todos los niveles — según horario asignado por sorteo</td></tr>
+                                        <tr><td>11 de Febrero</td><td>Fecha límite: presentación de criterios de evaluación y acreditación</td></tr>
+                                        <tr><td>13 de Febrero</td><td>Alta y/o baja de cursos</td></tr>
+                                        <tr class="cle-cal-highlight"><td>16 de Febrero</td><td><strong>🟢 Inicio de cursos del Centro de Lenguas</strong></td></tr>
+                                        <tr><td>18 de Febrero</td><td>Fecha límite para solicitar ficha de depósito (exalumno/a o Carta de Exención de Pago) a <a href="mailto:cle.validaciones@aragon.unam.mx" style="color:var(--primary-color);">cle.validaciones@aragon.unam.mx</a></td></tr>
+                                        <tr><td>25 y 26 de Febrero</td><td>El CLe envía ficha de depósito para cobertura de aportación al correo institucional</td></tr>
+                                        <tr><td>13 de Marzo</td><td>Fecha límite para devolver comprobante de aportación a <a href="mailto:cle.validaciones@aragon.unam.mx" style="color:var(--primary-color);">cle.validaciones@aragon.unam.mx</a></td></tr>
+                                        <tr class="cle-cal-highlight"><td>23 de Mayo</td><td><strong>🔴 Fin de cursos</strong></td></tr>
+                                        <tr><td>Días inhábiles</td><td>1 ene · 2 feb · 16 mar · 1, 10, 15 may</td></tr>
+                                        <tr><td>Vacaciones admvas.</td><td>Del 6 al 24 de julio</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Examen Global General -->
+                    <div class="tab-pane fade" id="cal-global">
+                        <div class="bg-white rounded-3 p-4">
+                            <div class="table-responsive">
+                                <table class="cle-calendar-table">
+                                    <thead><tr><th>Fecha</th><th>Actividad</th></tr></thead>
+                                    <tbody>
+                                        <tr class="cle-cal-highlight"><td>27 de Abril</td><td><strong>Inscripción</strong> — Alemán, Francés, Inglés, Italiano, Japonés, Latín, Portugués y Ruso (Lengua o Comprensión de Lectura)</td></tr>
+                                        <tr><td>30 de Abril</td><td>Fecha límite para solicitar ficha de depósito (exalumno/a o Carta de Exención) — <a href="mailto:cle.validaciones@aragon.unam.mx" style="color:var(--primary-color);">cle.validaciones@aragon.unam.mx</a></td></tr>
+                                        <tr><td>5 de Mayo</td><td>CLe envía ficha de depósito al correo institucional</td></tr>
+                                        <tr><td>25 de Mayo</td><td>Fecha límite para devolver comprobante de aportación</td></tr>
+                                        <tr class="cle-cal-highlight"><td>1 de Junio</td><td><strong>Aplicación:</strong> Inglés — Comprensión de Lectura</td></tr>
+                                        <tr class="cle-cal-highlight"><td>2 de Junio</td><td><strong>Aplicación:</strong> Inglés — Lengua / Posesión</td></tr>
+                                        <tr class="cle-cal-highlight"><td>3 de Junio</td><td><strong>Aplicación:</strong> Italiano y Francés</td></tr>
+                                        <tr class="cle-cal-highlight"><td>4 de Junio</td><td><strong>Aplicación:</strong> Alemán, Japonés, Latín, Portugués y Ruso</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Examen Extemporáneo -->
+                    <div class="tab-pane fade" id="cal-ext">
+                        <div class="bg-white rounded-3 p-4">
+                            <div class="table-responsive">
+                                <table class="cle-calendar-table">
+                                    <thead><tr><th>Fecha</th><th>Actividad</th></tr></thead>
+                                    <tbody>
+                                        <tr class="cle-cal-highlight"><td>25 de Mayo</td><td><strong>Inscripción</strong> — Francés, Inglés, Italiano, Latín y Portugués (Comprensión de Lectura)</td></tr>
+                                        <tr><td>29 de Mayo</td><td>Fecha límite para solicitar ficha de depósito — <a href="mailto:cle.validaciones@aragon.unam.mx" style="color:var(--primary-color);">cle.validaciones@aragon.unam.mx</a></td></tr>
+                                        <tr><td>2 de Junio</td><td>CLe envía ficha de depósito al correo institucional</td></tr>
+                                        <tr><td>18 de Junio</td><td>Fecha límite para devolver comprobante de aportación</td></tr>
+                                        <tr class="cle-cal-highlight"><td>19 de Junio</td><td><strong>Aplicación de examen</strong></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Examen de Colocación -->
+                    <div class="tab-pane fade" id="cal-col">
+                        <div class="bg-white rounded-3 p-4">
+                            <p class="fw-semibold small mb-3" style="color:var(--primary-color);">
+                                <i class="bi bi-info-circle me-2" style="color:var(--cle-color);"></i>
+                                Examen de Colocación para cursos del semestre <strong>2027-1</strong>
+                            </p>
+                            <div class="table-responsive">
+                                <table class="cle-calendar-table">
+                                    <thead><tr><th>Fecha</th><th>Actividad</th></tr></thead>
+                                    <tbody>
+                                        <tr class="cle-cal-highlight"><td>22 de Junio</td><td><strong>Inscripción</strong> — todos los idiomas y modalidades</td></tr>
+                                        <tr><td>24 de Junio</td><td>Fecha límite para solicitar ficha de depósito — <a href="mailto:cle.validaciones@aragon.unam.mx" style="color:var(--primary-color);">cle.validaciones@aragon.unam.mx</a></td></tr>
+                                        <tr><td>26 de Junio</td><td>CLe envía ficha de depósito al correo institucional</td></tr>
+                                        <tr><td>30 de Junio</td><td>Fecha límite para devolver comprobante de aportación</td></tr>
+                                        <tr class="cle-cal-highlight"><td>1 de Julio</td><td><strong>Aplicación de examen</strong></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ══════════════════════════════════════
+             7. APORTACIONES
+        ══════════════════════════════════════ -->
+        <section class="py-5 bg-white" id="aportaciones">
+            <div class="container">
+                <div class="text-center mb-5 reveal">
+                    <span class="lp-section-label">Cuotas</span>
+                    <div class="lp-title-wrap cle-title-wrap mt-2">
+                        <h2 class="fw-bold" style="color:var(--primary-color);">Aportaciones Vigentes</h2>
+                    </div>
+                    <p class="text-muted mt-2">El pago se realiza por transferencia (como pago de servicio) o directamente en el banco.</p>
+                </div>
+
+                <ul class="nav cle-nav-pills justify-content-center mb-4 gap-2 reveal" id="aportTabs">
+                    <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#aport-cursos"><i class="bi bi-book me-2"></i>Cursos</button></li>
+                    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#aport-examenes"><i class="bi bi-pencil me-2"></i>Exámenes</button></li>
+                </ul>
+
+                <div class="tab-content reveal">
+                    <!-- Aportaciones Cursos -->
+                    <div class="tab-pane fade show active" id="aport-cursos">
+                        <div class="card border-0 shadow-sm" style="border-radius:var(--border-radius);">
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover cle-table mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th>Categoría de Alumno</th>
+                                                <th class="text-center">Regular<br><small class="fw-normal opacity-75">(1 nivel/semestre)</small></th>
+                                                <th class="text-center">Intensivo<br><small class="fw-normal opacity-75">(2 niveles/semestre)</small></th>
+                                                <th class="text-center">Super Intensivo<br><small class="fw-normal opacity-75">(3 niveles/semestre)</small></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><i class="bi bi-mortarboard-fill me-2" style="color:var(--cle-color);"></i>Licenciatura FES Aragón <small class="text-muted">(tira vigente)</small></td>
+                                                <td class="text-center"><span class="badge" style="background:rgba(0,41,107,0.1);color:var(--primary-color);">Voluntaria</span></td>
+                                                <td class="text-center"><span class="badge" style="background:rgba(0,41,107,0.1);color:var(--primary-color);">Voluntaria</span></td>
+                                                <td class="text-center"><span class="badge" style="background:rgba(0,41,107,0.1);color:var(--primary-color);">Voluntaria</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="bi bi-person-badge me-2" style="color:var(--cle-color);"></i>Egresados FES Aragón <small class="text-muted">(con credencial exalumno)</small></td>
+                                                <td class="text-center fw-semibold">$800.00</td>
+                                                <td class="text-center fw-semibold">$1,600.00</td>
+                                                <td class="text-center fw-semibold">$2,400.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="bi bi-person me-2" style="color:var(--cle-color);"></i>Egresados FES Aragón <small class="text-muted">(sin credencial exalumno)</small></td>
+                                                <td class="text-center fw-semibold">$1,000.00</td>
+                                                <td class="text-center fw-semibold">$2,000.00</td>
+                                                <td class="text-center fw-semibold">$3,000.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="bi bi-building me-2" style="color:var(--cle-color);"></i>Comunidad UNAM <small class="text-muted">(vigentes y egresados)*</small></td>
+                                                <td class="text-center fw-semibold">$1,600.00</td>
+                                                <td class="text-center fw-semibold">$3,200.00</td>
+                                                <td class="text-center fw-semibold">$4,600.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="bi bi-people me-2" style="color:var(--cle-color);"></i>Comunidad Externa <small class="text-muted">*Mayores de 18 años</small></td>
+                                                <td class="text-center fw-semibold">$1,600.00</td>
+                                                <td class="text-center fw-semibold">$3,200.00</td>
+                                                <td class="text-center fw-semibold">$4,600.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="bi bi-briefcase me-2" style="color:var(--cle-color);"></i>Académicos y Trabajadores <small class="text-muted">(carta AAPAUNAM-STUNAM)</small></td>
+                                                <td class="text-center"><span class="badge" style="background:rgba(43,170,139,0.15);color:#1a6b55;">Exención</span></td>
+                                                <td class="text-center"><span class="badge" style="background:rgba(43,170,139,0.15);color:#1a6b55;">Exención</span></td>
+                                                <td class="text-center"><span class="badge" style="background:rgba(43,170,139,0.15);color:#1a6b55;">Exención</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mt-3 small text-muted">
+                            * Mayores de 18 años &nbsp;|&nbsp;
+                            <a href="#" style="color:var(--primary-color);">** Trámite credencial exalumnos</a>
+                        </p>
+                    </div>
+
+                    <!-- Aportaciones Exámenes -->
+                    <div class="tab-pane fade" id="aport-examenes">
+                        <div class="card border-0 shadow-sm" style="border-radius:var(--border-radius);">
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover cle-table mb-0">
+                                        <thead>
+                                            <tr><th>Categoría de Alumno</th><th class="text-center">Aportación</th></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><i class="bi bi-mortarboard-fill me-2" style="color:var(--cle-color);"></i>Licenciatura FES Aragón <small class="text-muted">(tira vigente)</small></td>
+                                                <td class="text-center"><span class="badge" style="background:rgba(0,41,107,0.1);color:var(--primary-color);">Voluntaria</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="bi bi-person-badge me-2" style="color:var(--cle-color);"></i>Egresados FES Aragón</td>
+                                                <td class="text-center fw-semibold">$600.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="bi bi-person-badge-fill me-2" style="color:var(--cle-color);"></i>Egresados FES Aragón <small class="text-muted">(con credencial Exalumnx)**</small></td>
+                                                <td class="text-center fw-semibold">$150.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="bi bi-building me-2" style="color:var(--cle-color);"></i>Egresados Comunidad UNAM</td>
+                                                <td class="text-center fw-semibold">$900.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="bi bi-building me-2" style="color:var(--cle-color);"></i>Comunidad UNAM</td>
+                                                <td class="text-center fw-semibold">$900.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="bi bi-people me-2" style="color:var(--cle-color);"></i>Comunidad Externa</td>
+                                                <td class="text-center fw-semibold">$1,500.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="bi bi-briefcase me-2" style="color:var(--cle-color);"></i>Personal Académico</td>
+                                                <td class="text-center">$600.00 <small class="text-muted">o exención AAPAUNAM</small></td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="bi bi-file-person me-2" style="color:var(--cle-color);"></i>Personal Administrativo</td>
+                                                <td class="text-center fw-semibold">$300.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="bi bi-person-workspace me-2" style="color:var(--cle-color);"></i>Personal STUNAM</td>
+                                                <td class="text-center">$600.00 <small class="text-muted">o exención STUNAM</small></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mt-3 small text-muted">
+                            <a href="#" style="color:var(--primary-color);">** Trámite credencial exalumnos</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ══════════════════════════════════════
+             8. REQUISITO DE TITULACIÓN
+        ══════════════════════════════════════ -->
+        <section class="py-5 bg-light" id="titulacion">
+            <div class="container">
+                <div class="text-center mb-5 reveal">
+                    <span class="lp-section-label">Titulación</span>
+                    <div class="lp-title-wrap cle-title-wrap mt-2">
+                        <h2 class="fw-bold" style="color:var(--primary-color);">Requisito de Idioma para Titulación</h2>
+                    </div>
+                    <p class="text-muted mt-2">Constancia emitida por un Centro de Idiomas o Lenguas de la UNAM</p>
+                </div>
+
+                <div class="row mb-4 reveal">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="cle-note cle-note-primary">
+                            <i class="bi bi-info-circle-fill me-2"></i>
+                            Para cumplir con este requisito, únicamente se tomarán en cuenta las
+                            <strong>constancias de acreditación de idioma emitidas por algún Centro de Idiomas o Lenguas de la UNAM</strong>
+                            donde se indique la modalidad: <em>Comprensión de lectura</em> o <em>4 habilidades</em>.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accordion por División -->
+                <div class="accordion cle-accordion" id="titulacionAccordion">
+
+                    <!-- División Ciencias Sociales -->
+                    <div class="accordion-item border-0 shadow-sm mb-3 reveal" style="border-radius:var(--border-radius);overflow:hidden;">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#divSocial">
+                                <i class="bi bi-briefcase-fill me-3" style="color:var(--cle-color);font-size:1.1rem;"></i>
+                                División de Ciencias Sociales
+                            </button>
+                        </h2>
+                        <div id="divSocial" class="accordion-collapse collapse show" data-bs-parent="#titulacionAccordion">
+                            <div class="accordion-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover cle-table mb-0">
+                                        <thead><tr><th>Licenciatura</th><th>Plan</th><th>Idioma</th><th>Tipo de curso requerido</th></tr></thead>
+                                        <tbody>
+                                            <tr><td>Comunicación y Periodismo</td><td class="text-muted small">1274</td><td>Inglés oblig. + cualquier otro</td><td>2 C.L. ó 2 Lengua ó 1 de cada uno</td></tr>
+                                            <tr><td rowspan="2">Derecho</td><td class="text-muted small">1325 y 2254</td><td>Cualquier idioma</td><td>1 Lengua ó 2 C.L.</td></tr>
+                                            <tr><td class="text-muted small">0187</td><td>Cualquier idioma</td><td>1 C.L. ó 1 Lengua</td></tr>
+                                            <tr><td>Economía</td><td class="text-muted small">0076 y 1382</td><td>Inglés</td><td>1 C.L. ó 1 Lengua</td></tr>
+                                            <tr><td>Planificación para el Desarrollo Agropecuario</td><td class="text-muted small">2003 y 2018</td><td>Inglés</td><td>1 C.L. ó 1 Lengua</td></tr>
+                                            <tr><td rowspan="2">Relaciones Internacionales</td><td class="text-muted small">1275 y 2235</td><td>Cualquier idioma ≠ inglés</td><td>1 C.L. ó 1 Lengua</td></tr>
+                                            <tr><td class="text-muted small">068 y 071</td><td>Inglés oblig. + otro</td><td>1 C.L. <strong>Y</strong> 1 Lengua</td></tr>
+                                            <tr><td>Sociología</td><td class="text-muted small">1324</td><td>Inglés o Francés (obligatorio)</td><td>2 C.L. ó 2 Lengua ó 1 de cada uno</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- División Ciencias Físico-Matemáticas e Ingenierías -->
+                    <div class="accordion-item border-0 shadow-sm mb-3 reveal reveal-delay-1" style="border-radius:var(--border-radius);overflow:hidden;">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#divIng">
+                                <i class="bi bi-gear-fill me-3" style="color:var(--cle-color);font-size:1.1rem;"></i>
+                                División de Ciencias Físico-Matemáticas y de las Ingenierías
+                            </button>
+                        </h2>
+                        <div id="divIng" class="accordion-collapse collapse" data-bs-parent="#titulacionAccordion">
+                            <div class="accordion-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover cle-table mb-0">
+                                        <thead><tr><th>Licenciatura</th><th>Plan</th><th>Idioma</th><th>Tipo de curso requerido</th></tr></thead>
+                                        <tbody>
+                                            <tr><td>Ingeniería Civil</td><td class="text-muted small">1280 y 2236</td><td>Inglés</td><td>1 C.L. ó 1 Lengua</td></tr>
+                                            <tr><td>Ingeniería en Computación</td><td class="text-muted small">1279 y 2119</td><td>Inglés</td><td>1 C.L. ó 1 Lengua</td></tr>
+                                            <tr><td>Ingeniería Eléctrica-Electrónica</td><td class="text-muted small">2008 y 2023</td><td>Inglés</td><td>1 C.L. ó 1 Lengua</td></tr>
+                                            <tr><td>Ingeniería Industrial</td><td class="text-muted small">1313 y 2195</td><td>Inglés</td><td>1 C.L. ó 1 Lengua</td></tr>
+                                            <tr><td>Ingeniería Mecánica</td><td class="text-muted small">2009 y 2022</td><td>Inglés</td><td>1 C.L. ó 1 Lengua</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- División Humanidades y Artes -->
+                    <div class="accordion-item border-0 shadow-sm mb-3 reveal reveal-delay-2" style="border-radius:var(--border-radius);overflow:hidden;">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#divHum">
+                                <i class="bi bi-palette-fill me-3" style="color:var(--cle-color);font-size:1.1rem;"></i>
+                                División de Humanidades y Artes
+                            </button>
+                        </h2>
+                        <div id="divHum" class="accordion-collapse collapse" data-bs-parent="#titulacionAccordion">
+                            <div class="accordion-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover cle-table mb-0">
+                                        <thead><tr><th>Licenciatura</th><th>Plan</th><th>Idioma</th><th>Tipo de curso requerido</th></tr></thead>
+                                        <tbody>
+                                            <tr><td>Arquitectura</td><td class="text-muted small">—</td><td>—</td><td><span class="badge bg-secondary">Sin requisito para titulación</span></td></tr>
+                                            <tr><td>Diseño Industrial</td><td class="text-muted small">1082</td><td>Cualquier idioma</td><td>1 C.L. ó 1 Lengua</td></tr>
+                                            <tr><td>Pedagogía</td><td class="text-muted small">1103</td><td>Cualquier idioma</td><td>2 C.L. ó 2 Lengua ó 1 de cada uno</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- División DUACyD -->
+                    <div class="accordion-item border-0 shadow-sm mb-3 reveal reveal-delay-3" style="border-radius:var(--border-radius);overflow:hidden;">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#divDuacyd">
+                                <i class="bi bi-laptop-fill me-3" style="color:var(--cle-color);font-size:1.1rem;"></i>
+                                División de Universidad Abierta, Continua y a Distancia (DUACyD)
+                            </button>
+                        </h2>
+                        <div id="divDuacyd" class="accordion-collapse collapse" data-bs-parent="#titulacionAccordion">
+                            <div class="accordion-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover cle-table mb-0">
+                                        <thead><tr><th>Licenciatura</th><th>Plan</th><th>Idioma</th><th>Tipo de curso requerido</th></tr></thead>
+                                        <tbody>
+                                            <tr><td>Derecho</td><td class="text-muted small">1108</td><td>Cualquier idioma</td><td>1 C.L. ó 1 Lengua</td></tr>
+                                            <tr><td>Economía</td><td class="text-muted small">1291</td><td>Inglés</td><td>1 C.L. ó 1 Lengua</td></tr>
+                                            <tr><td>Relaciones Internacionales</td><td class="text-muted small">1290</td><td>Cualquier idioma excepto inglés</td><td>1 C.L. ó 1 Lengua</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /accordion -->
+
+                <!-- Datos constancia -->
+                <div class="row mt-4 reveal">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="card border-0 shadow-sm" style="border-radius:var(--border-radius);">
+                            <div class="card-body p-4">
+                                <h6 class="fw-bold mb-3" style="color:var(--primary-color);">
+                                    <i class="bi bi-file-earmark-text me-2" style="color:var(--cle-color);"></i>
+                                    Datos que debe integrar la constancia de idioma
+                                </h6>
+                                <div class="row g-2">
+                                    <div class="col-sm-6">
+                                        <ul class="list-unstyled small text-secondary mb-0">
+                                            <li class="mb-1"><i class="bi bi-check-circle-fill me-2" style="color:var(--cle-color);"></i>Nombre completo</li>
+                                            <li class="mb-1"><i class="bi bi-check-circle-fill me-2" style="color:var(--cle-color);"></i>Número de cuenta</li>
+                                            <li class="mb-1"><i class="bi bi-check-circle-fill me-2" style="color:var(--cle-color);"></i>Carrera</li>
+                                            <li><i class="bi bi-check-circle-fill me-2" style="color:var(--cle-color);"></i>Idioma</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <ul class="list-unstyled small text-secondary mb-0">
+                                            <li class="mb-1"><i class="bi bi-check-circle-fill me-2" style="color:var(--cle-color);"></i>Tipo de curso</li>
+                                            <li class="mb-1"><i class="bi bi-check-circle-fill me-2" style="color:var(--cle-color);"></i>Fecha en que se cursó el idioma y/o periodo</li>
+                                            <li class="mb-1"><i class="bi bi-check-circle-fill me-2" style="color:var(--cle-color);"></i>Fecha de expedición de la constancia</li>
+                                            <li><i class="bi bi-check-circle-fill me-2" style="color:var(--cle-color);"></i>Firma y sello de la dependencia UNAM</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <p class="mt-3 small text-muted mb-0">
+                                    Para mayor información sobre este documento, pregunta en tu jefatura de carrera.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ══════════════════════════════════════
+             9. CTA
+        ══════════════════════════════════════ -->
+        <section class="cle-cta py-5">
+            <div class="container text-center" style="position:relative;z-index:1;">
+                <div class="reveal">
+                    <span class="lp-section-label on-dark">¿Listo para empezar?</span>
+                    <div class="lp-title-wrap cle-title-wrap mt-2">
+                        <h2 class="fw-bold text-white">Comienza tu aventura lingüística</h2>
+                    </div>
+                    <p class="mt-3" style="color:rgba(255,255,255,0.55);">
+                        Consulta las convocatorias vigentes, inscríbete en línea y da el primer paso<br class="d-none d-md-block">
+                        hacia un nuevo idioma con el respaldo académico de la UNAM.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3 justify-content-center mt-4">
+                        <a href="http://cle-aragon.unam.mx" target="_blank" rel="noopener noreferrer"
+                            class="btn fw-semibold px-4 py-2"
+                            style="background:var(--cle-color);color:var(--primary-color);border-radius:100px;">
+                            <i class="bi bi-box-arrow-up-right me-2"></i>Ir al sitio del CLe
+                        </a>
+                        <a href="mailto:centrode lenguas@aragon.unam.mx"
+                            class="btn btn-outline-light fw-semibold px-4 py-2"
+                            style="border-radius:100px;">
+                            <i class="bi bi-envelope me-2"></i>Contactar al CLe
+                        </a>
+                    </div>
+                    <p class="mt-4 small" style="color:rgba(255,255,255,0.35);">
+                        <i class="bi bi-envelope me-1"></i>centrode lenguas@aragon.unam.mx
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ══════════════════════════════════════
+             BOTONES FLOTANTES
+        ══════════════════════════════════════ -->
         <div class="social-floating-buttons">
-            <button type="button" class="social-btn facebook-btn" data-bs-toggle="modal" data-bs-target="#facebookModal"
-                aria-label="Facebook">
+            <button type="button" class="social-btn facebook-btn" data-bs-toggle="modal"
+                data-bs-target="#facebookModal" aria-label="Facebook">
                 <i class="bi bi-facebook"></i>
             </button>
-
             <button type="button" class="social-btn instagram-btn" data-bs-toggle="modal"
                 data-bs-target="#instagramModal" aria-label="Instagram">
                 <i class="bi bi-instagram"></i>
             </button>
-
-            <button type="button" class="social-btn suayed-btn" data-bs-toggle="modal" data-bs-target="#modalSuayed">
+            <button type="button" class="social-btn suayed-btn" data-bs-toggle="modal"
+                data-bs-target="#modalSuayed">
                 <img src="resources/SUAYED_Blanco-06.ico" alt="SUAYED" class="icono-btn">
             </button>
-
-            <button type="button" class="social-btn edco-btn" data-bs-toggle="modal" data-bs-target="#modalEdco">
-                <img src="resources\Educación-Continua_Blanco-07.ico" alt="EDCO" class="icono-btn">
+            <button type="button" class="social-btn edco-btn" data-bs-toggle="modal"
+                data-bs-target="#modalEdco">
+                <img src="resources/Educación-Continua_Blanco-07.ico" alt="EDCO" class="icono-btn">
             </button>
-
-            <button type="button" class="social-btn cle-btn" data-bs-toggle="modal" data-bs-target="#modalCle">
+            <button type="button" class="social-btn cle-btn" data-bs-toggle="modal"
+                data-bs-target="#modalCle">
                 <img src="resources/CLE_B-09.png" alt="CLE" class="icono-btn">
             </button>
         </div>
 
+        <!-- Modal Facebook -->
+        <div class="modal fade" id="facebookModal" tabindex="-1" aria-labelledby="facebookModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color:var(--primary-color);">
+                        <h5 class="modal-title text-white" id="facebookModalLabel"><i class="bi bi-facebook me-2"></i>Facebook | Áreas DUACyD</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <p class="mb-4">Selecciona la jefatura para abrir su página oficial en Facebook.</p>
+                        <a href="https://www.facebook.com/SUAyEDFESAragon/" target="_blank" rel="noopener noreferrer"
+                            class="btn w-100 py-3 mb-3 d-flex align-items-center justify-content-between"
+                            style="background-color:var(--suayed-color);color:white;border-radius:10px;">
+                            <span class="d-flex align-items-center"><i class="bi bi-laptop fs-4 me-3"></i><span class="fw-semibold">SUAyED</span></span>
+                            <i class="bi bi-facebook fs-5"></i>
+                        </a>
+                        <a href="https://www.facebook.com/FESAragonCentrodeLenguas/" target="_blank" rel="noopener noreferrer"
+                            class="btn w-100 py-3 mb-3 d-flex align-items-center justify-content-between"
+                            style="background-color:var(--cle-color);color:var(--primary-color);border-radius:10px;">
+                            <span class="d-flex align-items-center"><i class="bi bi-translate fs-4 me-3"></i><span class="fw-semibold">Centro de Lenguas</span></span>
+                            <i class="bi bi-facebook fs-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Modal Instagram -->
-        <div class="modal fade" id="instagramModal" tabindex="-1" aria-labelledby="instagramModalLabel"
-            aria-hidden="true">
+        <div class="modal fade" id="instagramModal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="instagramModalLabel">Instagram | Areas DUACyD</h5>
+                        <h5 class="modal-title">Instagram | Áreas DUACyD</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                     </div>
                     <div class="modal-body text-center">
-                        <i class="bi bi-instagram display-1 mb-3"
-                            style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
                         <p class="mb-4">Selecciona la jefatura para abrir su página oficial en Instagram.</p>
-
                         <a href="https://www.instagram.com/suayedfesaragon/" target="_blank" rel="noopener noreferrer"
                             class="btn w-100 py-3 mb-3 d-flex align-items-center justify-content-between"
-                            style="background-color: var(--suayed-color); color: white; border-radius: 10px; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
-                            onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.2)'"
-                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'">
-                            <span class="d-flex align-items-center">
-                                <i class="bi bi-laptop fs-4 me-3"></i>
-                                <span class="fw-semibold">SUAyED</span>
-                            </span>
+                            style="background-color:var(--suayed-color);color:white;border-radius:10px;">
+                            <span class="d-flex align-items-center"><i class="bi bi-laptop fs-4 me-3"></i><span class="fw-semibold">SUAyED</span></span>
                             <i class="bi bi-instagram fs-5"></i>
                         </a>
-
-                        <a href="https://www.instagram.com/fesaragoncentrodelenguas/" target="_blank"
-                            rel="noopener noreferrer"
+                        <a href="https://www.instagram.com/fesaragoncentrodelenguas/" target="_blank" rel="noopener noreferrer"
                             class="btn w-100 py-3 mb-3 d-flex align-items-center justify-content-between"
-                            style="background-color: var(--cle-color); color: var(--primary-color); border-radius: 10px; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
-                            onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.2)'"
-                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'">
-                            <span class="d-flex align-items-center">
-                                <i class="bi bi-translate fs-4 me-3"></i>
-                                <span class="fw-semibold">Centro de Lenguas</span>
-                            </span>
-                            <i class="bi bi-instagram fs-5"></i>
-                        </a>
-
-                        <a href="https://www.instagram.com/educacioncontinuafesaragon/" target="_blank"
-                            rel="noopener noreferrer"
-                            class="btn w-100 py-3 d-flex align-items-center justify-content-between"
-                            style="background-color: var(--edco-color); color: white; border-radius: 10px; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
-                            onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.2)'"
-                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'">
-                            <span class="d-flex align-items-center">
-                                <i class="bi bi-lightbulb fs-4 me-3"></i>
-                                <span class="fw-semibold">Educación Continua</span>
-                            </span>
+                            style="background-color:var(--cle-color);color:var(--primary-color);border-radius:10px;">
+                            <span class="d-flex align-items-center"><i class="bi bi-translate fs-4 me-3"></i><span class="fw-semibold">Centro de Lenguas</span></span>
                             <i class="bi bi-instagram fs-5"></i>
                         </a>
                     </div>
@@ -169,76 +1535,19 @@
             </div>
         </div>
 
-        <!-- Modal Facebook -->
-        <div class="modal fade" id="facebookModal" tabindex="-1" aria-labelledby="facebookModalLabel"
-            aria-hidden="true">
+        <!-- Modal SUAyED -->
+        <div class="modal fade" id="modalSuayed" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="facebookModalLabel">Facebook | Areas DUACyD</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                <div class="modal-content" style="border-color:var(--suayed-color);">
+                    <div class="modal-header" style="background-color:var(--suayed-color);color:white;">
+                        <h5 class="modal-title">Sistema Universidad Abierta y Educación a Distancia</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                     </div>
                     <div class="modal-body text-center">
-                        <i class="bi bi-facebook display-1 mb-3" style="color: var(--primary-color);"></i>
-                        <p class="mb-4">Selecciona la jefatura para abrir su página oficial en Facebook.</p>
-
-                        <a href="https://www.facebook.com/FESAragon.SUAyED?locale=es_LA" target="_blank"
-                            rel="noopener noreferrer"
-                            class="btn w-100 py-3 mb-3 d-flex align-items-center justify-content-between"
-                            style="background-color: var(--suayed-color); color: white; border-radius: 10px; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
-                            onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.2)'"
-                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'">
-                            <span class="d-flex align-items-center">
-                                <i class="bi bi-laptop fs-4 me-3"></i>
-                                <span class="fw-semibold">SUAyED</span>
-                            </span>
-                            <i class="bi bi-facebook fs-5"></i>
-                        </a>
-
-                        <a href="https://www.facebook.com/FESAragon.centrodelenguas?locale=es_LA" target="_blank"
-                            rel="noopener noreferrer"
-                            class="btn w-100 py-3 mb-3 d-flex align-items-center justify-content-between"
-                            style="background-color: var(--cle-color); color: var(--primary-color); border-radius: 10px; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
-                            onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.2)'"
-                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'">
-                            <span class="d-flex align-items-center">
-                                <i class="bi bi-translate fs-4 me-3"></i>
-                                <span class="fw-semibold">Centro de Lenguas</span>
-                            </span>
-                            <i class="bi bi-facebook fs-5"></i>
-                        </a>
-
-                        <a href="https://www.facebook.com/FESAragon.educacioncontinua?locale=es_LA" target="_blank"
-                            rel="noopener noreferrer"
-                            class="btn w-100 py-3 d-flex align-items-center justify-content-between"
-                            style="background-color: var(--edco-color); color: white; border-radius: 10px; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
-                            onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.2)'"
-                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'">
-                            <span class="d-flex align-items-center">
-                                <i class="bi bi-lightbulb fs-4 me-3"></i>
-                                <span class="fw-semibold">Educación Continua</span>
-                            </span>
-                            <i class="bi bi-facebook fs-5"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Modal SUAYED -->
-        <div class="modal fade" id="modalSuayed" tabindex="-1" aria-labelledby="modalSuayedLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content" style="border-color: var(--color-suayed);">
-                    <div class="modal-header" style="background-color: var(--color-suayed); color: white;">
-                        <h5 class="modal-title" id="modalSuayedLabel">Modalidad SUAyED</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                            aria-label="Cerrar"></button>
-                    </div>
-                    <div class="modal-body text-center">
-                        <i class="bi bi-laptop display-1 mb-3" style="color: var(--color-suayed);"></i>
-                        <p>Consulta la información sobre la Universidad Abierta y a Distancia.</p>
-                        <a href="#" class="btn w-100 py-2" style="background-color: var(--color-suayed); color: white;">
-                            <i class="bi bi-box-arrow-up-right me-2"></i> Ir a SUAyED
+                        <i class="bi bi-laptop display-1 mb-3" style="color:var(--suayed-color);"></i>
+                        <p>Modalidad educativa flexible con licenciaturas en Derecho, Economía y Relaciones Internacionales.</p>
+                        <a href="SUAYED.html" class="btn w-100 py-2" style="background-color:var(--suayed-color);color:white;">
+                            <i class="bi bi-box-arrow-in-right me-2"></i>Ir a SUAyED
                         </a>
                     </div>
                 </div>
@@ -246,39 +1555,37 @@
         </div>
 
         <!-- Modal EDCO -->
-        <div class="modal fade" id="modalEdco" tabindex="-1" aria-labelledby="modalEdcoLabel" aria-hidden="true">
+        <div class="modal fade" id="modalEdco" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content" style="border-color: var(--color-edco);">
-                    <div class="modal-header" style="background-color: var(--color-edco); color: white;">
-                        <h5 class="modal-title" id="modalEdcoLabel">Educación Continua</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                            aria-label="Cerrar"></button>
+                <div class="modal-content" style="border-color:var(--edco-color);">
+                    <div class="modal-header" style="background-color:var(--edco-color);color:white;">
+                        <h5 class="modal-title">Educación Continua</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                     </div>
                     <div class="modal-body text-center">
-                        <i class="bi bi-lightbulb display-1 mb-3" style="color: var(--color-edco);"></i>
+                        <i class="bi bi-lightbulb display-1 mb-3" style="color:var(--edco-color);"></i>
                         <p>Explora cursos, talleres y diplomados para tu actualización profesional.</p>
-                        <a href="#" class="btn w-100 py-2" style="background-color: var(--color-edco); color: white;">
-                            <i class="bi bi-box-arrow-up-right me-2"></i> Ver oferta EDCO
+                        <a href="EDCO.html" class="btn w-100 py-2" style="background-color:var(--edco-color);color:white;">
+                            <i class="bi bi-box-arrow-in-right me-2"></i>Ver oferta EDCO
                         </a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Modal CLE -->
-        <div class="modal fade" id="modalCle" tabindex="-1" aria-labelledby="modalCleLabel" aria-hidden="true">
+        <!-- Modal CLe -->
+        <div class="modal fade" id="modalCle" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content" style="border-color: var(--color-cle);">
-                    <div class="modal-header" style="background-color: var(--color-cle); color: white;">
-                        <h5 class="modal-title" id="modalCleLabel">Centro de Lenguas Extranjeras (CLE)</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                            aria-label="Cerrar"></button>
+                <div class="modal-content" style="border-color:var(--cle-color);">
+                    <div class="modal-header" style="background-color:var(--cle-color);color:var(--primary-color);">
+                        <h5 class="modal-title fw-bold">Centro de Lenguas (CLe)</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                     </div>
                     <div class="modal-body text-center">
-                        <i class="bi bi-translate display-1 mb-3" style="color: var(--color-cle);"></i>
-                        <p>Consulta la oferta de idiomas y modalidades del CLE.</p>
-                        <a href="#" class="btn w-100 py-2" style="background-color: var(--color-cle); color: white;">
-                            <i class="bi bi-box-arrow-up-right me-2"></i> Ir al CLE
+                        <i class="bi bi-translate display-1 mb-3" style="color:var(--cle-color);"></i>
+                        <p>Aprende un idioma en la FES Aragón con el respaldo de la UNAM. 8 idiomas disponibles.</p>
+                        <a href="CLE.html" class="btn w-100 py-2" style="background-color:var(--primary-color);color:white;">
+                            <i class="bi bi-award me-2"></i>Ir al CLe
                         </a>
                     </div>
                 </div>
@@ -288,6 +1595,9 @@
     </main>
 
 
+    <!-- ══════════════════════════════════════
+         FOOTER — idéntico al resto del sitio
+    ══════════════════════════════════════ -->
     <footer class="footer-carbon py-5">
         <div class="container">
             <div class="row">
@@ -297,17 +1607,14 @@
                     <p>Facultad de Estudios Superiores Aragón</p>
                     <p>Universidad Nacional Autónoma de México</p>
                 </div>
-
                 <div class="col-md-4 mb-4 mb-md-0">
                     <h5>Contacto</h5>
                     <ul class="list-unstyled footer-links">
-                        <li><i class="bi bi-geo-alt-fill me-2"></i> Av. Universidad Nacional S/N, Bosques de Aragon,
-                            57171 Cdad. Nezahualcóyotl, Méx.</li>
-                        <li><i class="bi bi-telephone-fill me-2"></i> Teléfono: 55 5623 0000</li>
-                        <li><i class="bi bi-envelope-fill me-2"></i> Email: duacyd@aragon.unam.mx</li>
+                        <li><i class="bi bi-geo-alt-fill me-2"></i>Av. Universidad Nacional S/N, Bosques de Aragón, 57171 Cdad. Nezahualcóyotl, Méx.</li>
+                        <li><i class="bi bi-telephone-fill me-2"></i>Teléfono: 55 5623 0000</li>
+                        <li><i class="bi bi-envelope-fill me-2"></i>Email: contacto@aragon.unam.mx</li>
                     </ul>
                 </div>
-
                 <div class="col-md-4">
                     <h5>Síguenos</h5>
                     <div class="social-icons mb-3">
@@ -316,8 +1623,8 @@
                         <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
                         <a href="#" target="_blank"><i class="bi bi-youtube"></i></a>
                     </div>
-                    <img src="resources/unam_blanco.png" alt="Logo UNAM" style="height: 60px;" class="me-3">
-                    <img src="resources/fesaragon-blanco.png" alt="Logo FES Aragón" style="height: 60px;">
+                    <img src="resources/unam_blanco.png" alt="Logo UNAM" style="height:60px;" class="me-3">
+                    <img src="resources/fesaragon-blanco.png" alt="Logo FES Aragón" style="height:60px;">
                 </div>
             </div>
 
@@ -325,13 +1632,14 @@
 
             <div class="row">
                 <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0">&copy; 2025 DUACyD FES Aragón - UNAM. Todos los derechos reservados.</p>
+                    <p class="mb-0">&copy; 2025 DUACyD FES Aragón — UNAM. Todos los derechos reservados.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <ul class="list-inline mb-0">
-                        <li class="list-inline-item"><a
-                                href="https://www.aragon.unam.mx/fes-aragon/public_html/documents/aviso-de-privacidad/integral-de-la-fes-aragon.pdf"
-                                class="footer-links">Aviso de Privacidad</a></li>
+                        <li class="list-inline-item">
+                            <a href="https://www.aragon.unam.mx/fes-aragon/public_html/documents/aviso-de-privacidad/integral-de-la-fes-aragon.pdf"
+                                class="footer-links">Aviso de Privacidad</a>
+                        </li>
                         <li class="list-inline-item"><span class="mx-2">|</span></li>
                         <li class="list-inline-item"><a href="#" class="footer-links">Términos de Uso</a></li>
                         <li class="list-inline-item"><span class="mx-2">|</span></li>
@@ -342,49 +1650,41 @@
         </div>
     </footer>
 
-    <!-- Contenido principal -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // JavaScript con selectores actualizados
+        // ── Scroll Reveal ──
+        const reveals = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        reveals.forEach(el => revealObserver.observe(el));
+
+        // ── Touch support para flip cards (si hubiera) ──
         document.addEventListener('DOMContentLoaded', function () {
             const container = document.querySelector('.lp-comp-1-container');
             if (!container) return;
-
             const boxes = container.querySelectorAll('.lp-comp-1-box');
-
-            // Verificar si es un dispositivo táctil
             const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints;
-
             if (isTouchDevice) {
                 boxes.forEach(box => {
                     box.addEventListener('click', function (e) {
                         e.stopPropagation();
-
-                        // Cerrar cualquier caja abierta primero
-                        boxes.forEach(b => {
-                            if (b !== box && b.classList.contains('lp-comp-1-active')) {
-                                b.classList.remove('lp-comp-1-active');
-                            }
-                        });
-
-                        // Alternar la clase active en la caja clickeada
+                        boxes.forEach(b => { if (b !== box) b.classList.remove('lp-comp-1-active'); });
                         box.classList.toggle('lp-comp-1-active');
                     });
                 });
-
-                // Cerrar al hacer click fuera de las cajas
-                document.addEventListener('click', function () {
-                    boxes.forEach(box => {
-                        box.classList.remove('lp-comp-1-active');
-                    });
+                document.addEventListener('click', () => {
+                    boxes.forEach(box => box.classList.remove('lp-comp-1-active'));
                 });
             }
         });
     </script>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-</body>
 
+</body>
 </html>
