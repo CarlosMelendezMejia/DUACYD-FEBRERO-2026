@@ -20,6 +20,243 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="icon" href="resources/DUACyD_B-09.ico" type="image/x-icon">
 
+    <!-- Estilos para la sección de organizaciones colaboradoras -->
+    <style>
+        .duacyd-partners {
+            padding: 72px 24px;
+            overflow: hidden;
+            background: var(--bg, #f8fafc);
+        }
+
+        .duacyd-partners__container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .duacyd-partners__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 20px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .duacyd-partners__title-block {
+            max-width: 760px;
+        }
+
+        .duacyd-partners__eyebrow {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+
+        .duacyd-partners__title {
+            margin: 0;
+            font-size: clamp(1.8rem, 3vw, 2.7rem);
+            line-height: 1.15;
+            color: var(--primary-color, #0f3d63);
+        }
+
+        .duacyd-partners__subtitle {
+            margin: 12px 0 0;
+            color: #6b7280;
+            font-size: 1rem;
+            line-height: 1.7;
+            max-width: 680px;
+        }
+
+        .duacyd-partners__controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .duacyd-btn {
+            width: 46px;
+            height: 46px;
+            border: 1px solid #e5e7eb;
+            background: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--primary-color, #0f3d63);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+        }
+
+        .duacyd-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(15, 61, 99, 0.12);
+            background: #fdfdfd;
+        }
+
+        .duacyd-btn:disabled {
+            opacity: 0.45;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .duacyd-carousel-wrapper {
+            position: relative;
+        }
+
+        .duacyd-carousel {
+            display: flex;
+            gap: 22px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 8px 4px 16px;
+            scrollbar-width: none;
+        }
+
+        .duacyd-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .duacyd-card {
+            flex: 0 0 calc(25% - 17px);
+            min-width: 250px;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 20px;
+            padding: 24px 20px;
+            box-shadow: 0 10px 30px rgba(15, 61, 99, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-height: 280px;
+        }
+
+        .duacyd-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 36px rgba(15, 61, 99, 0.14);
+            border-color: rgba(212, 175, 55, 0.45);
+        }
+
+        .duacyd-card__logo-wrap {
+            width: 100%;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            padding: 12px;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 16px;
+            border: 1px solid #edf1f5;
+        }
+
+        .duacyd-card__logo {
+            max-width: 100%;
+            max-height: 82px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.9;
+            transition: filter 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .duacyd-card:hover .duacyd-card__logo {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.03);
+        }
+
+        .duacyd-card__name {
+            margin: 0 0 14px;
+            font-size: 1rem;
+            line-height: 1.5;
+            font-weight: 700;
+            color: var(--primary-color, #0f3d63);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            min-height: 48px;
+        }
+
+        .duacyd-card__tag {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 14px;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            background: rgba(15, 61, 99, 0.08);
+            color: var(--primary-color, #0f3d63);
+            border: 1px solid rgba(15, 61, 99, 0.08);
+            margin-top: auto;
+        }
+
+        .duacyd-carousel-fade::before,
+        .duacyd-carousel-fade::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 70px;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .duacyd-carousel-fade::before {
+            left: 0;
+            background: linear-gradient(to right, #f8fafc, rgba(248, 250, 252, 0));
+        }
+
+        .duacyd-carousel-fade::after {
+            right: 0;
+            background: linear-gradient(to left, #f8fafc, rgba(248, 250, 252, 0));
+        }
+
+        @media (max-width: 1100px) {
+            .duacyd-card {
+                flex: 0 0 calc(33.333% - 15px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .duacyd-partners {
+                padding: 56px 18px;
+            }
+
+            .duacyd-card {
+                flex: 0 0 calc(50% - 11px);
+                min-width: 220px;
+            }
+
+            .duacyd-carousel-fade::before,
+            .duacyd-carousel-fade::after {
+                width: 28px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .duacyd-card {
+                flex: 0 0 85%;
+                min-width: 85%;
+            }
+
+            .duacyd-partners__controls {
+                width: 100%;
+                justify-content: flex-end;
+            }
+        }
+    </style>
+
 </head>
 
 <body class="landing-page">
@@ -351,6 +588,369 @@
                         <p class="fs-6" style="opacity: 0.85;">
                             A través de la educación abierta, la formación continua y la enseñanza de lenguas, promueve el aprendizaje permanente y el acceso a nuevas oportunidades de desarrollo para la comunidad universitaria y para la sociedad en su conjunto.
                         </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Organizaciones colaboradoras -->
+        <section class="duacyd-partners">
+            <div class="duacyd-partners__container">
+                <div class="duacyd-partners__header">
+                    <div class="duacyd-partners__title-block">
+                        <span class="duacyd-partners__eyebrow">Red institucional</span>
+                        <h2 class="duacyd-partners__title">Vinculación y colaboración institucional</h2>
+                        <p class="duacyd-partners__subtitle">
+                            Organizaciones e instituciones con las que la DUACyD FES Aragón mantiene relaciones de colaboración,
+                            vinculación o convenio.
+                        </p>
+                    </div>
+
+                    <div class="duacyd-partners__controls">
+                        <button class="duacyd-btn" id="btnPrev" aria-label="Desplazar a la izquierda">←</button>
+                        <button class="duacyd-btn" id="btnNext" aria-label="Desplazar a la derecha">→</button>
+                    </div>
+                </div>
+
+                <div class="duacyd-carousel-wrapper duacyd-carousel-fade">
+                    <div class="duacyd-carousel" id="partnersCarousel">
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=SHCP" alt="Logo SHCP">
+                            </div>
+                            <h3 class="duacyd-card__name">SHCP - Secretaría de Hacienda y Crédito Público</h3>
+                            <span class="duacyd-card__tag">Convenio</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=SEGOB" alt="Logo SEGOB">
+                            </div>
+                            <h3 class="duacyd-card__name">SEGOB - Secretaría de Gobernación</h3>
+                            <span class="duacyd-card__tag">Convenio</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=SE" alt="Logo SE">
+                            </div>
+                            <h3 class="duacyd-card__name">SE - Secretaría de Economía</h3>
+                            <span class="duacyd-card__tag">Convenio</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=SEFIN" alt="Logo SEFIN">
+                            </div>
+                            <h3 class="duacyd-card__name">SEFIN - Secretaría de Finanzas</h3>
+                            <span class="duacyd-card__tag">Convenio</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=Gobierno" alt="Logo Gobierno de México">
+                            </div>
+                            <h3 class="duacyd-card__name">Gobierno de México</h3>
+                            <span class="duacyd-card__tag">Colaboración</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=Tribunales" alt="Logo Tribunales Agrarios">
+                            </div>
+                            <h3 class="duacyd-card__name">Tribunales Agrarios</h3>
+                            <span class="duacyd-card__tag">Vinculación</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=SFP" alt="Logo Función Pública">
+                            </div>
+                            <h3 class="duacyd-card__name">Función Pública - Secretaría de la Función Pública</h3>
+                            <span class="duacyd-card__tag">Convenio</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=Bienestar" alt="Logo Secretaría de Bienestar">
+                            </div>
+                            <h3 class="duacyd-card__name">Bienestar - Secretaría de Bienestar</h3>
+                            <span class="duacyd-card__tag">Convenio</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=Seguridad" alt="Logo Secretaría de Seguridad">
+                            </div>
+                            <h3 class="duacyd-card__name">Seguridad - Secretaría de Seguridad y Ciudadana</h3>
+                            <span class="duacyd-card__tag">Convenio</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=ISSSTE" alt="Logo ISSSTE">
+                            </div>
+                            <h3 class="duacyd-card__name">ISSSTE</h3>
+                            <span class="duacyd-card__tag">Colaboración</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=CJEF" alt="Logo CJEF">
+                            </div>
+                            <h3 class="duacyd-card__name">CJEF - Consejería Jurídica del Ejecutivo Federal</h3>
+                            <span class="duacyd-card__tag">Vinculación</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=Diputados" alt="Logo Cámara de Diputados">
+                            </div>
+                            <h3 class="duacyd-card__name">Cámara de Diputados</h3>
+                            <span class="duacyd-card__tag">Vinculación</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=CDMX" alt="Logo Gobierno CDMX">
+                            </div>
+                            <h3 class="duacyd-card__name">Gobierno de la Ciudad de México</h3>
+                            <span class="duacyd-card__tag">Colaboración</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=SADER" alt="Logo SADER">
+                            </div>
+                            <h3 class="duacyd-card__name">SADER - Secretaría de Agricultura y Desarrollo Rural</h3>
+                            <span class="duacyd-card__tag">Convenio</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=PGJ" alt="Logo PGJ">
+                            </div>
+                            <h3 class="duacyd-card__name">PGJ - Procuraduría General de Justicia</h3>
+                            <span class="duacyd-card__tag">Convenio</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=SESNSP" alt="Logo Secretariado Ejecutivo">
+                            </div>
+                            <h3 class="duacyd-card__name">Secretariado Ejecutivo</h3>
+                            <span class="duacyd-card__tag">Vinculación</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=Salud" alt="Logo Secretaría de Salud">
+                            </div>
+                            <h3 class="duacyd-card__name">Salud - Secretaría de Salud</h3>
+                            <span class="duacyd-card__tag">Convenio</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=Prodecon" alt="Logo Prodecon">
+                            </div>
+                            <h3 class="duacyd-card__name">Prodecon - Procuraduría de la Defensa del Contribuyente</h3>
+                            <span class="duacyd-card__tag">Colaboración</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=SEP" alt="Logo SEP">
+                            </div>
+                            <h3 class="duacyd-card__name">SEP - Secretaría de Educación Pública</h3>
+                            <span class="duacyd-card__tag">Convenio</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=Cultura" alt="Logo Secretaría de Cultura">
+                            </div>
+                            <h3 class="duacyd-card__name">Cultura - Secretaría de Cultura</h3>
+                            <span class="duacyd-card__tag">Convenio</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=FGJ" alt="Logo Fiscalía General">
+                            </div>
+                            <h3 class="duacyd-card__name">Fiscalía General de Justicia - Ciudad de México</h3>
+                            <span class="duacyd-card__tag">Convenio</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=SENASICA" alt="Logo SENASICA">
+                            </div>
+                            <h3 class="duacyd-card__name">SENASICA</h3>
+                            <span class="duacyd-card__tag">Vinculación</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=PROSOC" alt="Logo Procuraduría Social">
+                            </div>
+                            <h3 class="duacyd-card__name">Procuraduría Social de la Ciudad de México</h3>
+                            <span class="duacyd-card__tag">Colaboración</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=Gob" alt="Signo de la Nación">
+                            </div>
+                            <h3 class="duacyd-card__name">Signo de la Nación</h3>
+                            <span class="duacyd-card__tag">Colaboración</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=Cofepris" alt="Logo Cofepris">
+                            </div>
+                            <h3 class="duacyd-card__name">Cofepris</h3>
+                            <span class="duacyd-card__tag">Vinculación</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=TSJCDMX" alt="Logo TSJCDMX">
+                            </div>
+                            <h3 class="duacyd-card__name">TSJCDMX - Tribunal Superior de Justicia de la Ciudad de México</h3>
+                            <span class="duacyd-card__tag">Convenio</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=HGM" alt="Logo Hospital General de México">
+                            </div>
+                            <h3 class="duacyd-card__name">Hospital General de México - Dr. Eduardo Liceaga</h3>
+                            <span class="duacyd-card__tag">Colaboración</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=Parlamento" alt="Logo Parlamento Abierto">
+                            </div>
+                            <h3 class="duacyd-card__name">Parlamento Abierto</h3>
+                            <span class="duacyd-card__tag">Vinculación</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=IEEM" alt="Logo IEEM">
+                            </div>
+                            <h3 class="duacyd-card__name">IEEM - Instituto Electoral del Estado de México</h3>
+                            <span class="duacyd-card__tag">Vinculación</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=STyFE" alt="Logo Secretaría de Trabajo">
+                            </div>
+                            <h3 class="duacyd-card__name">Secretaría de Trabajo y Fomento al Empleo</h3>
+                            <span class="duacyd-card__tag">Convenio</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=INIFAP" alt="Logo INIFAP">
+                            </div>
+                            <h3 class="duacyd-card__name">INIFAP - Instituto Nacional de Investigaciones Forestales, Agrícolas y Pecuarias</h3>
+                            <span class="duacyd-card__tag">Colaboración</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=AMACESA" alt="Logo AMACESA">
+                            </div>
+                            <h3 class="duacyd-card__name">AMACESA - Almacenes Fiscalizados</h3>
+                            <span class="duacyd-card__tag">Vinculación</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=Alher" alt="Logo Universidad Alher">
+                            </div>
+                            <h3 class="duacyd-card__name">Universidad Alher</h3>
+                            <span class="duacyd-card__tag">Colaboración</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=Loteria" alt="Logo Lotería Nacional">
+                            </div>
+                            <h3 class="duacyd-card__name">Lotería Nacional</h3>
+                            <span class="duacyd-card__tag">Vinculación</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=JAP" alt="Logo Junta de Asistencia Privada">
+                            </div>
+                            <h3 class="duacyd-card__name">Junta de Asistencia Privada del Distrito Federal</h3>
+                            <span class="duacyd-card__tag">Vinculación</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=Vivook" alt="Logo Vivook">
+                            </div>
+                            <h3 class="duacyd-card__name">Vivook</h3>
+                            <span class="duacyd-card__tag">Colaboración</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=Huawei" alt="Logo Huawei">
+                            </div>
+                            <h3 class="duacyd-card__name">Huawei</h3>
+                            <span class="duacyd-card__tag">Colaboración</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=OPARIN" alt="Logo OPARIN">
+                            </div>
+                            <h3 class="duacyd-card__name">OPARIN</h3>
+                            <span class="duacyd-card__tag">Vinculación</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=Carranza" alt="Logo Carranza">
+                            </div>
+                            <h3 class="duacyd-card__name">Carranza</h3>
+                            <span class="duacyd-card__tag">Colaboración</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=Obregon" alt="Logo Alcaldía Álvaro Obregón">
+                            </div>
+                            <h3 class="duacyd-card__name">Alcaldía Álvaro Obregón</h3>
+                            <span class="duacyd-card__tag">Convenio</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=IMSS" alt="Logo IMSS">
+                            </div>
+                            <h3 class="duacyd-card__name">IMSS - Instituto Mexicano del Seguro Social</h3>
+                            <span class="duacyd-card__tag">Convenio</span>
+                        </article>
+
+                        <article class="duacyd-card">
+                            <div class="duacyd-card__logo-wrap">
+                                <img class="duacyd-card__logo" src="https://via.placeholder.com/220x90?text=CNBV" alt="Logo CNBV">
+                            </div>
+                            <h3 class="duacyd-card__name">CNBV - Comisión Nacional Bancaria y de Valores</h3>
+                            <span class="duacyd-card__tag">Convenio</span>
+                        </article>
+
                     </div>
                 </div>
             </div>
@@ -698,6 +1298,104 @@
                 observer.observe(el);
             });
         })();
+    </script>
+
+    <!-- Script para el carrusel de organizaciones colaboradoras -->
+    <script>
+        const carousel = document.getElementById("partnersCarousel");
+        const btnPrev = document.getElementById("btnPrev");
+        const btnNext = document.getElementById("btnNext");
+
+        if (carousel && btnPrev && btnNext) {
+            let autoScrollInterval;
+            let isUserInteracting = false;
+
+            function getScrollAmount() {
+                const card = carousel.querySelector(".duacyd-card");
+                if (!card) return 300;
+
+                const cardStyle = window.getComputedStyle(card);
+                const cardWidth = card.offsetWidth;
+                const gap = parseInt(window.getComputedStyle(carousel).gap) || 22;
+
+                return cardWidth + gap;
+            }
+
+            function scrollNext() {
+                const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+                
+                // Si llegamos al final, volver al inicio
+                if (carousel.scrollLeft >= maxScroll - 10) {
+                    carousel.scrollTo({
+                        left: 0,
+                        behavior: "smooth"
+                    });
+                } else {
+                    carousel.scrollBy({
+                        left: getScrollAmount(),
+                        behavior: "smooth"
+                    });
+                }
+            }
+
+            function startAutoScroll() {
+                stopAutoScroll();
+                autoScrollInterval = setInterval(() => {
+                    if (!isUserInteracting) {
+                        scrollNext();
+                    }
+                }, 4000); // Avanza cada 4 segundos
+            }
+
+            function stopAutoScroll() {
+                if (autoScrollInterval) {
+                    clearInterval(autoScrollInterval);
+                }
+            }
+
+            function resetAutoScroll() {
+                isUserInteracting = true;
+                stopAutoScroll();
+                
+                setTimeout(() => {
+                    isUserInteracting = false;
+                    startAutoScroll();
+                }, 3000); // Reinicia después de 3 segundos de inactividad
+            }
+
+            // Eventos de los botones
+            btnNext.addEventListener("click", () => {
+                scrollNext();
+                resetAutoScroll();
+            });
+
+            btnPrev.addEventListener("click", () => {
+                carousel.scrollBy({
+                    left: -getScrollAmount(),
+                    behavior: "smooth"
+                });
+                resetAutoScroll();
+            });
+
+            // Pausar al hacer hover sobre el carrusel
+            carousel.addEventListener("mouseenter", () => {
+                isUserInteracting = true;
+            });
+
+            carousel.addEventListener("mouseleave", () => {
+                isUserInteracting = false;
+            });
+
+            // Pausar al hacer scroll manual
+            carousel.addEventListener("scroll", () => {
+                if (!isUserInteracting) {
+                    resetAutoScroll();
+                }
+            }, { passive: true });
+
+            // Iniciar el auto-scroll
+            startAutoScroll();
+        }
     </script>
 </body>
 
