@@ -91,11 +91,12 @@
             <div class="container position-relative text-white">
                 <div class="row align-items-center">
                     <div class="col-lg-8">
-                        <h1 class="display-4 fw-bold">Comunidad Universitaria</h1>
-                        <h2 class="fw-semibold mt-3">
+                        <h1 class="display-4 fw-bold hero-animate hero-animate-1">Comunidad Universitaria</h1>
+                        <span class="hero-title-accent"></span>
+                        <h2 class="fw-semibold mt-3 hero-animate hero-animate-2">
                             RACE y Transporte Seguro
                         </h2>
-                        <p class="mt-4 fs-5 fst-italic text-white-50 d-none d-lg-block">
+                        <p class="mt-4 fs-5 fst-italic text-white-50 d-none d-lg-block hero-animate hero-animate-3">
                             Conoce a los Responsables de Atención a la Comunidad Estudiantil y los servicios de
                             transporte
                             seguro que ofrecemos para garantizar tu bienestar.
@@ -2359,6 +2360,19 @@
                 }
             }).addTo(mapBotones);
         });
+    </script>
+
+    <!-- Scroll Reveal -->
+    <script>
+        const reveals = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        reveals.forEach(el => revealObserver.observe(el));
     </script>
 </body>
 
