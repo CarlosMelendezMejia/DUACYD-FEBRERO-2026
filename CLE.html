@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Centro de Lenguas de la FES Aragón — Aprende inglés, francés, alemán, italiano, japonés, portugués, ruso y latín con el respaldo académico de la UNAM.">
+        content="Centro de Lenguas de la FES Aragón — Aprende alemán, chino, francés, inglés, italiano, japonés, latín, lengua de señas mexicana, náhuatl, portugués y ruso con el respaldo académico de la UNAM.">
     <meta name="keywords"
-        content="Centro de Lenguas, CLe, idiomas, UNAM, FES Aragón, inglés, francés, alemán, japonés, cursos, exámenes">
+        content="Centro de Lenguas, CLe, idiomas, UNAM, FES Aragón, inglés, francés, alemán, chino, japonés, náhuatl, lengua de señas mexicana, LSM, cursos, exámenes">
     <title>CLe — Centro de Lenguas | DUACyD FES Aragón</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -22,6 +22,30 @@
     <link rel="icon" href="resources/DUACyD_B-09.ico" type="image/x-icon">
 
     <style>
+        /* ── Abbreviations ── */
+        abbr[title] {
+            text-decoration: underline dotted currentColor;
+            text-underline-offset: 2px;
+            cursor: help;
+        }
+
+        /* ── Modality badges (oferta de cursos) ── */
+        .cle-mod {
+            display: inline-block;
+            font-size: 0.67rem;
+            font-weight: 600;
+            padding: 0.2em 0.55em;
+            border-radius: 100px;
+            margin: 0.1em 0.1em 0.1em 0;
+            white-space: nowrap;
+            line-height: 1.5;
+        }
+        .cle-mod-pres  { background: var(--primary-color); color: #fff; }
+        .cle-mod-semi  { background: #0d6efd; color: #fff; }
+        .cle-mod-sinc  { background: var(--cle-color); color: var(--primary-color); }
+        .cle-mod-asinc { background: #fd7e14; color: #fff; }
+        .cle-mod-clia  { background: #198754; color: #fff; }
+
         /* ── Advisory cards (patrón SUAYED) ── */
         .advisory-card {
             background: #f8f9fa;
@@ -553,7 +577,7 @@
                             Abre tu mundo con un nuevo idioma
                         </h2>
                         <p class="mt-3 fs-5 text-white-50 d-none d-lg-block hero-animate hero-animate-4">
-                            Desde 1977, formando hablantes de 8 idiomas con el respaldo académico de la UNAM.
+                            Desde 1977, formando hablantes de 11 idiomas con el respaldo académico de la UNAM.
                         </p>
                         <div class="d-flex flex-wrap gap-3 mt-4 hero-animate hero-animate-4">
                             <a href="#cursos" class="btn fw-semibold px-4 py-2"
@@ -653,10 +677,9 @@
         ══════════════════════════════════════ -->
         <section class="py-5 bg-light" id="que-es">
             <div class="container">
-                <div class="row align-items-center g-5">
-
+                <div class="row justify-content-center">
                     <!-- Texto -->
-                    <div class="col-lg-7 reveal">
+                    <div class="col-lg-9 reveal">
                         <span class="lp-section-label">Nuestra Historia</span>
                         <div class="lp-title-wrap cle-title-wrap align-start mt-2">
                             <h2 class="fw-bold" style="color:var(--cle-color);">¿Qué es el Centro de Lenguas?</h2>
@@ -670,8 +693,7 @@
                             Inglés y Francés en Comprensión de Lectura y Lengua son los primeros idiomas con los que
                             inicia
                             la impartición de cursos el Centro de Lenguas. En la actualidad se imparten
-                            <strong>ocho idiomas: Inglés, Francés, Italiano, Portugués, Japonés, Alemán, Ruso y
-                                Latín.</strong>
+                            <strong>once idiomas: Alemán, Chino, Francés, Inglés, Italiano, Japonés, Latín, Lengua de Señas Mexicana, Náhuatl, Portugués y Ruso.</strong>
                         </p>
                         <p class="custom-text-justify text-secondary">
                             La difusión de la cultura es uno de los rubros contemplados por los Centros de Lenguas de la
@@ -687,41 +709,6 @@
                             de
                             la División de Universidad Abierta, Continua y a Distancia (DUACyD).
                         </p>
-                    </div>
-
-                    <!-- Stats + nota -->
-                    <div class="col-lg-5 reveal reveal-delay-2">
-                        <div class="row g-3">
-                            <div class="col-6">
-                                <div class="cle-stat-card">
-                                    <div class="cle-stat-num"><span>1977</span></div>
-                                    <div class="cle-stat-label">Año de fundación</div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="cle-stat-card">
-                                    <div class="cle-stat-num"><span>8</span></div>
-                                    <div class="cle-stat-label">Idiomas disponibles</div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="cle-stat-card">
-                                    <div class="cle-stat-num"><span>58</span></div>
-                                    <div class="cle-stat-label">Profesores en plantilla</div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="cle-stat-card">
-                                    <div class="cle-stat-num"><span>6k</span></div>
-                                    <div class="cle-stat-label">Alumnos por semestre</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cle-note mt-3">
-                            <i class="bi bi-patch-check-fill me-2" style="color:var(--cle-color);"></i>
-                            <strong>Convenios institucionales</strong> con el IFAL, Instituto Goethe, Asociación
-                            Dante Alighieri y la Embajada Rusa, entre otros.
-                        </div>
                     </div>
                 </div>
             </div>
@@ -756,8 +743,21 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Francés -->
+                    <!-- Chino -->
                     <div class="col-6 col-md-4 col-lg-3 reveal reveal-delay-1">
+                        <div class="cle-lang-card">
+                            <div class="lang-top">
+                                <div class="lang-flag">🇨🇳</div>
+                            </div>
+                            <div class="lang-body">
+                                <div class="lang-name">Chino</div>
+                                <span class="lang-badge text-white" style="background:var(--primary-color);">Lengua · 4
+                                    niv.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Francés -->
+                    <div class="col-6 col-md-4 col-lg-3 reveal reveal-delay-2">
                         <div class="cle-lang-card">
                             <div class="lang-top">
                                 <div class="lang-flag">🇫🇷</div>
@@ -767,7 +767,7 @@
                                 <span class="lang-badge text-white" style="background:var(--primary-color);">Lengua · 6
                                     niv.</span>
                                 <span class="lang-badge"
-                                    style="background:var(--cle-color);color:var(--primary-color);">C.L. · 2 niv.</span>
+                                    style="background:var(--cle-color);color:var(--primary-color);"><abbr title="Comprensión de Lectura">C.L.</abbr> · 2 niv.</span>
                             </div>
                         </div>
                     </div>
@@ -782,12 +782,12 @@
                                 <span class="lang-badge text-white" style="background:var(--primary-color);">Lengua · 6
                                     niv.</span>
                                 <span class="lang-badge"
-                                    style="background:var(--cle-color);color:var(--primary-color);">C.L. · 3 niv.</span>
+                                    style="background:var(--cle-color);color:var(--primary-color);"><abbr title="Comprensión de Lectura">C.L.</abbr> · 3 niv.</span>
                             </div>
                         </div>
                     </div>
                     <!-- Italiano -->
-                    <div class="col-6 col-md-4 col-lg-3 reveal reveal-delay-2">
+                    <div class="col-6 col-md-4 col-lg-3 reveal reveal-delay-3">
                         <div class="cle-lang-card">
                             <div class="lang-top">
                                 <div class="lang-flag">🇮🇹</div>
@@ -797,7 +797,7 @@
                                 <span class="lang-badge text-white" style="background:var(--primary-color);">Lengua · 6
                                     niv.</span>
                                 <span class="lang-badge"
-                                    style="background:var(--cle-color);color:var(--primary-color);">C.L. · 2 niv.</span>
+                                    style="background:var(--cle-color);color:var(--primary-color);"><abbr title="Comprensión de Lectura">C.L.</abbr> · 2 niv.</span>
                             </div>
                         </div>
                     </div>
@@ -815,7 +815,7 @@
                         </div>
                     </div>
                     <!-- Latín -->
-                    <div class="col-6 col-md-4 col-lg-3 reveal reveal-delay-3">
+                    <div class="col-6 col-md-4 col-lg-3 reveal reveal-delay-4">
                         <div class="cle-lang-card">
                             <div class="lang-top">
                                 <div class="lang-flag">🏛️</div>
@@ -823,12 +823,38 @@
                             <div class="lang-body">
                                 <div class="lang-name">Latín</div>
                                 <span class="lang-badge"
-                                    style="background:var(--cle-color);color:var(--primary-color);">C.L. · 3 niv.</span>
+                                    style="background:var(--cle-color);color:var(--primary-color);"><abbr title="Comprensión de Lectura">C.L.</abbr> · 2 niv.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Lengua de Señas Mexicana -->
+                    <div class="col-6 col-md-4 col-lg-3 reveal reveal-delay-4">
+                        <div class="cle-lang-card">
+                            <div class="lang-top">
+                                <div class="lang-flag">🤟</div>
+                            </div>
+                            <div class="lang-body">
+                                <div class="lang-name">Lengua de Señas Mexicana</div>
+                                <span class="lang-badge text-white" style="background:var(--primary-color);">Lengua · 4
+                                    niv.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Náhuatl -->
+                    <div class="col-6 col-md-4 col-lg-3 reveal reveal-delay-1">
+                        <div class="cle-lang-card">
+                            <div class="lang-top">
+                                <div class="lang-flag">🦅</div>
+                            </div>
+                            <div class="lang-body">
+                                <div class="lang-name">Náhuatl</div>
+                                <span class="lang-badge text-white" style="background:var(--primary-color);">Lengua · 4
+                                    niv.</span>
                             </div>
                         </div>
                     </div>
                     <!-- Portugués -->
-                    <div class="col-6 col-md-4 col-lg-3 reveal reveal-delay-4">
+                    <div class="col-6 col-md-4 col-lg-3 reveal reveal-delay-2">
                         <div class="cle-lang-card">
                             <div class="lang-top">
                                 <div class="lang-flag">🇧🇷</div>
@@ -838,12 +864,12 @@
                                 <span class="lang-badge text-white" style="background:var(--primary-color);">Lengua · 5
                                     niv.</span>
                                 <span class="lang-badge"
-                                    style="background:var(--cle-color);color:var(--primary-color);">C.L. · 2 niv.</span>
+                                    style="background:var(--cle-color);color:var(--primary-color);"><abbr title="Comprensión de Lectura">C.L.</abbr> · 2 niv.</span>
                             </div>
                         </div>
                     </div>
                     <!-- Ruso -->
-                    <div class="col-6 col-md-4 col-lg-3 reveal reveal-delay-4">
+                    <div class="col-6 col-md-4 col-lg-3 reveal reveal-delay-2">
                         <div class="cle-lang-card">
                             <div class="lang-top">
                                 <div class="lang-flag">🇷🇺</div>
@@ -865,7 +891,7 @@
                     </span>
                     <span class="badge px-3 py-2"
                         style="background:var(--cle-color);color:var(--primary-color);font-size:0.78rem;border-radius:100px;">
-                        <i class="bi bi-book-fill me-1"></i>C.L. — Comprensión de Lectura
+                        <i class="bi bi-book-fill me-1"></i><abbr title="Comprensión de Lectura">C.L.</abbr> — Comprensión de Lectura
                     </span>
                 </div>
             </div>
@@ -961,63 +987,104 @@
                                 <div class="card border-0 shadow-sm mb-4" style="border-radius:var(--border-radius);">
                                     <div class="card-body p-4">
                                         <h6 class="fw-bold mb-3" style="color:var(--primary-color);">
-                                            <i class="bi bi-globe me-2" style="color:var(--cle-color);"></i>Idiomas
-                                            disponibles
+                                            <i class="bi bi-globe me-2" style="color:var(--cle-color);"></i>Oferta de cursos — Posesión / 4 Habilidades
                                         </h6>
                                         <div class="table-responsive">
                                             <table class="table table-hover cle-table mb-0">
                                                 <thead>
                                                     <tr>
                                                         <th>Idioma</th>
-                                                        <th class="text-center">Duración</th>
+                                                        <th>Niveles disponibles</th>
+                                                        <th>Modalidades</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
                                                         <td>🇩🇪 Alemán</td>
-                                                        <td class="text-center"><span class="badge"
-                                                                style="background:var(--primary-color);">6
-                                                                niveles</span></td>
+                                                        <td class="small text-muted">1y2 · 2 · 3y4 · 5y6 · 7y8</td>
+                                                        <td>
+                                                            <span class="cle-mod cle-mod-pres">Presencial</span>
+                                                            <span class="cle-mod cle-mod-semi">Semi-presencial</span>
+                                                            <span class="cle-mod cle-mod-asinc">En línea asíncrono</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>🇨🇳 Chino</td>
+                                                        <td class="small text-muted">3 · 4 · 5 · 6</td>
+                                                        <td>
+                                                            <span class="cle-mod cle-mod-semi">Semi-presencial</span>
+                                                            <span class="cle-mod cle-mod-sinc">En línea</span>
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td>🇫🇷 Francés</td>
-                                                        <td class="text-center"><span class="badge"
-                                                                style="background:var(--primary-color);">6
-                                                                niveles</span></td>
+                                                        <td class="small text-muted">1 · 1y2 · 2 · 3y4 · 5y6 · 7y8</td>
+                                                        <td>
+                                                            <span class="cle-mod cle-mod-pres">Presencial</span>
+                                                            <span class="cle-mod cle-mod-semi">Semi-presencial</span>
+                                                            <span class="cle-mod cle-mod-sinc">En línea síncrono</span>
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td>🇬🇧 Inglés</td>
-                                                        <td class="text-center"><span class="badge"
-                                                                style="background:var(--primary-color);">6
-                                                                niveles</span></td>
+                                                        <td class="small text-muted">1 · 1y2 · 2 · 3 · 3y4 · 4 · 5 · 5y6 · 6</td>
+                                                        <td>
+                                                            <span class="cle-mod cle-mod-pres">Presencial</span>
+                                                            <span class="cle-mod cle-mod-semi">Semi-presencial</span>
+                                                            <span class="cle-mod cle-mod-sinc">En línea síncrono</span>
+                                                            <span class="cle-mod cle-mod-asinc">En línea asíncrono</span>
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td>🇮🇹 Italiano</td>
-                                                        <td class="text-center"><span class="badge"
-                                                                style="background:var(--primary-color);">6
-                                                                niveles</span></td>
+                                                        <td class="small text-muted">1 · 1y2 · 3y4 · 5y6</td>
+                                                        <td>
+                                                            <span class="cle-mod cle-mod-pres">Presencial</span>
+                                                            <span class="cle-mod cle-mod-sinc">En línea síncrono</span>
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td>🇯🇵 Japonés</td>
-                                                        <td class="text-center"><span class="badge"
-                                                                style="background:var(--primary-color);">6
-                                                                niveles</span></td>
+                                                        <td class="small text-muted">1 · 1y2 · 2 · 3 · 3y4 · 4 · 5y6</td>
+                                                        <td>
+                                                            <span class="cle-mod cle-mod-pres">Presencial</span>
+                                                            <span class="cle-mod cle-mod-sinc">En línea síncrono</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>🤟 Lengua de Señas Mexicana</td>
+                                                        <td class="small text-muted">1</td>
+                                                        <td>
+                                                            <span class="cle-mod cle-mod-pres">Presencial</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>🦅 Náhuatl</td>
+                                                        <td class="small text-muted">1 · 2 · 3 · 4 · 6</td>
+                                                        <td>
+                                                            <span class="cle-mod cle-mod-pres">Presencial</span>
+                                                            <span class="cle-mod cle-mod-sinc">En línea síncrono</span>
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td>🇧🇷 Portugués</td>
-                                                        <td class="text-center"><span class="badge"
-                                                                style="background:var(--primary-color);">5
-                                                                niveles</span></td>
+                                                        <td class="small text-muted">1y2 · 2 · 3 · 3y4 · 4 · 5y6</td>
+                                                        <td>
+                                                            <span class="cle-mod cle-mod-pres">Presencial</span>
+                                                            <span class="cle-mod cle-mod-sinc">En línea síncrono</span>
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td>🇷🇺 Ruso</td>
-                                                        <td class="text-center"><span class="badge"
-                                                                style="background:var(--primary-color);">6
-                                                                niveles</span></td>
+                                                        <td class="small text-muted">1y2 · 3y4 · 5y6</td>
+                                                        <td>
+                                                            <span class="cle-mod cle-mod-pres">Presencial</span>
+                                                        </td>
                                                     </tr>
                                                 </tbody>
                                             </table>
                                         </div>
+                                        <p class="text-muted mt-2 mb-0" style="font-size:0.72rem;"><i class="bi bi-info-circle me-1"></i>Los niveles con formato <strong>XyZ</strong> son cursos intensivos que cubren dos niveles consecutivos en un semestre.</p>
                                     </div>
                                 </div>
 
@@ -1142,51 +1209,101 @@
                                 <div class="card border-0 shadow-sm mb-4" style="border-radius:var(--border-radius);">
                                     <div class="card-body p-4">
                                         <h6 class="fw-bold mb-3" style="color:var(--primary-color);">
-                                            <i class="bi bi-globe me-2" style="color:var(--cle-color);"></i>Idiomas
-                                            disponibles
+                                            <i class="bi bi-globe me-2" style="color:var(--cle-color);"></i>Oferta de cursos — <abbr title="Comprensión de Lectura">C.L.</abbr>
                                         </h6>
                                         <div class="table-responsive">
                                             <table class="table table-hover cle-table mb-0">
                                                 <thead>
                                                     <tr>
                                                         <th>Idioma</th>
-                                                        <th class="text-center">Duración</th>
+                                                        <th>Niveles disponibles</th>
+                                                        <th>Modalidades</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
                                                         <td>🇫🇷 Francés</td>
-                                                        <td class="text-center"><span class="badge"
-                                                                style="background:var(--cle-color);color:var(--primary-color);">2
-                                                                niveles</span></td>
+                                                        <td class="small text-muted">1 · 1y2 · 2</td>
+                                                        <td>
+                                                            <span class="cle-mod cle-mod-pres">Presencial</span>
+                                                            <span class="cle-mod cle-mod-semi">Semi-presencial</span>
+                                                            <span class="cle-mod cle-mod-sinc">En línea síncrono</span>
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td>🇬🇧 Inglés</td>
-                                                        <td class="text-center"><span class="badge"
-                                                                style="background:var(--cle-color);color:var(--primary-color);">3
-                                                                niveles</span></td>
+                                                        <td class="small text-muted">1 · 1y2 · 2 · 2y3 · 3 · 1-2-3</td>
+                                                        <td>
+                                                            <span class="cle-mod cle-mod-pres">Presencial</span>
+                                                            <span class="cle-mod cle-mod-semi">Semi-presencial</span>
+                                                            <span class="cle-mod cle-mod-sinc">En línea síncrono</span>
+                                                            <span class="cle-mod cle-mod-asinc">En línea asíncrono</span>
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td>🇮🇹 Italiano</td>
-                                                        <td class="text-center"><span class="badge"
-                                                                style="background:var(--cle-color);color:var(--primary-color);">2
-                                                                niveles</span></td>
+                                                        <td class="small text-muted">1 · 1y2 · 2</td>
+                                                        <td>
+                                                            <span class="cle-mod cle-mod-pres">Presencial</span>
+                                                            <span class="cle-mod cle-mod-semi">Semi-presencial</span>
+                                                            <span class="cle-mod cle-mod-sinc">En línea síncrono</span>
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td>🏛️ Latín</td>
-                                                        <td class="text-center"><span class="badge"
-                                                                style="background:var(--cle-color);color:var(--primary-color);">3
-                                                                niveles</span></td>
+                                                        <td class="small text-muted">1 · 2</td>
+                                                        <td>
+                                                            <span class="cle-mod cle-mod-pres">Presencial</span>
+                                                            <span class="cle-mod cle-mod-sinc">En línea síncrono</span>
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td>🇧🇷 Portugués</td>
-                                                        <td class="text-center"><span class="badge"
-                                                                style="background:var(--cle-color);color:var(--primary-color);">2
-                                                                niveles</span></td>
+                                                        <td class="small text-muted">1y2</td>
+                                                        <td>
+                                                            <span class="cle-mod cle-mod-sinc">En línea síncrono</span>
+                                                        </td>
                                                     </tr>
                                                 </tbody>
                                             </table>
                                         </div>
+                                        <h6 class="fw-bold mt-4 mb-2" style="color:var(--primary-color);font-size:0.88rem;">
+                                            <i class="bi bi-laptop me-2" style="color:var(--cle-color);"></i><abbr title="Cursos en Línea de Idiomas Asíncronos — modalidad masiva abierta de la UNAM">CLIA</abbr> — Cursos en Línea de Idiomas Asíncronos
+                                        </h6>
+                                        <div class="table-responsive">
+                                            <table class="table table-hover cle-table mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Idioma</th>
+                                                        <th>Niveles</th>
+                                                        <th>Modalidad</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>🇫🇷 Francés</td>
+                                                        <td class="small text-muted">1y2</td>
+                                                        <td><span class="cle-mod cle-mod-clia">En línea asíncrono (masivo)</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>🇬🇧 Inglés</td>
+                                                        <td class="small text-muted">1-2-3</td>
+                                                        <td><span class="cle-mod cle-mod-clia">En línea asíncrono (masivo)</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>🇮🇹 Italiano</td>
+                                                        <td class="small text-muted">1y2</td>
+                                                        <td><span class="cle-mod cle-mod-clia">En línea asíncrono (masivo)</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>🇧🇷 Portugués</td>
+                                                        <td class="small text-muted">1y2</td>
+                                                        <td><span class="cle-mod cle-mod-clia">En línea asíncrono (masivo)</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <p class="text-muted mt-2 mb-0" style="font-size:0.72rem;"><i class="bi bi-info-circle me-1"></i>Los niveles con formato <strong>XyZ</strong> son cursos intensivos que cubren dos niveles consecutivos.</p>
                                     </div>
                                 </div>
 
@@ -1870,47 +1987,47 @@
                                                 <td>Comunicación y Periodismo</td>
                                                 <td class="text-muted small">1274</td>
                                                 <td>Inglés oblig. + cualquier otro</td>
-                                                <td>2 C.L. o 2 Lengua o 1 de cada uno</td>
+                                                <td>2 <abbr title="Comprensión de Lectura">C.L.</abbr> o 2 Lengua o 1 de cada uno</td>
                                             </tr>
                                             <tr>
                                                 <td rowspan="2">Derecho</td>
                                                 <td class="text-muted small">1325 y 2254</td>
                                                 <td>Cualquier idioma</td>
-                                                <td>1 Lengua o 2 C.L.</td>
+                                                <td>1 Lengua o 2 <abbr title="Comprensión de Lectura">C.L.</abbr></td>
                                             </tr>
                                             <tr>
                                                 <td class="text-muted small">0187</td>
                                                 <td>Cualquier idioma</td>
-                                                <td>1 C.L. o 1 Lengua</td>
+                                                <td>1 <abbr title="Comprensión de Lectura">C.L.</abbr> o 1 Lengua</td>
                                             </tr>
                                             <tr>
                                                 <td>Economía</td>
                                                 <td class="text-muted small">0076 y 1382</td>
                                                 <td>Inglés</td>
-                                                <td>1 C.L. o 1 Lengua</td>
+                                                <td>1 <abbr title="Comprensión de Lectura">C.L.</abbr> o 1 Lengua</td>
                                             </tr>
                                             <tr>
                                                 <td>Planificación para el Desarrollo Agropecuario</td>
                                                 <td class="text-muted small">2003 y 2018</td>
                                                 <td>Inglés</td>
-                                                <td>1 C.L. o 1 Lengua</td>
+                                                <td>1 <abbr title="Comprensión de Lectura">C.L.</abbr> o 1 Lengua</td>
                                             </tr>
                                             <tr>
                                                 <td rowspan="2">Relaciones Internacionales</td>
                                                 <td class="text-muted small">1275 y 2235</td>
                                                 <td>Cualquier idioma ≠ inglés</td>
-                                                <td>1 C.L. o 1 Lengua</td>
+                                                <td>1 <abbr title="Comprensión de Lectura">C.L.</abbr> o 1 Lengua</td>
                                             </tr>
                                             <tr>
                                                 <td class="text-muted small">068 y 071</td>
                                                 <td>Inglés oblig. + otro</td>
-                                                <td>1 C.L. <strong>Y</strong> 1 Lengua</td>
+                                                <td>1 <abbr title="Comprensión de Lectura">C.L.</abbr> <strong>Y</strong> 1 Lengua</td>
                                             </tr>
                                             <tr>
                                                 <td>Sociología</td>
                                                 <td class="text-muted small">1324</td>
                                                 <td>Inglés o Francés (obligatorio)</td>
-                                                <td>2 C.L. o 2 Lengua o 1 de cada uno</td>
+                                                <td>2 <abbr title="Comprensión de Lectura">C.L.</abbr> o 2 Lengua o 1 de cada uno</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -1946,31 +2063,31 @@
                                                 <td>Ingeniería Civil</td>
                                                 <td class="text-muted small">1280 y 2236</td>
                                                 <td>Inglés</td>
-                                                <td>1 C.L. o 1 Lengua</td>
+                                                <td>1 <abbr title="Comprensión de Lectura">C.L.</abbr> o 1 Lengua</td>
                                             </tr>
                                             <tr>
                                                 <td>Ingeniería en Computación</td>
                                                 <td class="text-muted small">1279 y 2119</td>
                                                 <td>Inglés</td>
-                                                <td>1 C.L. o 1 Lengua</td>
+                                                <td>1 <abbr title="Comprensión de Lectura">C.L.</abbr> o 1 Lengua</td>
                                             </tr>
                                             <tr>
                                                 <td>Ingeniería Eléctrica-Electrónica</td>
                                                 <td class="text-muted small">2008 y 2023</td>
                                                 <td>Inglés</td>
-                                                <td>1 C.L. o 1 Lengua</td>
+                                                <td>1 <abbr title="Comprensión de Lectura">C.L.</abbr> o 1 Lengua</td>
                                             </tr>
                                             <tr>
                                                 <td>Ingeniería Industrial</td>
                                                 <td class="text-muted small">1313 y 2195</td>
                                                 <td>Inglés</td>
-                                                <td>1 C.L. o 1 Lengua</td>
+                                                <td>1 <abbr title="Comprensión de Lectura">C.L.</abbr> o 1 Lengua</td>
                                             </tr>
                                             <tr>
                                                 <td>Ingeniería Mecánica</td>
                                                 <td class="text-muted small">2009 y 2022</td>
                                                 <td>Inglés</td>
-                                                <td>1 C.L. o 1 Lengua</td>
+                                                <td>1 <abbr title="Comprensión de Lectura">C.L.</abbr> o 1 Lengua</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -2013,13 +2130,13 @@
                                                 <td>Diseño Industrial</td>
                                                 <td class="text-muted small">1082</td>
                                                 <td>Cualquier idioma</td>
-                                                <td>1 C.L. o 1 Lengua</td>
+                                                <td>1 <abbr title="Comprensión de Lectura">C.L.</abbr> o 1 Lengua</td>
                                             </tr>
                                             <tr>
                                                 <td>Pedagogía</td>
                                                 <td class="text-muted small">1103</td>
                                                 <td>Cualquier idioma</td>
-                                                <td>2 C.L. o 2 Lengua o 1 de cada uno</td>
+                                                <td>2 <abbr title="Comprensión de Lectura">C.L.</abbr> o 2 Lengua o 1 de cada uno</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -2055,19 +2172,19 @@
                                                 <td>Derecho</td>
                                                 <td class="text-muted small">1108</td>
                                                 <td>Cualquier idioma</td>
-                                                <td>1 C.L. o 1 Lengua</td>
+                                                <td>1 <abbr title="Comprensión de Lectura">C.L.</abbr> o 1 Lengua</td>
                                             </tr>
                                             <tr>
                                                 <td>Economía</td>
                                                 <td class="text-muted small">1291</td>
                                                 <td>Inglés</td>
-                                                <td>1 C.L. o 1 Lengua</td>
+                                                <td>1 <abbr title="Comprensión de Lectura">C.L.</abbr> o 1 Lengua</td>
                                             </tr>
                                             <tr>
                                                 <td>Relaciones Internacionales</td>
                                                 <td class="text-muted small">1290</td>
                                                 <td>Cualquier idioma excepto inglés</td>
-                                                <td>1 C.L. o 1 Lengua</td>
+                                                <td>1 <abbr title="Comprensión de Lectura">C.L.</abbr> o 1 Lengua</td>
                                             </tr>
                                         </tbody>
                                     </table>
