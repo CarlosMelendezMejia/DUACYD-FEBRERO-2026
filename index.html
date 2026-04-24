@@ -18,6 +18,7 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/flip-cards.css">
     <link rel="icon" href="resources/DUACyD_B-09.ico" type="image/x-icon">
 
     <!-- Estilos para la sección de organizaciones colaboradoras -->
@@ -574,20 +575,63 @@
             </div>
         </section>
 
-        <!-- Sección: Compromiso con la formación permanente -->
-        <section class="py-5 lp-comp-compromiso" style="background-color: var(--tertiary-color);">
+        <!-- Sección: Misión y Visión -->
+        <section class="comp-3-section py-5">
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-9 text-center text-white reveal">
-                        <span class="lp-section-label on-dark">Nuestra misión</span>
-                        <div class="lp-compromiso-divider mt-2"></div>
-                        <h2 class="fw-bold mb-4">Compromiso con la formación permanente</h2>
-                        <p class="fs-5 mb-3">
-                            La DUACyD contribuye al fortalecimiento del desarrollo académico y profesional mediante programas educativos que responden a los retos actuales del conocimiento y del entorno social.
-                        </p>
-                        <p class="fs-6" style="opacity: 0.85;">
-                            A través de la educación abierta, la formación continua y la enseñanza de lenguas, promueve el aprendizaje permanente y el acceso a nuevas oportunidades de desarrollo para la comunidad universitaria y para la sociedad en su conjunto.
-                        </p>
+                <div class="text-center mb-5 reveal">
+                    <span class="lp-section-label">Nuestra esencia</span>
+                    <div class="lp-title-wrap mt-2">
+                        <h2 class="fw-bold" style="color:var(--primary-color);">Compromiso con la formación permanente</h2>
+                    </div>
+                    <p class="text-muted mt-2">Los principios que guían a la DUACyD FES Aragón</p>
+                </div>
+                <div class="row g-4">
+                    <!-- Flip Card Misión -->
+                    <div class="col-lg-6 reveal reveal-delay-1">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front"
+                                    style="background: linear-gradient(135deg, var(--primary-color) 0%, #003f88 100%);">
+                                    <div class="flip-card-icon">
+                                        <i class="bi bi-bullseye"></i>
+                                    </div>
+                                    <h3 class="flip-card-title">Nuestra Misión</h3>
+                                    <p class="flip-card-hint">Pasa el cursor para leer más</p>
+                                </div>
+                                <div class="flip-card-back"
+                                    style="background: linear-gradient(135deg, #f0f5fb 0%, #ffffff 100%); color: var(--primary-color);">
+                                    <h3 class="mb-3">Nuestra Misión</h3>
+                                    <p style="color: #333;">
+                                        La DUACyD contribuye al fortalecimiento del desarrollo académico y profesional mediante programas educativos que responden a los retos actuales del conocimiento y del entorno social.
+                                    </p>
+                                    <p style="color: #333;">
+                                        A través de la educación abierta, la formación continua y la enseñanza de lenguas, promueve el aprendizaje permanente y el acceso a nuevas oportunidades de desarrollo para la comunidad universitaria y para la sociedad en su conjunto.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Flip Card Visión -->
+                    <div class="col-lg-6 reveal reveal-delay-2">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front"
+                                    style="background: linear-gradient(135deg, #003f88 0%, var(--primary-color) 100%);">
+                                    <div class="flip-card-icon">
+                                        <i class="bi bi-eye"></i>
+                                    </div>
+                                    <h3 class="flip-card-title">Nuestra Visión</h3>
+                                    <p class="flip-card-hint">Pasa el cursor para leer más</p>
+                                </div>
+                                <div class="flip-card-back"
+                                    style="background: linear-gradient(135deg, #ffffff 0%, #f0f5fb 100%); color: var(--primary-color);">
+                                    <h3 class="mb-3">Nuestra Visión</h3>
+                                    <p style="color: #333;">
+                                        Ser reconocidos como una división líder en la oferta de programas educativos innovadores y de calidad en modalidades abierta, continua y a distancia, consolidando el aprendizaje permanente y la formación integral de la comunidad universitaria y la sociedad en general.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
