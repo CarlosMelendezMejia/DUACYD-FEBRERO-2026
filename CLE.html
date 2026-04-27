@@ -110,6 +110,68 @@
             z-index: 2;
         }
 
+        .cle-hero-content {
+            max-width: 34rem;
+        }
+
+        .cle-hero-title {
+            letter-spacing: -0.02em;
+            line-height: 0.96;
+        }
+
+        .cle-hero-subtitle {
+            color: var(--cle-color);
+            font-size: clamp(1.35rem, 2vw, 2rem);
+            line-height: 1.15;
+        }
+
+        .cle-hero-lead {
+            max-width: 32rem;
+            font-size: clamp(1rem, 1.35vw, 1.2rem);
+            color: rgba(255, 255, 255, 0.74);
+        }
+
+        .cle-hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        .cle-hero-actions .btn {
+            min-height: 52px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+        }
+
+        .cle-hero-actions .btn-outline-light {
+            border-width: 1px;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(4px);
+        }
+
+        .cle-hero-carousel {
+            position: relative;
+        }
+
+        .cle-hero-carousel .carousel {
+            border-radius: calc(var(--border-radius) + 0.35rem);
+            overflow: hidden;
+            box-shadow: 0 22px 56px rgba(0, 15, 46, 0.32);
+        }
+
+        .cle-hero-carousel .carousel-inner {
+            border-radius: inherit;
+        }
+
+        .cle-hero-carousel .carousel-item img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
         /* ── Stat cards ── */
         .cle-stat-card {
             border-radius: var(--border-radius);
@@ -465,7 +527,8 @@
 
         @media (max-width: 768px) {
             .cle-hero {
-                min-height: 60vh;
+                min-height: auto;
+                padding: 7.5rem 0 3rem;
             }
 
             .cle-stat-num {
@@ -474,6 +537,76 @@
 
             .cle-float-letter {
                 opacity: 0.04;
+            }
+
+            .cle-hero-pattern {
+                display: none;
+            }
+
+            .cle-hero .container {
+                padding-inline: 1.25rem;
+            }
+
+            .cle-hero-content {
+                max-width: none;
+                text-align: center;
+                margin-inline: auto;
+            }
+
+            .cle-hero-title {
+                font-size: clamp(2.35rem, 10vw, 3.4rem);
+                margin-top: 0.85rem;
+            }
+
+            .cle-hero-subtitle {
+                font-size: clamp(1.2rem, 5vw, 1.6rem);
+                margin-top: 0.9rem;
+            }
+
+            .cle-hero-lead {
+                display: block;
+                margin: 1rem auto 0;
+                font-size: 0.98rem;
+                line-height: 1.6;
+                color: rgba(255, 255, 255, 0.82);
+            }
+
+            .cle-hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.75rem;
+                margin-top: 1.5rem;
+            }
+
+            .cle-hero-actions .btn {
+                width: 100%;
+                padding-inline: 1.25rem !important;
+            }
+
+            .cle-hero-carousel {
+                margin-top: 0.5rem;
+            }
+
+            .cle-hero-carousel .carousel {
+                box-shadow: 0 16px 34px rgba(0, 15, 46, 0.26);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .cle-hero {
+                padding-top: 7rem;
+            }
+
+            .cle-hero .row {
+                --bs-gutter-y: 1.5rem;
+            }
+
+            .cle-hero-title {
+                font-size: 2.15rem;
+            }
+
+            .cle-hero-actions .btn {
+                font-size: 0.96rem;
             }
         }
     </style>
@@ -566,33 +699,40 @@
             <div class="container position-relative text-white">
                 <div class="row align-items-center g-4">
                     <div class="col-lg-5">
+                        <div class="cle-hero-content">
                         <span class="lp-section-label on-dark hero-animate hero-animate-1">
                             DUACyD · FES Aragón · UNAM
                         </span>
-                        <h1 class="display-4 fw-bold mt-2 hero-animate hero-animate-2" style="letter-spacing:-0.02em;">
+                        <h1 class="display-4 fw-bold mt-2 hero-animate hero-animate-2 cle-hero-title">
                             Centro de Lenguas
                             <span class="hero-title-accent"></span>
                         </h1>
-                        <h2 class="fw-semibold hero-animate hero-animate-3" style="color:var(--cle-color);">
+                        <h2 class="fw-semibold hero-animate hero-animate-3 cle-hero-subtitle">
                             Abre tu mundo con un nuevo idioma
                         </h2>
-                        <p class="mt-3 fs-5 text-white-50 d-none d-lg-block hero-animate hero-animate-4">
+                        <p class="mt-3 hero-animate hero-animate-4 cle-hero-lead">
                             Desde 1977, formando hablantes de 11 idiomas con el respaldo académico de la UNAM.
                         </p>
-                        <div class="d-flex flex-wrap gap-3 mt-4 hero-animate hero-animate-4">
+                        <div class="cle-hero-actions hero-animate hero-animate-4">
                             <a href="#cursos" class="btn fw-semibold px-4 py-2"
                                 style="background:var(--cle-color);color:var(--primary-color);border-radius:100px;">
                                 <i class="bi bi-book-fill me-2"></i>Ver cursos
+                            </a>
+                            <a href="https://siglear.aragon.unam.mx/" target="_blank" rel="noopener noreferrer"
+                                class="btn fw-semibold px-4 py-2"
+                                style="background:#ffffff;color:var(--primary-color);border:1px solid rgba(255,255,255,0.35);border-radius:100px;">
+                                <i class="bi bi-box-arrow-up-right me-2"></i>Ir a SIGLEAR
                             </a>
                             <a href="#calendario" class="btn btn-outline-light fw-semibold px-4 py-2"
                                 style="border-radius:100px;">
                                 <i class="bi bi-calendar3 me-2"></i>Calendario 2026-2
                             </a>
                         </div>
+                        </div>
                     </div>
 
                     <!-- Carrusel de carteles -->
-                    <div class="col-lg-7 hero-carousel-animate">
+                    <div class="col-lg-7 hero-carousel-animate cle-hero-carousel">
                         <div id="carouselCLE" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
                             <div class="carousel-inner rounded shadow">
                                 <!-- 1. Visítanos en Facebook -->
@@ -709,6 +849,64 @@
                             de
                             la División de Universidad Abierta, Continua y a Distancia (DUACyD).
                         </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Misión y Visión -->
+        <section class="comp-3-section py-5">
+            <div class="container">
+                <h2 class="text-center mb-2 fw-bold" style="font-size: 2.5rem; color: var(--cle-color);">Nuestra Esencia</h2>
+                <p class="text-center text-muted mb-5">Los principios que guían al Centro de Lenguas FES Aragón</p>
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front"
+                                    style="background: linear-gradient(135deg, var(--cle-color) 0%, #e6a800 100%); color: var(--primary-color);">
+                                    <div class="flip-card-icon">
+                                        <i class="bi bi-bullseye"></i>
+                                    </div>
+                                    <h3 class="flip-card-title">Nuestra Misión</h3>
+                                    <p class="flip-card-hint">Pasa el cursor para leer más</p>
+                                </div>
+                                <div class="flip-card-back"
+                                    style="background: linear-gradient(135deg, #fff9e8 0%, #ffffff 100%); color: var(--primary-color);">
+                                    <h3 class="mb-3" style="color: var(--cle-color);">Nuestra Misión</h3>
+                                    <p style="color: #333;">
+                                        Ofrecer formación lingüística de calidad a la comunidad universitaria y al público en
+                                        general, mediante programas académicos que fortalezcan la comprensión, la comunicación
+                                        y el desarrollo intercultural, con el respaldo académico de la UNAM y una atención
+                                        orientada al aprendizaje permanente.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front"
+                                    style="background: linear-gradient(135deg, #e6a800 0%, var(--cle-color) 100%); color: var(--primary-color);">
+                                    <div class="flip-card-icon">
+                                        <i class="bi bi-eye"></i>
+                                    </div>
+                                    <h3 class="flip-card-title">Nuestra Visión</h3>
+                                    <p class="flip-card-hint">Pasa el cursor para leer más</p>
+                                </div>
+                                <div class="flip-card-back"
+                                    style="background: linear-gradient(135deg, #ffffff 0%, #fff9e8 100%); color: var(--primary-color);">
+                                    <h3 class="mb-3" style="color: var(--cle-color);">Nuestra Visión</h3>
+                                    <p style="color: #333;">
+                                        Consolidarnos como un referente en la enseñanza de lenguas dentro de la FES Aragón,
+                                        reconocidos por una oferta académica diversa, pertinente e incluyente que impulse la
+                                        formación integral, el intercambio cultural y el acceso a nuevas oportunidades
+                                        académicas y profesionales.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2203,28 +2401,28 @@
         <section class="cle-cta py-5">
             <div class="container text-center" style="position:relative;z-index:1;">
                 <div class="reveal">
-                    <span class="lp-section-label">¿Listo para empezar?</span>
+                    <span class="lp-section-label">Inscripciones y trámites</span>
                     <div class="lp-title-wrap cle-title-wrap mt-2">
-                        <h2 class="fw-bold" style="color:var(--primary-color);">Comienza tu aventura lingüística</h2>
+                        <h2 class="fw-bold" style="color:var(--primary-color);">Realiza tu proceso en SIGLEAR</h2>
                     </div>
                     <p class="mt-3" style="color:rgba(0,41,107,0.65);">
-                        Consulta las convocatorias vigentes, inscríbete en línea y da el primer paso<br
+                        Accede al Sistema de Gestión del Centro de Lenguas de la Facultad de Estudios Superiores Aragón<br
                             class="d-none d-md-block">
-                        hacia un nuevo idioma con el respaldo académico de la UNAM.
+                        para inscripciones de cursos, exámenes y solicitud de constancias.
                     </p>
                     <div class="d-flex flex-wrap gap-3 justify-content-center mt-4">
-                        <a href="http://cle-aragon.unam.mx" target="_blank" rel="noopener noreferrer"
+                        <a href="https://siglear.aragon.unam.mx/" target="_blank" rel="noopener noreferrer"
                             class="btn fw-semibold px-4 py-2"
                             style="background:var(--primary-color);color:#fff;border-radius:100px;">
-                            <i class="bi bi-box-arrow-up-right me-2"></i>Ir al sitio del CLe
+                            <i class="bi bi-box-arrow-up-right me-2"></i>Ir a SIGLEAR
                         </a>
-                        <a href="mailto:centrode lenguas@aragon.unam.mx" class="btn fw-semibold px-4 py-2"
+                        <a href="#contacto" class="btn fw-semibold px-4 py-2"
                             style="background:rgba(0,41,107,0.15);color:var(--primary-color);border:1px solid rgba(0,41,107,0.3);border-radius:100px;">
-                            <i class="bi bi-envelope me-2"></i>Contactar al CLe
+                            <i class="bi bi-envelope me-2"></i>Ver contacto
                         </a>
                     </div>
                     <p class="mt-4 small" style="color:rgba(0,41,107,0.5);">
-                        <i class="bi bi-envelope me-1"></i>centrode lenguas@aragon.unam.mx
+                        Si necesitas asistencia, consulta el apartado de contacto disponible más abajo en esta página.
                     </p>
                 </div>
             </div>
