@@ -256,6 +256,107 @@
                 justify-content: flex-end;
             }
         }
+
+        .landing-hero {
+            background-image: url('resources/banner actualizado.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 75vh;
+        }
+
+        .landing-hero-content {
+            max-width: 28rem;
+        }
+
+        .landing-hero-title {
+            letter-spacing: 0.18em;
+            line-height: 0.95;
+            margin-bottom: 0;
+        }
+
+        .landing-hero-subtitle {
+            font-size: clamp(1.35rem, 2vw, 2rem);
+            line-height: 1.15;
+            margin-bottom: 0;
+        }
+
+        .landing-hero-lead {
+            font-size: clamp(1rem, 1.2vw, 1.15rem);
+            line-height: 1.65;
+            color: rgba(255, 255, 255, 0.76);
+        }
+
+        .landing-hero-carousel .carousel {
+            border-radius: calc(var(--border-radius) + 0.35rem);
+            overflow: hidden;
+            box-shadow: 0 22px 56px rgba(0, 15, 46, 0.32);
+        }
+
+        .landing-hero-carousel .carousel-inner {
+            border-radius: inherit;
+        }
+
+        @media (max-width: 991.98px) {
+            .landing-hero {
+                min-height: auto;
+                padding: 7.25rem 0 3rem;
+            }
+
+            .landing-hero .container {
+                padding-inline: 1.25rem;
+            }
+
+            .landing-hero-content {
+                max-width: none;
+                text-align: center;
+                margin-inline: auto;
+            }
+
+            .landing-hero-title {
+                font-size: clamp(2.35rem, 10vw, 3.25rem);
+                letter-spacing: 0.12em;
+            }
+
+            .landing-hero-subtitle {
+                font-size: clamp(1.15rem, 5vw, 1.6rem);
+                margin-top: 0.15rem;
+            }
+
+            .landing-hero .hero-title-accent {
+                margin-inline: auto;
+            }
+
+            .landing-hero-lead {
+                font-size: 0.98rem;
+                line-height: 1.6;
+                color: rgba(255, 255, 255, 0.82);
+                max-width: 40rem;
+                margin-inline: auto;
+            }
+
+            .landing-hero-carousel {
+                margin-top: 0.5rem;
+            }
+
+            .landing-hero-carousel .carousel {
+                box-shadow: 0 16px 34px rgba(0, 15, 46, 0.26);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .landing-hero {
+                padding-top: 6.8rem;
+            }
+
+            .landing-hero-title {
+                font-size: 2.1rem;
+                letter-spacing: 0.08em;
+            }
+
+            .landing-hero-subtitle {
+                line-height: 1.2;
+            }
+        }
     </style>
 
 </head>
@@ -324,32 +425,32 @@
     </header>
 
     <main>
-        <section class="hero-section banner-overlay text-white d-flex align-items-center"
-            style="background-image: url('resources/banner actualizado.jpg'); background-size: cover; background-position: center; height: 75vh;">
+        <section class="hero-section landing-hero banner-overlay text-white d-flex align-items-center">
             <div class="container">
-                <div class="row align-items-center">
+                <div class="row align-items-center g-4">
                     <!-- Columna de texto -->
                     <div class="col-lg-4 mb-4 mb-lg-0 ">
-                        <h1 class="display-4 fw-bold hero-animate hero-animate-1">D U A C y D</h1>
+                        <div class="landing-hero-content">
+                        <h1 class="display-4 fw-bold hero-animate hero-animate-1 landing-hero-title">D U A C y D</h1>
                         <span class="hero-title-accent"></span>
 
-                        <h2 class="fw-semibold d-none d-lg-block hero-animate hero-animate-2">
+                        <h2 class="fw-semibold hero-animate hero-animate-2 landing-hero-subtitle">
                             División de<br>
                             Universidad<br>
                             Abierta, Continua y<br>
                             a Distancia
                         </h2>
-                        <!-- Lema visible solo en pantallas grandes -->
-                        <p class="mt-3 fs-5 fst-italic d-none d-lg-block text-white-50 hero-animate hero-animate-3">
+                        <p class="mt-3 fs-5 fst-italic text-white-50 hero-animate hero-animate-3">
                             Facultad de Estudios Superiores Aragón
                         </p>
-                        <p class="mt-2 d-none d-lg-block text-white-50 hero-animate hero-animate-4" style="font-size: 0.9rem; line-height: 1.6;">
+                        <p class="mt-2 hero-animate hero-animate-4 landing-hero-lead">
                             Espacio académico dedicado a ampliar las oportunidades de formación universitaria mediante educación abierta, continua y lingüística, con el respaldo de la UNAM.
                         </p>
+                        </div>
                     </div>
 
                     <!-- Columna del carrusel -->
-                    <div class="col-lg-8 hero-carousel-animate">
+                    <div class="col-lg-8 hero-carousel-animate landing-hero-carousel">
                         <div id="carouselDUACYD" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
                             <div class="carousel-inner rounded shadow">
                                 <div class="carousel-item active">
