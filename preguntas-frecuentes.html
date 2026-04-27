@@ -110,111 +110,429 @@
         </section>
 
         <!-- Sección Preguntas Frecuentes -->
-        <section class="container my-5">
+        <section class="py-5" style="background: #f4f6fb;">
+            <div class="container">
 
-            <div class="accordion" id="faqAccordion">
-                <!-- Sección: General -->
-                <div class="accordion-item mb-3 border-0 rounded-3 overflow-hidden">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed fs-5 py-3" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
-                            <i class="bi bi-question-circle me-2 text-primary"></i> ¿Qué es la DUACyD?
-                        </button>
-                    </h2>
-                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body bg-light">
-                            La División de Universidad Abierta, Continua y a Distancia (DUACyD) es la instancia
-                            encargada de coordinar programas educativos flexibles, incluyentes y de alta calidad en
-                            modalidades distintas a la escolarizada.
+                <!-- Navegación rápida entre secciones -->
+                <div class="d-flex flex-wrap justify-content-center gap-3 mb-5">
+                    <a href="#seccion-duacyd"
+                        class="btn px-4 py-2 rounded-pill fw-semibold shadow-sm text-decoration-none"
+                        style="background-color: var(--primary-color); color: white;">
+                        <i class="bi bi-building me-2"></i>DUACyD
+                    </a>
+                    <a href="#seccion-suayed"
+                        class="btn px-4 py-2 rounded-pill fw-semibold shadow-sm text-decoration-none"
+                        style="background-color: var(--suayed-color); color: white;">
+                        <i class="bi bi-journal-text me-2"></i>SUAyED
+                    </a>
+                    <a href="#seccion-edco"
+                        class="btn px-4 py-2 rounded-pill fw-semibold shadow-sm text-decoration-none"
+                        style="background-color: var(--edco-color); color: white;">
+                        <i class="bi bi-lightbulb me-2"></i>EDCO
+                    </a>
+                    <a href="#seccion-cle"
+                        class="btn px-4 py-2 rounded-pill fw-semibold shadow-sm text-decoration-none"
+                        style="background-color: var(--cle-color); color: var(--primary-color);">
+                        <i class="bi bi-translate me-2"></i>CLe
+                    </a>
+                </div>
+
+                <!-- ======================== DUACYD ======================== -->
+                <div class="faq-section mb-5" id="seccion-duacyd">
+                    <!-- Encabezado de sección -->
+                    <div class="rounded-3 p-4 mb-3 d-flex align-items-center gap-4"
+                        style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--subprimary-color) 100%); color: white;">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+                            style="width: 64px; height: 64px; background: rgba(255,255,255,0.15); font-size: 2rem;">
+                            <i class="bi bi-building"></i>
+                        </div>
+                        <div>
+                            <h3 class="fw-bold mb-0 fs-3">DUACyD</h3>
+                            <p class="mb-0 small" style="opacity: 0.8;">División de Universidad Abierta, Continua y a Distancia</p>
+                        </div>
+                    </div>
+                    <!-- Preguntas -->
+                    <div class="accordion accordion-flush" id="faqDuacyd">
+                        <div class="accordion-item mb-2 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed py-3 fw-medium" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#duacyd1"
+                                    aria-expanded="false" aria-controls="duacyd1">
+                                    <i class="bi bi-question-circle me-2" style="color: var(--primary-color);"></i>
+                                    ¿Qué es la DUACyD?
+                                </button>
+                            </h2>
+                            <div id="duacyd1" class="accordion-collapse collapse" data-bs-parent="#faqDuacyd">
+                                <div class="accordion-body" style="border-left: 4px solid var(--primary-color);">
+                                    La División de Universidad Abierta, Continua y a Distancia (DUACyD) es la instancia
+                                    encargada de coordinar programas educativos flexibles, incluyentes y de alta calidad
+                                    en modalidades distintas a la escolarizada.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-2 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed py-3 fw-medium" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#duacyd2"
+                                    aria-expanded="false" aria-controls="duacyd2">
+                                    <i class="bi bi-diagram-3 me-2" style="color: var(--primary-color);"></i>
+                                    ¿Qué áreas comprende la DUACyD?
+                                </button>
+                            </h2>
+                            <div id="duacyd2" class="accordion-collapse collapse" data-bs-parent="#faqDuacyd">
+                                <div class="accordion-body" style="border-left: 4px solid var(--primary-color);">
+                                    La DUACyD integra tres grandes áreas de atención: el Sistema Universidad Abierta y
+                                    Educación a Distancia (SUAyED), la Jefatura de Educación Continua (EDCO) y el Centro
+                                    de Lenguas Extranjeras (CLe).
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-2 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed py-3 fw-medium" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#duacyd3"
+                                    aria-expanded="false" aria-controls="duacyd3">
+                                    <i class="bi bi-geo-alt me-2" style="color: var(--primary-color);"></i>
+                                    ¿Dónde se ubica la DUACyD?
+                                </button>
+                            </h2>
+                            <div id="duacyd3" class="accordion-collapse collapse" data-bs-parent="#faqDuacyd">
+                                <div class="accordion-body" style="border-left: 4px solid var(--primary-color);">
+                                    La DUACyD se encuentra en las instalaciones de la Facultad de Estudios Superiores
+                                    Aragón, ubicada en Av. Universidad Nacional S/N, Bosques de Aragón,
+                                    Nezahualcóyotl, Estado de México.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-2 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed py-3 fw-medium" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#duacyd4"
+                                    aria-expanded="false" aria-controls="duacyd4">
+                                    <i class="bi bi-envelope me-2" style="color: var(--primary-color);"></i>
+                                    ¿Cómo puedo contactar a la DUACyD?
+                                </button>
+                            </h2>
+                            <div id="duacyd4" class="accordion-collapse collapse" data-bs-parent="#faqDuacyd">
+                                <div class="accordion-body" style="border-left: 4px solid var(--primary-color);">
+                                    Puedes comunicarte con nosotros a través del correo
+                                    <strong>duacyd@aragon.unam.mx</strong>, por teléfono al
+                                    <strong>55 5623 0000</strong>, o acudir directamente a nuestras oficinas en la
+                                    FES Aragón en horario de lunes a viernes de 9:00 a 17:00 hrs.
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Sección: Modalidad Abierta -->
-                <div class="accordion-item mb-3 border-0 rounded-3 overflow-hidden">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed fs-5 py-3" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
-                            <i class="bi bi-journal-text me-2 text-primary"></i> ¿En qué consiste la modalidad SUAyED?
-                        </button>
-                    </h2>
-                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body bg-light">
-                            Es una modalidad educativa de la UNAM que permite estudiar una licenciatura con horarios
-                            flexibles, a través de materiales didácticos y el acompañamiento de asesores, ya sea en
-                            modalidad abierta o a distancia.
+                <!-- ======================== SUAYED ======================== -->
+                <div class="faq-section mb-5" id="seccion-suayed">
+                    <div class="rounded-3 p-4 mb-3 d-flex align-items-center gap-4"
+                        style="background: linear-gradient(135deg, #f94144 0%, #c8191c 100%); color: white;">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+                            style="width: 64px; height: 64px; background: rgba(255,255,255,0.15); font-size: 2rem;">
+                            <i class="bi bi-journal-text"></i>
+                        </div>
+                        <div>
+                            <h3 class="fw-bold mb-0 fs-3">SUAyED</h3>
+                            <p class="mb-0 small" style="opacity: 0.8;">Sistema Universidad Abierta y Educación a Distancia</p>
+                        </div>
+                    </div>
+                    <div class="accordion accordion-flush" id="faqSuayed">
+                        <div class="accordion-item mb-2 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed py-3 fw-medium" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#suayed1"
+                                    aria-expanded="false" aria-controls="suayed1">
+                                    <i class="bi bi-question-circle me-2" style="color: var(--suayed-color);"></i>
+                                    ¿En qué consiste la modalidad SUAyED?
+                                </button>
+                            </h2>
+                            <div id="suayed1" class="accordion-collapse collapse" data-bs-parent="#faqSuayed">
+                                <div class="accordion-body" style="border-left: 4px solid var(--suayed-color);">
+                                    Es una modalidad educativa de la UNAM que permite estudiar una licenciatura con
+                                    horarios flexibles, a través de materiales didácticos y el acompañamiento de
+                                    asesores, ya sea en modalidad abierta o a distancia.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-2 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed py-3 fw-medium" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#suayed2"
+                                    aria-expanded="false" aria-controls="suayed2">
+                                    <i class="bi bi-mortarboard me-2" style="color: var(--suayed-color);"></i>
+                                    ¿Qué licenciaturas se ofrecen en modalidad SUAyED?
+                                </button>
+                            </h2>
+                            <div id="suayed2" class="accordion-collapse collapse" data-bs-parent="#faqSuayed">
+                                <div class="accordion-body" style="border-left: 4px solid var(--suayed-color);">
+                                    La FES Aragón ofrece diversas licenciaturas en modalidad abierta y a distancia.
+                                    Te recomendamos consultar la sección SUAyED de este portal o comunicarte
+                                    directamente con la jefatura para conocer la oferta académica vigente.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-2 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed py-3 fw-medium" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#suayed3"
+                                    aria-expanded="false" aria-controls="suayed3">
+                                    <i class="bi bi-laptop me-2" style="color: var(--suayed-color);"></i>
+                                    ¿Cuál es la diferencia entre la modalidad abierta y la modalidad a distancia?
+                                </button>
+                            </h2>
+                            <div id="suayed3" class="accordion-collapse collapse" data-bs-parent="#faqSuayed">
+                                <div class="accordion-body" style="border-left: 4px solid var(--suayed-color);">
+                                    En la modalidad <strong>abierta</strong>, el estudiante asiste de forma presencial
+                                    a asesorías en la institución. En la modalidad <strong>a distancia</strong>, toda
+                                    la interacción con asesores y entrega de actividades se realiza a través de
+                                    plataformas digitales, lo que permite estudiar desde cualquier lugar.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-2 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed py-3 fw-medium" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#suayed4"
+                                    aria-expanded="false" aria-controls="suayed4">
+                                    <i class="bi bi-calendar-check me-2" style="color: var(--suayed-color);"></i>
+                                    ¿Cuándo son los periodos de inscripción al SUAyED?
+                                </button>
+                            </h2>
+                            <div id="suayed4" class="accordion-collapse collapse" data-bs-parent="#faqSuayed">
+                                <div class="accordion-body" style="border-left: 4px solid var(--suayed-color);">
+                                    Los periodos de inscripción se publican en la convocatoria oficial de la UNAM.
+                                    Te recomendamos estar atento a nuestra sección de calendario y a nuestras redes
+                                    sociales para recibir avisos oportunos.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-2 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed py-3 fw-medium" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#suayed5"
+                                    aria-expanded="false" aria-controls="suayed5">
+                                    <i class="bi bi-person-workspace me-2" style="color: var(--suayed-color);"></i>
+                                    ¿Qué rol desempeña el asesor en el SUAyED?
+                                </button>
+                            </h2>
+                            <div id="suayed5" class="accordion-collapse collapse" data-bs-parent="#faqSuayed">
+                                <div class="accordion-body" style="border-left: 4px solid var(--suayed-color);">
+                                    El asesor es la figura de acompañamiento académico del estudiante. Orienta el
+                                    proceso de aprendizaje, resuelve dudas, evalúa las actividades y fomenta el
+                                    estudio independiente, siendo un apoyo fundamental durante toda la trayectoria
+                                    escolar.
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Sección: Educación Continua -->
-                <div class="accordion-item mb-3 border-0 rounded-3 overflow-hidden">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed fs-5 py-3" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
-                            <i class="bi bi-mortarboard me-2 text-primary"></i> ¿Qué tipo de cursos ofrece Educación
-                            Continua?
-                        </button>
-                    </h2>
-                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body bg-light">
-                            Ofrecemos cursos, talleres, microcursos y diplomados en diversas áreas del conocimiento,
-                            enfocados en la actualización profesional y el desarrollo de nuevas habilidades.
+                <!-- ======================== EDCO ======================== -->
+                <div class="faq-section mb-5" id="seccion-edco">
+                    <div class="rounded-3 p-4 mb-3 d-flex align-items-center gap-4"
+                        style="background: linear-gradient(135deg, #43aa8b 0%, #2d8a6f 100%); color: white;">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+                            style="width: 64px; height: 64px; background: rgba(255,255,255,0.15); font-size: 2rem;">
+                            <i class="bi bi-lightbulb"></i>
+                        </div>
+                        <div>
+                            <h3 class="fw-bold mb-0 fs-3">EDCO</h3>
+                            <p class="mb-0 small" style="opacity: 0.8;">Jefatura de Educación Continua</p>
+                        </div>
+                    </div>
+                    <div class="accordion accordion-flush" id="faqEdco">
+                        <div class="accordion-item mb-2 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed py-3 fw-medium" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#edco1"
+                                    aria-expanded="false" aria-controls="edco1">
+                                    <i class="bi bi-question-circle me-2" style="color: var(--edco-color);"></i>
+                                    ¿Qué tipo de cursos ofrece Educación Continua?
+                                </button>
+                            </h2>
+                            <div id="edco1" class="accordion-collapse collapse" data-bs-parent="#faqEdco">
+                                <div class="accordion-body" style="border-left: 4px solid var(--edco-color);">
+                                    Ofrecemos cursos, talleres, microcursos y diplomados en diversas áreas del
+                                    conocimiento, enfocados en la actualización profesional y el desarrollo de nuevas
+                                    habilidades.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-2 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed py-3 fw-medium" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#edco2"
+                                    aria-expanded="false" aria-controls="edco2">
+                                    <i class="bi bi-people me-2" style="color: var(--edco-color);"></i>
+                                    ¿A quién van dirigidos los programas de Educación Continua?
+                                </button>
+                            </h2>
+                            <div id="edco2" class="accordion-collapse collapse" data-bs-parent="#faqEdco">
+                                <div class="accordion-body" style="border-left: 4px solid var(--edco-color);">
+                                    Los programas de Educación Continua están dirigidos a profesionales, egresados y
+                                    público en general que buscan actualizar sus conocimientos, adquirir nuevas
+                                    competencias o desarrollarse en áreas específicas sin necesidad de inscribirse a
+                                    un programa de licenciatura o posgrado.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-2 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed py-3 fw-medium" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#edco3"
+                                    aria-expanded="false" aria-controls="edco3">
+                                    <i class="bi bi-pencil-square me-2" style="color: var(--edco-color);"></i>
+                                    ¿Cómo me inscribo a un curso o diplomado?
+                                </button>
+                            </h2>
+                            <div id="edco3" class="accordion-collapse collapse" data-bs-parent="#faqEdco">
+                                <div class="accordion-body" style="border-left: 4px solid var(--edco-color);">
+                                    Cada convocatoria incluye una liga de registro. También puedes consultar nuestra
+                                    <strong>página oficial</strong> o redes sociales para conocer los periodos de
+                                    inscripción vigentes.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-2 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed py-3 fw-medium" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#edco4"
+                                    aria-expanded="false" aria-controls="edco4">
+                                    <i class="bi bi-file-earmark-text me-2" style="color: var(--edco-color);"></i>
+                                    ¿Se entregan constancias o diplomas al finalizar?
+                                </button>
+                            </h2>
+                            <div id="edco4" class="accordion-collapse collapse" data-bs-parent="#faqEdco">
+                                <div class="accordion-body" style="border-left: 4px solid var(--edco-color);">
+                                    Sí. Al finalizar los cursos o diplomados, y cumpliendo con los requisitos de
+                                    asistencia y evaluación, se entrega una constancia oficial avalada por la UNAM.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-2 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed py-3 fw-medium" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#edco5"
+                                    aria-expanded="false" aria-controls="edco5">
+                                    <i class="bi bi-clock me-2" style="color: var(--edco-color);"></i>
+                                    ¿Cuánto dura un curso de Educación Continua?
+                                </button>
+                            </h2>
+                            <div id="edco5" class="accordion-collapse collapse" data-bs-parent="#faqEdco">
+                                <div class="accordion-body" style="border-left: 4px solid var(--edco-color);">
+                                    La duración varía según el tipo de programa: los microcursos pueden durar
+                                    desde unas horas, los cursos y talleres van de algunos días a semanas, mientras
+                                    que los diplomados pueden extenderse varios meses. Consulta cada convocatoria
+                                    para conocer la duración específica.
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Sección: CLE -->
-                <div class="accordion-item mb-3 border-0 rounded-3 overflow-hidden">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed fs-5 py-3" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
-                            <i class="bi bi-translate me-2 text-primary"></i> ¿Qué idiomas puedo aprender en el Centro
-                            de Lenguas?
-                        </button>
-                    </h2>
-                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body bg-light">
-                            Actualmente se imparten cursos de inglés, francés, alemán e italiano. Cada uno cuenta con
-                            diferentes niveles y modalidades (presencial o en línea).
+                <!-- ======================== CLe ======================== -->
+                <div class="faq-section mb-2" id="seccion-cle">
+                    <div class="rounded-3 p-4 mb-3 d-flex align-items-center gap-4"
+                        style="background: linear-gradient(135deg, #eaa401 0%, #c88200 100%); color: var(--primary-color);">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+                            style="width: 64px; height: 64px; background: rgba(0,0,0,0.1); font-size: 2rem;">
+                            <i class="bi bi-translate"></i>
+                        </div>
+                        <div>
+                            <h3 class="fw-bold mb-0 fs-3">CLe</h3>
+                            <p class="mb-0 small" style="opacity: 0.75;">Centro de Lenguas Extranjeras</p>
+                        </div>
+                    </div>
+                    <div class="accordion accordion-flush" id="faqCle">
+                        <div class="accordion-item mb-2 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed py-3 fw-medium" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#cle1"
+                                    aria-expanded="false" aria-controls="cle1">
+                                    <i class="bi bi-globe2 me-2" style="color: var(--cle-color);"></i>
+                                    ¿Qué idiomas puedo aprender en el Centro de Lenguas?
+                                </button>
+                            </h2>
+                            <div id="cle1" class="accordion-collapse collapse" data-bs-parent="#faqCle">
+                                <div class="accordion-body" style="border-left: 4px solid var(--cle-color);">
+                                    Actualmente se imparten cursos de inglés, francés, alemán e italiano. Cada uno
+                                    cuenta con diferentes niveles y modalidades (presencial o en línea).
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-2 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed py-3 fw-medium" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#cle2"
+                                    aria-expanded="false" aria-controls="cle2">
+                                    <i class="bi bi-bar-chart-steps me-2" style="color: var(--cle-color);"></i>
+                                    ¿Cuántos niveles tiene el programa de idiomas?
+                                </button>
+                            </h2>
+                            <div id="cle2" class="accordion-collapse collapse" data-bs-parent="#faqCle">
+                                <div class="accordion-body" style="border-left: 4px solid var(--cle-color);">
+                                    Los programas de idiomas están estructurados en niveles progresivos que van desde
+                                    el básico hasta el avanzado, alineados al Marco Común Europeo de Referencia para
+                                    las Lenguas (MCER), desde A1 hasta C1.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-2 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed py-3 fw-medium" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#cle3"
+                                    aria-expanded="false" aria-controls="cle3">
+                                    <i class="bi bi-person-check me-2" style="color: var(--cle-color);"></i>
+                                    ¿Necesito ser alumno de la UNAM para inscribirme en el CLe?
+                                </button>
+                            </h2>
+                            <div id="cle3" class="accordion-collapse collapse" data-bs-parent="#faqCle">
+                                <div class="accordion-body" style="border-left: 4px solid var(--cle-color);">
+                                    No necesariamente. Los cursos del Centro de Lenguas están abiertos tanto para la
+                                    comunidad universitaria como para el público en general, aunque pueden existir
+                                    cuotas diferenciadas para cada grupo.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-2 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed py-3 fw-medium" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#cle4"
+                                    aria-expanded="false" aria-controls="cle4">
+                                    <i class="bi bi-award me-2" style="color: var(--cle-color);"></i>
+                                    ¿El CLe prepara para certificaciones internacionales?
+                                </button>
+                            </h2>
+                            <div id="cle4" class="accordion-collapse collapse" data-bs-parent="#faqCle">
+                                <div class="accordion-body" style="border-left: 4px solid var(--cle-color);">
+                                    Sí. El CLe prepara a los estudiantes para obtener certificaciones internacionales
+                                    de idiomas. Consulta directamente con el Centro para conocer los exámenes de
+                                    certificación disponibles y los requisitos correspondientes.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-2 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed py-3 fw-medium" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#cle5"
+                                    aria-expanded="false" aria-controls="cle5">
+                                    <i class="bi bi-pencil-square me-2" style="color: var(--cle-color);"></i>
+                                    ¿Cómo me inscribo a un curso de idiomas?
+                                </button>
+                            </h2>
+                            <div id="cle5" class="accordion-collapse collapse" data-bs-parent="#faqCle">
+                                <div class="accordion-body" style="border-left: 4px solid var(--cle-color);">
+                                    Las inscripciones se realizan en los periodos establecidos por el CLe. Puedes
+                                    consultar las convocatorias vigentes en nuestra página, redes sociales o acudir
+                                    directamente a las instalaciones del Centro de Lenguas en la FES Aragón.
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Sección: Inscripción -->
-                <div class="accordion-item mb-3 border-0 rounded-3 overflow-hidden">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed fs-5 py-3" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
-                            <i class="bi bi-pencil-square me-2 text-primary"></i> ¿Cómo me inscribo a un curso o
-                            diplomado?
-                        </button>
-                    </h2>
-                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body bg-light">
-                            Cada convocatoria incluye una liga de registro. También puedes consultar nuestra
-                            <strong>página oficial</strong> o redes sociales para conocer los periodos de inscripción
-                            vigentes.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sección: Constancias -->
-                <div class="accordion-item mb-3 border-0 rounded-3 overflow-hidden">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed fs-5 py-3" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">
-                            <i class="bi bi-file-earmark-text me-2 text-primary"></i> ¿Se entregan constancias o
-                            diplomas?
-                        </button>
-                    </h2>
-                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body bg-light">
-                            Sí. Al finalizar los cursos o diplomados, y cumpliendo con los requisitos de asistencia y
-                            evaluación, se entrega una constancia oficial avalada por la UNAM.
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
