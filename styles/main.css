@@ -90,6 +90,13 @@
   position: relative;
 }
 
+.nav-area-icon {
+  width: 1rem;
+  height: 1rem;
+  object-fit: contain;
+  vertical-align: text-bottom;
+}
+
 .nav-link:hover {
   color: var(--important-color) !important;
   transform: translateY(-2px);
@@ -757,6 +764,41 @@ main {
   font-size: 0.9rem;
 }
 
+.lp-comp-1-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.7rem 1.1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--primary-color);
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
+}
+
+.lp-comp-1-btn:hover {
+  transform: translateY(-2px);
+  background: #ffffff;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+}
+
+#lp-comp-1-box1 .lp-comp-1-btn {
+  color: var(--suayed-color);
+}
+
+#lp-comp-1-box2 .lp-comp-1-btn {
+  color: var(--primary-color);
+}
+
+#lp-comp-1-box3 .lp-comp-1-btn {
+  color: var(--edco-color);
+}
+
 .lp-comp-1-box.lp-comp-1-active .lp-comp-1-logo-img,
 .lp-comp-1-box:hover .lp-comp-1-logo-img {
   opacity: 0;
@@ -811,6 +853,10 @@ main {
 
   .lp-comp-1-descripcion {
     font-size: 1rem;
+  }
+
+  .lp-comp-1-btn {
+    margin-top: 1.25rem;
   }
 }
 
