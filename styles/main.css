@@ -965,6 +965,10 @@ main {
   overflow: hidden;
 }
 
+.comp-4-hero.comp-4-parallax {
+  background-attachment: fixed;
+}
+
 .comp-4-overlay {
   position: absolute;
   inset: 0;
@@ -976,6 +980,48 @@ main {
 .comp-4-hero .container {
   z-index: 2;
   position: relative;
+}
+
+.comp-4-content {
+  padding: 5.5rem 0;
+}
+
+.comp-4-intro {
+  max-width: 52rem;
+  margin: 0 auto 3rem;
+}
+
+.comp-4-contact-shell {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: calc(var(--border-radius) + 0.5rem);
+  padding: 1.75rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 22px 56px rgba(0, 0, 0, 0.18);
+}
+
+.comp-4-contact-card {
+  border-top: 4px solid var(--primary-color) !important;
+  border-radius: var(--border-radius);
+}
+
+.comp-4-contact-card a {
+  color: var(--primary-color);
+}
+
+@media (max-width: 991.98px) {
+  .comp-4-content {
+    padding: 4.5rem 0;
+  }
+
+  .comp-4-hero.comp-4-parallax {
+    background-attachment: scroll;
+  }
+
+  .comp-4-contact-shell {
+    padding: 1.25rem;
+  }
 }
 
 /* Oferta educativa specific styles */
