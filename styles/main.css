@@ -153,6 +153,65 @@
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
+/* Dropdown menus del navbar */
+.navbar .dropdown-menu {
+  background-color: var(--primary-color);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 2px solid var(--important-color);
+  border-radius: 0 0 10px 10px;
+  padding: 0.4rem 0;
+  min-width: 230px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  margin-top: 0 !important;
+}
+
+.navbar .dropdown-item {
+  color: var(--secondary-color);
+  font-size: 0.82rem;
+  padding: 0.45rem 1.2rem;
+  transition: background-color 0.2s ease, padding-left 0.2s ease, color 0.2s ease;
+}
+
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus {
+  background-color: var(--tertiary-color);
+  color: var(--important-color);
+  padding-left: 1.6rem;
+}
+
+.navbar .dropdown-item i {
+  opacity: 0.8;
+  width: 1rem;
+}
+
+.navbar .dropdown-divider {
+  border-color: rgba(255, 255, 255, 0.12);
+  margin: 0.25rem 0;
+}
+
+.navbar .dropdown-toggle::after {
+  vertical-align: 0.15em;
+}
+
+/* Apertura con hover en desktop */
+@media (min-width: 992px) {
+  .navbar .nav-item.dropdown:hover > .dropdown-menu {
+    display: block;
+    animation: navDropFadeIn 0.18s ease forwards;
+  }
+}
+
+@keyframes navDropFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 main {
   margin-top: 7rem;
